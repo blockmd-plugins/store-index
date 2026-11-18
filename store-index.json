@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-18T18:11:30Z",
+  "updated_at": "2026-11-18T21:26:15Z",
   "apps": [
     {
       "app": "blockmd",
@@ -11,19 +11,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.2.9",
+      "version": "1.2.10",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "支持本地目录镜像、WebDAV 与 Git 仓库的多端增量同步",
         "en": "Incremental notebook sync via local mirror, WebDAV, and Git"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.2.9/block-sync-v1.2.9.tar.gz",
-      "sha256": "6c9ca612b3b4caa101f9a94bf2f9d333c4c4c80fe0cea3e302938381f46db791",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.2.10/block-sync-v1.2.10.tar.gz",
+      "sha256": "fa8ed6c34448eb429284863172ebf14bd7721a13817c0e16ff613280fd9b5d98",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-18T18:11:11Z",
+      "updated_at": "2026-11-18T18:22:29Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -56,19 +56,19 @@
         "zh": "图床上传",
         "en": "Image Host"
       },
-      "version": "1.1.6",
+      "version": "1.1.7",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-image-host",
       "summary": {
         "zh": "支持 Cloudflare R2、S3 兼容存储与 GitHub 仓库的笔记图片自动上传",
         "en": "Upload local note images to Cloudflare R2, S3-compatible storage, or GitHub"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.1.6/block-image-host-v1.1.6.tar.gz",
-      "sha256": "c89532c52d77604ae66dae9c611e089922a8510403b51fdb1d315ae54dd277f9",
+      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.1.7/block-image-host-v1.1.7.tar.gz",
+      "sha256": "0220277c68ab9a6585f92d28fbbd323d4cc76cca03c333f7202e7c13055c3d87",
       "downloads": 941,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-18T18:11:11Z",
+      "updated_at": "2026-11-18T18:22:44Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -102,19 +102,19 @@
         "zh": "笔记迁移",
         "en": "Migrator"
       },
-      "version": "1.1.7",
+      "version": "1.1.8",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-migrator",
       "summary": {
         "zh": "从 Obsidian、Notion 与语雀导出目录迁移笔记，自动清洗语法并拷贝附件",
         "en": "Migrate notes from Obsidian, Notion, and Yuque exports with syntax cleanup and asset copy"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-migrator/releases/download/v1.1.7/block-migrator-v1.1.7.tar.gz",
-      "sha256": "ccddbbf789c60f1ce8b9c2cc166b0335130b3e38694b0a1c263045bbe2ee4a21",
+      "download_url": "https://github.com/blockmd-plugins/block-migrator/releases/download/v1.1.8/block-migrator-v1.1.8.tar.gz",
+      "sha256": "deffb671ee8bf21c6d35a4dd6c113e33009fa535ea37e4b44f6cd39aab235e14",
       "downloads": 616,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-18T18:11:11Z",
+      "updated_at": "2026-11-18T18:22:37Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -145,19 +145,19 @@
         "zh": "性能与诊断",
         "en": "Diagnostics"
       },
-      "version": "1.1.7",
+      "version": "1.1.8",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-diagnostics",
       "summary": {
         "zh": "统计工作区体积、笔记与附件占用，巡检孤立附件与失效链接并导出报告",
         "en": "Inspect workspace size, note and asset usage, orphan assets, broken links, and export reports"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-diagnostics/releases/download/v1.1.7/block-diagnostics-v1.1.7.tar.gz",
-      "sha256": "fb00243296779661091ef36de1576b340ba15a5d29297cd1761c2a7c6bfb3b5c",
+      "download_url": "https://github.com/blockmd-plugins/block-diagnostics/releases/download/v1.1.8/block-diagnostics-v1.1.8.tar.gz",
+      "sha256": "07d84cf969bacd9a96b27390d7e118387876ce377e8f4bebc4990152ec4d93fd",
       "downloads": 321,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-18T18:11:14Z",
+      "updated_at": "2026-11-18T18:22:37Z",
       "permissions": [
         "storage",
         "notes:read"
