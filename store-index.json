@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-18T12:32:07Z",
+  "updated_at": "2026-11-18T12:34:03Z",
   "apps": [
     {
       "app": "blockmd",
@@ -21,6 +21,7 @@
       "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.0.0/block-sync-v1.0.0.tar.gz",
       "sha256": "ad3c68a3d45b2440769593fef0228681e5cc75bb6f781c786ed0a4c05ae9c5ae",
       "downloads": 1281,
+      "stars": 0,
       "verified": true,
       "updated_at": "2026-11-18T12:09:03Z",
       "permissions": [
@@ -65,6 +66,7 @@
       "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.0.0/block-image-host-v1.0.0.tar.gz",
       "sha256": "dc2c416c32566463c5085e185c2269ac7973f24d7a148c338c819b9635ea3237",
       "downloads": 941,
+      "stars": 0,
       "verified": true,
       "updated_at": "2026-11-18T12:09:27Z",
       "permissions": [
@@ -110,6 +112,7 @@
       "download_url": "https://github.com/blockmd-plugins/block-publisher/releases/download/v1.0.0/block-publisher-v1.0.0.tar.gz",
       "sha256": "8ff8bbfaefa59b27a9d2ff0bb433568a46b9040991b454a9107fec7d995876e5",
       "downloads": 761,
+      "stars": 0,
       "verified": true,
       "updated_at": "2026-11-18T12:11:08Z",
       "permissions": [
@@ -153,6 +156,7 @@
       "download_url": "https://github.com/blockmd-plugins/block-migrator/releases/download/v1.0.0/block-migrator-v1.0.0.tar.gz",
       "sha256": "14d7b9e3913cda8d83adffd377fb2ec5933f62ec802679fdb0bdba48bf30a499",
       "downloads": 616,
+      "stars": 0,
       "verified": true,
       "updated_at": "2026-11-18T12:11:21Z",
       "permissions": [
@@ -195,6 +199,7 @@
       "download_url": "https://github.com/blockmd-plugins/block-diagnostics/releases/download/v1.0.0/block-diagnostics-v1.0.0.tar.gz",
       "sha256": "8fb8edecafaa2073b83b9360f86759868de278f86cf7ed58fd362b1b8d8fdd7c",
       "downloads": 321,
+      "stars": 0,
       "verified": true,
       "updated_at": "2026-11-18T12:11:33Z",
       "permissions": [
