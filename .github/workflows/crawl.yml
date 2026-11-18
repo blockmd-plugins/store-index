@@ -1,0 +1,31 @@
+name: Auto Crawl blockmd-plugin Store Index
+
+on:
+  schedule:
+    - cron: "15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Crawl topic:blockmd-plugin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/crawl_github.py
+
+      - name: Commit updated store-index.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet store-index.json; then
+            git add store-index.json
+            git commit -m "chore: update auto-crawled store-index.json"
+            git push
+          fi
