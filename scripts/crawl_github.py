@@ -163,8 +163,9 @@ def fetch_github_repo(repo, now_iso):
         for r in rels:
             for ast in r.get("assets", []):
                 gh_downloads += int(ast.get("download_count") or 0)
-        if rels:
-            latest = rels[0]
+        stable_rels = [r for r in rels if not r.get("draft") and not r.get("prerelease")]
+        if stable_rels:
+            latest = stable_rels[0]
             updated = latest.get("published_at") or updated
             for ast in latest.get("assets", []):
                 if ast["name"].endswith((".tar.gz", ".tgz", ".zip")):

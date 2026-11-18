@@ -28,4 +28,5 @@ jobs:
             git add store-index.json
             git commit -m "chore: update auto-crawled store-index.json"
             git push
+            curl -fsSL "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/store-index.json" || true
           fi
