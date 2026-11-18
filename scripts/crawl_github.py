@@ -102,7 +102,7 @@ def extract_manifest(raw_bytes, url):
     return None
 
 def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_repo_fn, now_iso):
-    apps, seen = [], set()
+    apps, owners, ambiguous = [], {}, set()
     for repo in search_items:
         full = repo["full_name"]
         if full.lower() in blocklist:
@@ -121,9 +121,14 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
             if not allowed:
                 print(f"[WARN] skip {full}: {reason}")
                 continue
-            if pid_key in seen:
+            declared = str(m.get("repo") or "").strip().lower()
+            if declared and declared != full.lower():
                 continue
-            seen.add(pid_key)
+            if pid_key in owners:
+                if owners[pid_key] != full.lower():
+                    ambiguous.add(pid_key)
+                continue
+            owners[pid_key] = full.lower()
             apps.append({
                 "app": "blockmd",
                 "id": pid,
@@ -145,6 +150,7 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
         except Exception as exc:
             print(f"[WARN] skip {full}: {exc}")
 
+    apps = [app for app in apps if app["id"].lower() not in ambiguous]
     validate_apps_against_verified(apps, id_to_repo)
     apps.sort(key=lambda x: (not x["verified"], -x.get("downloads", 0), -x.get("stars", 0), x["id"]))
     return {"app": "blockmd", "schema_version": 1, "topic": "blockmd-plugin", "updated_at": now_iso, "apps": apps}
