@@ -1,21 +1,72 @@
 #!/usr/bin/env python3
-import concurrent.futures, hashlib, io, json, os, sys, tarfile, urllib.request, zipfile
+import hashlib, io, json, os, stat, sys, tarfile, urllib.parse, urllib.request, zipfile
 from datetime import datetime, timezone
 
 API = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 RESERVED_IDS = {"block-diagnostics"}
+MAX_API_BYTES = 8 * 1024 * 1024
+MAX_ARCHIVE_BYTES = 64 * 1024 * 1024
+MAX_SINGLE_FILE_BYTES = 32 * 1024 * 1024
+MAX_TOTAL_EXTRACTED_BYTES = 256 * 1024 * 1024
+MAX_ARCHIVE_ENTRIES = 8192
+MAX_MANIFEST_BYTES = 256 * 1024
 MAX_README_BYTES = 512 * 1024
 
 
-def gh_get(url):
-    req = urllib.request.Request(url, headers={
+def read_limited(resp, limit, label):
+    chunks = []
+    total = 0
+    while True:
+        chunk = resp.read(65536)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > limit:
+            raise ValueError(f"{label} exceeds limit ({limit} bytes)")
+        chunks.append(chunk)
+    return b"".join(chunks)
+
+
+def gh_api_get(url):
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme != "https" or parsed.hostname != "api.github.com":
+        raise ValueError(f"refusing API request to unexpected host: {url}")
+    headers = {
         "User-Agent": "Block-Store-Crawler/1.0 (blockmd)",
         "Accept": "application/vnd.github+json",
-        **({"Authorization": f"Bearer {TOKEN}"} if TOKEN else {}),
+    }
+    if TOKEN:
+        headers["Authorization"] = f"Bearer {TOKEN}"
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return read_limited(r, MAX_API_BYTES, "GitHub API response")
+
+
+def download_archive(url):
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme != "https" or not parsed.hostname:
+        raise ValueError(f"invalid archive URL: {url}")
+    # Never forward GITHUB_TOKEN when downloading public release/source archives.
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Block-Store-Crawler/1.0 (blockmd)",
     })
     with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read()
+        cl = r.headers.get("Content-Length")
+        if cl and cl.isdigit() and int(cl) > MAX_ARCHIVE_BYTES:
+            raise ValueError(f"archive exceeds {MAX_ARCHIVE_BYTES} bytes")
+        return read_limited(r, MAX_ARCHIVE_BYTES, "plugin archive")
+
+
+def json_loads_strict(raw_text):
+    def no_dup_pairs(pairs):
+        obj = {}
+        for k, v in pairs:
+            if k in obj:
+                raise ValueError(f"duplicate JSON key: {k!r}")
+            obj[k] = v
+        return obj
+    return json.loads(raw_text, object_pairs_hook=no_dup_pairs)
 
 
 def load_set(path):
@@ -28,7 +79,7 @@ def load_verified_map(path):
     if not os.path.exists(path):
         raise ValueError(f"verified map not found: {path}")
     with open(path, encoding="utf-8") as f:
-        raw = json.load(f)
+        raw = json_loads_strict(f.read())
     if not isinstance(raw, dict) or not raw:
         raise ValueError("verified.json must be a non-empty JSON object mapping id -> owner/repo")
     id_to_repo = {}
@@ -95,20 +146,49 @@ def find_chinese_char(text):
     return ""
 
 
+def contains_ascii_letter(text):
+    return any(("a" <= ch <= "z") or ("A" <= ch <= "Z") for ch in text)
+
+
+def validate_localized_field(path_label, loc):
+    if not isinstance(loc, dict):
+        raise ValueError(f"{path_label} must be an object with zh and en")
+    for lang in ("zh", "en"):
+        val = str(loc.get(lang) or "").strip()
+        if not val:
+            raise ValueError(f"{path_label}.{lang} is required for official plugins")
+        if contains_emoji(val):
+            raise ValueError(f"{path_label}.{lang} must not contain emoji")
+    en_val = str(loc.get("en") or "").strip()
+    bad = find_chinese_char(en_val)
+    if bad:
+        raise ValueError(f"{path_label}.en must be English-only, found {bad!r}")
+
+
 def validate_official_bilingual(manifest, docs):
     for field in ("name", "summary"):
-        loc = manifest.get(field)
-        if not isinstance(loc, dict):
-            raise ValueError(f"manifest.{field} must be an object with zh and en")
-        for lang in ("zh", "en"):
-            val = str(loc.get(lang) or "").strip()
-            if not val:
-                raise ValueError(f"manifest.{field}.{lang} is required for official plugins")
-            if contains_emoji(val):
-                raise ValueError(f"manifest.{field}.{lang} must not contain emoji")
+        validate_localized_field(f"manifest.{field}", manifest.get(field))
     author = str(manifest.get("author") or "").strip()
     if not author or contains_emoji(author):
         raise ValueError("manifest.author is required and must not contain emoji")
+
+    contributes = manifest.get("contributes")
+    if isinstance(contributes, dict):
+        for group, key in (
+            ("titlebar_buttons", "tooltip"),
+            ("settings_sections", "title"),
+            ("commands", "title"),
+            ("page_menu", "title"),
+            ("editor_menu", "title"),
+            ("panels", "title"),
+            ("dialogs", "title"),
+        ):
+            for idx, item in enumerate(contributes.get(group) or []):
+                if isinstance(item, dict) and key in item:
+                    validate_localized_field(f"manifest.contributes.{group}[{idx}].{key}", item.get(key))
+        for idx, item in enumerate(contributes.get("status_items") or []):
+            if isinstance(item, dict) and item.get("text") is not None:
+                validate_localized_field(f"manifest.contributes.status_items[{idx}].text", item.get("text"))
 
     zh_raw = docs.get("README.md")
     en_raw = docs.get("README.en.md")
@@ -127,6 +207,8 @@ def validate_official_bilingual(manifest, docs):
     bad = find_chinese_char(en_text)
     if bad:
         raise ValueError(f"README.en.md must be English-only, found {bad!r}")
+    if not contains_ascii_letter(en_text):
+        raise ValueError("README.en.md must contain English text")
     if zh_text == en_text:
         raise ValueError("README.en.md must not be identical to README.md")
 
@@ -165,102 +247,149 @@ def validate_apps_against_verified(apps, id_to_repo):
         raise ValueError("; ".join(errors))
 
 
+def _normalize_archive_path(raw_name):
+    norm = raw_name.replace("\\", "/")
+    while norm.startswith("./"):
+        norm = norm[2:]
+    if not norm or norm.startswith("/") or ".." in norm.split("/"):
+        raise ValueError(f"unsafe archive path: {raw_name!r}")
+    return norm
+
+
+def _read_bounded(stream, limit, label):
+    data = stream.read(limit + 1)
+    if len(data) > limit:
+        raise ValueError(f"{label} exceeds {limit} bytes")
+    return data
+
+
 def extract_manifest_and_docs(raw_bytes, url):
     files = {}
+    entry_count = 0
+    total_extracted = 0
+
     if url.lower().endswith(".zip") or raw_bytes[:4] == b"PK\x03\x04":
         with zipfile.ZipFile(io.BytesIO(raw_bytes)) as zf:
             for info in zf.infolist():
+                entry_count += 1
+                if entry_count > MAX_ARCHIVE_ENTRIES:
+                    raise ValueError("archive exceeds max entry limit")
                 if info.is_dir():
                     continue
-                norm = info.filename.lstrip("./")
-                if norm.count("/") <= 1:
-                    files[norm] = zf.read(info)
+                mode = info.external_attr >> 16
+                file_type = stat.S_IFMT(mode)
+                if file_type != 0 and file_type != stat.S_IFREG:
+                    raise ValueError(f"non-regular file in zip archive: {info.filename!r}")
+                if info.file_size > MAX_SINGLE_FILE_BYTES:
+                    raise ValueError(f"archive member too large: {info.filename!r}")
+                total_extracted += info.file_size
+                if total_extracted > MAX_TOTAL_EXTRACTED_BYTES:
+                    raise ValueError("archive extracted size exceeds limit")
+                norm = _normalize_archive_path(info.filename)
+                base = norm.rsplit("/", 1)[-1]
+                if norm.count("/") <= 1 and base in ("manifest.json", "README.md", "README.en.md"):
+                    limit = MAX_MANIFEST_BYTES if base == "manifest.json" else MAX_README_BYTES
+                    with zf.open(info, "r") as fp:
+                        files[norm] = _read_bounded(fp, limit, base)
     else:
         with tarfile.open(fileobj=io.BytesIO(raw_bytes), mode="r:gz") as tf:
             for m in tf.getmembers():
-                if not m.isfile():
+                entry_count += 1
+                if entry_count > MAX_ARCHIVE_ENTRIES:
+                    raise ValueError("archive exceeds max entry limit")
+                if m.isdir():
                     continue
-                norm = m.name.lstrip("./")
-                if norm.count("/") <= 1:
+                if not m.isreg():
+                    raise ValueError(f"non-regular file in tar archive: {m.name!r}")
+                if m.size > MAX_SINGLE_FILE_BYTES:
+                    raise ValueError(f"archive member too large: {m.name!r}")
+                total_extracted += m.size
+                if total_extracted > MAX_TOTAL_EXTRACTED_BYTES:
+                    raise ValueError("archive extracted size exceeds limit")
+                norm = _normalize_archive_path(m.name)
+                base = norm.rsplit("/", 1)[-1]
+                if norm.count("/") <= 1 and base in ("manifest.json", "README.md", "README.en.md"):
+                    limit = MAX_MANIFEST_BYTES if base == "manifest.json" else MAX_README_BYTES
                     fp = tf.extractfile(m)
                     if fp is not None:
-                        files[norm] = fp.read()
+                        files[norm] = _read_bounded(fp, limit, base)
 
-    manifest_key = None
-    for name in files:
-        if name == "manifest.json" or (name.count("/") == 1 and name.endswith("/manifest.json")):
-            manifest_key = name
-            break
-    if manifest_key is None:
+    manifest_keys = [
+        name for name in files
+        if name == "manifest.json" or (name.count("/") == 1 and name.endswith("/manifest.json"))
+    ]
+    if len(manifest_keys) == 0:
         return None, {}
+    if len(manifest_keys) > 1:
+        raise ValueError(f"archive contains multiple manifest.json candidates: {manifest_keys}")
+    manifest_key = manifest_keys[0]
     prefix = manifest_key[:-len("manifest.json")]
     docs = {}
     for doc_name in ("README.md", "README.en.md"):
         doc_key = prefix + doc_name
         if doc_key in files:
             docs[doc_name] = files[doc_key]
-    return json.loads(files[manifest_key].decode("utf-8")), docs
+    return json_loads_strict(files[manifest_key].decode("utf-8")), docs
 
 
 def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_repo_fn, now_iso):
     apps, owners, ambiguous = [], {}, set()
-    candidates = [repo for repo in search_items if repo["full_name"].lower() not in blocklist]
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
-        futures = [(repo, pool.submit(fetch_repo_fn, repo, now_iso)) for repo in candidates]
-        for repo, future in futures:
-            full = repo["full_name"]
-            try:
-                fetched = future.result()
-                if len(fetched) == 6:
-                    dl_url, sha_hex, gh_downloads, updated, m, docs = fetched
-                else:
-                    dl_url, sha_hex, gh_downloads, updated, m = fetched
-                    docs = {}
-                if not m or m.get("app") != "blockmd":
-                    continue
-                pid = (m.get("id") or "").strip()
-                if not pid:
-                    continue
-                pid_key = pid.lower()
-                if pid_key in RESERVED_IDS or pid_key in blocklist:
-                    continue
-                allowed, is_verified, reason = is_repo_allowed_for_id(pid, full, id_to_repo, repo_to_id)
-                if not allowed:
-                    print(f"[WARN] skip {full}: {reason}")
-                    continue
-                declared = str(m.get("repo") or "").strip().lower()
-                if declared and declared != full.lower():
-                    continue
-                if is_verified or full.lower().startswith("blockmd-plugins/"):
-                    validate_official_bilingual(m, docs)
-                if pid_key in owners:
-                    if owners[pid_key] != full.lower():
-                        ambiguous.add(pid_key)
-                    continue
-                owners[pid_key] = full.lower()
-                app_entry = {
-                    "app": "blockmd",
-                    "id": pid,
-                    "name": m["name"],
-                    "version": m["version"],
-                    "author": m["author"],
-                    "repo": full,
-                    "summary": m["summary"],
-                    "download_url": dl_url,
-                    "sha256": sha_hex,
-                    "downloads": max(prev_dl.get(pid, 0), gh_downloads),
-                    "stars": int(repo.get("stargazers_count") or 0),
-                    "verified": is_verified,
-                    "updated_at": updated,
-                    "permissions": m.get("permissions", []),
-                    "surfaces": m.get("surfaces", ["settings_page"]),
-                    "icon": m["icon"],
-                }
-                if m.get("beta") is True:
-                    app_entry["beta"] = True
-                apps.append(app_entry)
-            except Exception as exc:
-                print(f"[WARN] skip {full}: {exc}")
+    for repo in search_items:
+        full = repo["full_name"]
+        if full.lower() in blocklist:
+            continue
+        try:
+            fetched = fetch_repo_fn(repo, now_iso)
+            if len(fetched) == 6:
+                dl_url, sha_hex, gh_downloads, updated, m, docs = fetched
+            else:
+                dl_url, sha_hex, gh_downloads, updated, m = fetched
+                docs = {}
+            if not m or m.get("app") != "blockmd":
+                continue
+            pid = (m.get("id") or "").strip()
+            if not pid:
+                continue
+            pid_key = pid.lower()
+            if pid_key in RESERVED_IDS or pid_key in blocklist:
+                continue
+            allowed, is_verified, reason = is_repo_allowed_for_id(pid, full, id_to_repo, repo_to_id)
+            if not allowed:
+                print(f"[WARN] skip {full}: {reason}")
+                continue
+            declared = str(m.get("repo") or "").strip().lower()
+            if declared and declared != full.lower():
+                continue
+            if is_verified or full.lower().startswith("blockmd-plugins/"):
+                validate_official_bilingual(m, docs)
+            if pid_key in owners:
+                if owners[pid_key] != full.lower():
+                    ambiguous.add(pid_key)
+                continue
+            owners[pid_key] = full.lower()
+            app_entry = {
+                "app": "blockmd",
+                "id": pid,
+                "name": m["name"],
+                "version": m["version"],
+                "author": m["author"],
+                "repo": full,
+                "summary": m["summary"],
+                "download_url": dl_url,
+                "sha256": sha_hex,
+                "downloads": max(prev_dl.get(pid, 0), gh_downloads),
+                "stars": int(repo.get("stargazers_count") or 0),
+                "verified": is_verified,
+                "updated_at": updated,
+                "permissions": m.get("permissions", []),
+                "surfaces": m.get("surfaces", ["settings_page"]),
+                "icon": m["icon"],
+            }
+            if m.get("beta") is True:
+                app_entry["beta"] = True
+            apps.append(app_entry)
+        except Exception as exc:
+            print(f"[WARN] skip {full}: {exc}")
 
     apps = [app for app in apps if app["id"].lower() not in ambiguous]
     validate_apps_against_verified(apps, id_to_repo)
@@ -272,7 +401,7 @@ def fetch_github_repo(repo, now_iso):
     full = repo["full_name"]
     dl_url, gh_downloads, updated = "", 0, repo.get("pushed_at") or now_iso
     try:
-        rels = json.loads(gh_get(f"{API}/repos/{full}/releases?per_page=30"))
+        rels = json.loads(gh_api_get(f"{API}/repos/{full}/releases"))
         for r in rels:
             for ast in r.get("assets", []):
                 gh_downloads += int(ast.get("download_count") or 0)
@@ -291,7 +420,7 @@ def fetch_github_repo(repo, now_iso):
     if not dl_url:
         branch = repo.get("default_branch") or "main"
         dl_url = f"https://codeload.github.com/{full}/tar.gz/{branch}"
-    raw = gh_get(dl_url)
+    raw = download_archive(dl_url)
     sha_hex = hashlib.sha256(raw).hexdigest()
     m, docs = extract_manifest_and_docs(raw, dl_url)
     return dl_url, sha_hex, gh_downloads, updated, m, docs
@@ -305,7 +434,7 @@ def main():
         for a in json.load(open("store-index.json", encoding="utf-8")).get("apps", []):
             prev_dl[a.get("id")] = int(a.get("downloads") or 0)
 
-    search = json.loads(gh_get(f"{API}/search/repositories?q=topic:blockmd-plugin+fork:false+archived:false&sort=stars&order=desc&per_page=100"))
+    search = json.loads(gh_api_get(f"{API}/search/repositories?q=topic:blockmd-plugin+fork:false+archived:false&sort=stars&order=desc&per_page=100"))
     now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     out = build_index(
         search.get("items", []),
