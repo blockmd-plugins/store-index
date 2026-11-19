@@ -368,6 +368,8 @@ def _read_bounded(stream, limit, label):
 
 
 def _record_dir_entry(raw_name, seen_dirs, seen_files):
+    if "\" in raw_name or raw_name.startswith("/"):
+        raise ValueError(f"unsafe archive directory path: {raw_name!r}")
     stripped = raw_name.rstrip("/")
     if not stripped or stripped == ".":
         return
