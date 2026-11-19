@@ -4,6 +4,9 @@ from datetime import datetime, timezone
 
 API = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
+RESERVED_IDS = {"block-diagnostics"}
+MAX_README_BYTES = 512 * 1024
+
 
 def gh_get(url):
     req = urllib.request.Request(url, headers={
@@ -14,10 +17,12 @@ def gh_get(url):
     with urllib.request.urlopen(req, timeout=30) as r:
         return r.read()
 
+
 def load_set(path):
     if not os.path.exists(path):
         return set()
     return {x.strip().lower() for x in json.load(open(path, encoding="utf-8")) if x.strip()}
+
 
 def load_verified_map(path):
     if not os.path.exists(path):
@@ -36,6 +41,8 @@ def load_verified_map(path):
         parts = repo.split("/")
         if not pid or len(parts) != 2 or not parts[0] or not parts[1]:
             raise ValueError(f"invalid verified mapping {k!r} -> {v!r}")
+        if pid in RESERVED_IDS:
+            raise ValueError(f"verified.json must not include reserved id: {pid}")
         if pid in id_to_repo:
             raise ValueError(f"duplicate verified id: {pid}")
         if repo in repo_to_id:
@@ -43,6 +50,7 @@ def load_verified_map(path):
         id_to_repo[pid] = repo
         repo_to_id[repo] = pid
     return id_to_repo, repo_to_id
+
 
 def is_repo_allowed_for_id(pid, full_name, id_to_repo, repo_to_id):
     pid_key = pid.strip().lower()
@@ -57,6 +65,72 @@ def is_repo_allowed_for_id(pid, full_name, id_to_repo, repo_to_id):
         return False, False, f"verified repo {full_name} is bound to id {expected_id!r}, got {pid!r}"
     return True, False, ""
 
+
+def contains_emoji(text):
+    for ch in text:
+        cp = ord(ch)
+        if 0x1F300 <= cp <= 0x1FAFF or 0x2600 <= cp <= 0x27BF or 0xFE00 <= cp <= 0xFE0F:
+            return True
+    return False
+
+
+def contains_han(text):
+    for ch in text:
+        cp = ord(ch)
+        if (
+            0x3400 <= cp <= 0x4DBF
+            or 0x4E00 <= cp <= 0x9FFF
+            or 0xF900 <= cp <= 0xFAFF
+            or 0x20000 <= cp <= 0x2CEAF
+        ):
+            return True
+    return False
+
+
+def find_chinese_char(text):
+    for ch in text:
+        cp = ord(ch)
+        if contains_han(ch) or (0x3000 <= cp <= 0x303F) or (0xFF01 <= cp <= 0xFF5E):
+            return ch
+    return ""
+
+
+def validate_official_bilingual(manifest, docs):
+    for field in ("name", "summary"):
+        loc = manifest.get(field)
+        if not isinstance(loc, dict):
+            raise ValueError(f"manifest.{field} must be an object with zh and en")
+        for lang in ("zh", "en"):
+            val = str(loc.get(lang) or "").strip()
+            if not val:
+                raise ValueError(f"manifest.{field}.{lang} is required for official plugins")
+            if contains_emoji(val):
+                raise ValueError(f"manifest.{field}.{lang} must not contain emoji")
+    author = str(manifest.get("author") or "").strip()
+    if not author or contains_emoji(author):
+        raise ValueError("manifest.author is required and must not contain emoji")
+
+    zh_raw = docs.get("README.md")
+    en_raw = docs.get("README.en.md")
+    if zh_raw is None:
+        raise ValueError("official plugin archive missing README.md")
+    if en_raw is None:
+        raise ValueError("official plugin archive missing README.en.md")
+    if len(zh_raw) > MAX_README_BYTES or len(en_raw) > MAX_README_BYTES:
+        raise ValueError("official plugin README exceeds 512 KiB limit")
+    zh_text = zh_raw.decode("utf-8").lstrip("\ufeff").strip()
+    en_text = en_raw.decode("utf-8").lstrip("\ufeff").strip()
+    if not zh_text or not contains_han(zh_text):
+        raise ValueError("README.md must be non-empty Chinese text")
+    if not en_text:
+        raise ValueError("README.en.md must not be empty")
+    bad = find_chinese_char(en_text)
+    if bad:
+        raise ValueError(f"README.en.md must be English-only, found {bad!r}")
+    if zh_text == en_text:
+        raise ValueError("README.en.md must not be identical to README.md")
+
+
 def validate_apps_against_verified(apps, id_to_repo):
     errors = []
     by_id = {}
@@ -65,6 +139,9 @@ def validate_apps_against_verified(apps, id_to_repo):
         repo = (app.get("repo") or "").strip().lower()
         if not pid or not repo:
             errors.append(f"entry missing id or repo: {app!r}")
+            continue
+        if pid in RESERVED_IDS:
+            errors.append(f"reserved app id must not be published: {pid}")
             continue
         if pid in by_id:
             errors.append(f"duplicate app id: {pid}")
@@ -87,19 +164,43 @@ def validate_apps_against_verified(apps, id_to_repo):
     if errors:
         raise ValueError("; ".join(errors))
 
-def extract_manifest(raw_bytes, url):
+
+def extract_manifest_and_docs(raw_bytes, url):
+    files = {}
     if url.lower().endswith(".zip") or raw_bytes[:4] == b"PK\x03\x04":
         with zipfile.ZipFile(io.BytesIO(raw_bytes)) as zf:
-            for name in zf.namelist():
-                if name == "manifest.json" or (name.count("/") == 1 and name.endswith("/manifest.json")):
-                    return json.loads(zf.read(name).decode("utf-8"))
+            for info in zf.infolist():
+                if info.is_dir():
+                    continue
+                norm = info.filename.lstrip("./")
+                if norm.count("/") <= 1:
+                    files[norm] = zf.read(info)
     else:
         with tarfile.open(fileobj=io.BytesIO(raw_bytes), mode="r:gz") as tf:
             for m in tf.getmembers():
-                n = m.name.lstrip("./")
-                if n == "manifest.json" or (n.count("/") == 1 and n.endswith("/manifest.json")):
-                    return json.loads(tf.extractfile(m).read().decode("utf-8"))
-    return None
+                if not m.isfile():
+                    continue
+                norm = m.name.lstrip("./")
+                if norm.count("/") <= 1:
+                    fp = tf.extractfile(m)
+                    if fp is not None:
+                        files[norm] = fp.read()
+
+    manifest_key = None
+    for name in files:
+        if name == "manifest.json" or (name.count("/") == 1 and name.endswith("/manifest.json")):
+            manifest_key = name
+            break
+    if manifest_key is None:
+        return None, {}
+    prefix = manifest_key[:-len("manifest.json")]
+    docs = {}
+    for doc_name in ("README.md", "README.en.md"):
+        doc_key = prefix + doc_name
+        if doc_key in files:
+            docs[doc_name] = files[doc_key]
+    return json.loads(files[manifest_key].decode("utf-8")), docs
+
 
 def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_repo_fn, now_iso):
     apps, owners, ambiguous = [], {}, set()
@@ -108,14 +209,19 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
         if full.lower() in blocklist:
             continue
         try:
-            dl_url, sha_hex, gh_downloads, updated, m = fetch_repo_fn(repo, now_iso)
+            fetched = fetch_repo_fn(repo, now_iso)
+            if len(fetched) == 6:
+                dl_url, sha_hex, gh_downloads, updated, m, docs = fetched
+            else:
+                dl_url, sha_hex, gh_downloads, updated, m = fetched
+                docs = {}
             if not m or m.get("app") != "blockmd":
                 continue
             pid = (m.get("id") or "").strip()
             if not pid:
                 continue
             pid_key = pid.lower()
-            if pid_key in blocklist:
+            if pid_key in RESERVED_IDS or pid_key in blocklist:
                 continue
             allowed, is_verified, reason = is_repo_allowed_for_id(pid, full, id_to_repo, repo_to_id)
             if not allowed:
@@ -124,6 +230,8 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
             declared = str(m.get("repo") or "").strip().lower()
             if declared and declared != full.lower():
                 continue
+            if is_verified or full.lower().startswith("blockmd-plugins/"):
+                validate_official_bilingual(m, docs)
             if pid_key in owners:
                 if owners[pid_key] != full.lower():
                     ambiguous.add(pid_key)
@@ -158,6 +266,7 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
     apps.sort(key=lambda x: (not x["verified"], -x.get("downloads", 0), -x.get("stars", 0), x["id"]))
     return {"app": "blockmd", "schema_version": 1, "topic": "blockmd-plugin", "updated_at": now_iso, "apps": apps}
 
+
 def fetch_github_repo(repo, now_iso):
     full = repo["full_name"]
     dl_url, gh_downloads, updated = "", 0, repo.get("pushed_at") or now_iso
@@ -183,8 +292,9 @@ def fetch_github_repo(repo, now_iso):
         dl_url = f"https://codeload.github.com/{full}/tar.gz/{branch}"
     raw = gh_get(dl_url)
     sha_hex = hashlib.sha256(raw).hexdigest()
-    m = extract_manifest(raw, dl_url)
-    return dl_url, sha_hex, gh_downloads, updated, m
+    m, docs = extract_manifest_and_docs(raw, dl_url)
+    return dl_url, sha_hex, gh_downloads, updated, m, docs
+
 
 def main():
     blocklist = load_set("blocklist.json")
@@ -210,6 +320,7 @@ def main():
         json.dump(out, f, ensure_ascii=False, indent=2)
         f.write("\n")
     os.replace(tmp_path, "store-index.json")
+
 
 if __name__ == "__main__":
     try:
