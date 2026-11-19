@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-19T15:36:16Z",
+  "updated_at": "2026-11-19T16:02:50Z",
   "apps": [
     {
       "app": "blockmd",
@@ -187,54 +187,6 @@
     },
     {
       "app": "blockmd",
-      "id": "block-dot-matrix",
-      "name": {
-        "zh": "画布点阵",
-        "en": "Canvas Dots"
-      },
-      "version": "1.2.0",
-      "author": "maotiaosan",
-      "repo": "maotiaosan/block-dot-matrix",
-      "summary": {
-        "zh": "为笔记铺上与行高对齐的点阵或方格，帮助弱视读者稳定追踪每一行",
-        "en": "Line-aligned dot or grid canvas for notes, helping low-vision readers track each line"
-      },
-      "download_url": "https://github.com/maotiaosan/block-dot-matrix/releases/download/v1.2.0/block-dot-matrix-v1.2.0.tar.gz",
-      "sha256": "abbfcf98c9812d8fae724696787430e45c23c619feebcebad5f1a1a174a37676",
-      "downloads": 5,
-      "stars": 0,
-      "verified": false,
-      "updated_at": "2026-11-19T15:18:59Z",
-      "permissions": [
-        "storage",
-        "notes:read"
-      ],
-      "surfaces": [
-        "settings_page"
-      ],
-      "icon": {
-        "view_box": "0 0 24 24",
-        "fill_paths": [
-          "M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Z"
-        ],
-        "stroke_paths": [
-          "M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Z",
-          "M8.5 8.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M12 8.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M15.5 8.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M8.5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M15.5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M8.5 15.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M12 15.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M15.5 15.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
-        ],
-        "accent_paths": [
-          "M12 12m-1.2 0a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0"
-        ]
-      }
-    },
-    {
-      "app": "blockmd",
       "id": "block-canvas-dots",
       "name": {
         "zh": "画布点阵",
@@ -249,7 +201,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.0/block-canvas-dots-v1.2.0.tar.gz",
       "sha256": "789a95ebe50dfc0da50c1015a4ad1731cf5c88108651075240037c9b8bd902e1",
-      "downloads": 0,
+      "downloads": 2,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-19T15:35:43Z",
