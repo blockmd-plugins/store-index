@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import hashlib, io, json, os, re, stat, sys, tarfile, urllib.parse, urllib.request, zipfile
+import hashlib, io, json, os, posixpath, re, stat, sys, tarfile, urllib.parse, urllib.request, zipfile
 from datetime import datetime, timezone
 
 API = "https://api.github.com"
@@ -177,6 +177,14 @@ def contains_ascii_letter(text):
     return any(("a" <= ch <= "z") or ("A" <= ch <= "Z") for ch in text)
 
 
+def strip_html_comments(text):
+    text = HTML_COMMENT_RE.sub("", text)
+    idx = text.find("<!--")
+    if idx >= 0:
+        text = text[:idx]
+    return text.strip()
+
+
 def validate_manifest_core(m):
     if not isinstance(m, dict):
         raise ValueError("manifest must be a JSON object")
@@ -213,8 +221,8 @@ def validate_manifest_core(m):
     entry = m.get("entry")
     if not isinstance(entry, dict) or not isinstance(entry.get("command"), list) or not entry["command"]:
         raise ValueError("manifest.entry.command must be a non-empty array")
-    if not all(isinstance(x, str) and x.strip() for x in entry["command"][:1]):
-        raise ValueError("manifest.entry.command[0] must be non-empty string")
+    if not all(isinstance(x, str) for x in entry["command"]) or not entry["command"][0].strip():
+        raise ValueError("manifest.entry.command must contain only strings with a non-empty executable")
 
     perms = m.get("permissions")
     if not isinstance(perms, list):
@@ -291,14 +299,15 @@ def validate_official_bilingual(manifest, docs):
         raise ValueError("official plugin README exceeds 512 KiB limit")
     zh_text = zh_raw.decode("utf-8").lstrip("\ufeff").strip()
     en_text = en_raw.decode("utf-8").lstrip("\ufeff").strip()
-    if not zh_text or not contains_han(zh_text):
-        raise ValueError("README.md must be non-empty Chinese text")
+    zh_visible = strip_html_comments(zh_text)
+    if not zh_visible or not contains_han(zh_visible):
+        raise ValueError("README.md must contain visible Chinese text")
     if not en_text:
         raise ValueError("README.en.md must not be empty")
     bad = find_chinese_char(en_text)
     if bad:
         raise ValueError(f"README.en.md must be English-only, found {bad!r}")
-    en_visible = HTML_COMMENT_RE.sub("", en_text).strip()
+    en_visible = strip_html_comments(en_text)
     if not contains_ascii_letter(en_visible):
         raise ValueError("README.en.md must contain visible English text")
     if zh_text == en_text:
@@ -340,10 +349,13 @@ def validate_apps_against_verified(apps, id_to_repo):
 
 
 def _normalize_archive_path(raw_name):
-    norm = raw_name.replace("\\", "/")
-    while norm.startswith("./"):
-        norm = norm[2:]
-    if not norm or norm.startswith("/") or ".." in norm.split("/"):
+    if "\\" in raw_name or raw_name.startswith("/"):
+        raise ValueError(f"unsafe archive path: {raw_name!r}")
+    raw_parts = raw_name.split("/")
+    if ".." in raw_parts:
+        raise ValueError(f"unsafe archive path: {raw_name!r}")
+    norm = posixpath.normpath(raw_name)
+    if not norm or norm in (".", "..") or norm.startswith("/") or norm.startswith("../"):
         raise ValueError(f"unsafe archive path: {raw_name!r}")
     return norm
 
@@ -367,12 +379,16 @@ def extract_manifest_and_docs(raw_bytes, url):
                 entry_count += 1
                 if entry_count > MAX_ARCHIVE_ENTRIES:
                     raise ValueError("archive exceeds max entry limit")
-                if info.is_dir():
-                    continue
                 mode = info.external_attr >> 16
                 file_type = stat.S_IFMT(mode)
-                if file_type != 0 and file_type != stat.S_IFREG:
+                if file_type != 0 and file_type not in (stat.S_IFREG, stat.S_IFDIR):
                     raise ValueError(f"non-regular file in zip archive: {info.filename!r}")
+                if info.is_dir():
+                    if file_type == stat.S_IFREG:
+                        raise ValueError(f"invalid directory entry in zip archive: {info.filename!r}")
+                    continue
+                if file_type == stat.S_IFDIR:
+                    continue
                 if info.file_size > MAX_SINGLE_FILE_BYTES:
                     raise ValueError(f"archive member too large: {info.filename!r}")
                 total_extracted += info.file_size
