@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import hashlib, io, json, os, sys, tarfile, urllib.request, zipfile
+import concurrent.futures, hashlib, io, json, os, sys, tarfile, urllib.request, zipfile
 from datetime import datetime, timezone
 
 API = "https://api.github.com"
@@ -204,62 +204,63 @@ def extract_manifest_and_docs(raw_bytes, url):
 
 def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_repo_fn, now_iso):
     apps, owners, ambiguous = [], {}, set()
-    for repo in search_items:
-        full = repo["full_name"]
-        if full.lower() in blocklist:
-            continue
-        try:
-            fetched = fetch_repo_fn(repo, now_iso)
-            if len(fetched) == 6:
-                dl_url, sha_hex, gh_downloads, updated, m, docs = fetched
-            else:
-                dl_url, sha_hex, gh_downloads, updated, m = fetched
-                docs = {}
-            if not m or m.get("app") != "blockmd":
-                continue
-            pid = (m.get("id") or "").strip()
-            if not pid:
-                continue
-            pid_key = pid.lower()
-            if pid_key in RESERVED_IDS or pid_key in blocklist:
-                continue
-            allowed, is_verified, reason = is_repo_allowed_for_id(pid, full, id_to_repo, repo_to_id)
-            if not allowed:
-                print(f"[WARN] skip {full}: {reason}")
-                continue
-            declared = str(m.get("repo") or "").strip().lower()
-            if declared and declared != full.lower():
-                continue
-            if is_verified or full.lower().startswith("blockmd-plugins/"):
-                validate_official_bilingual(m, docs)
-            if pid_key in owners:
-                if owners[pid_key] != full.lower():
-                    ambiguous.add(pid_key)
-                continue
-            owners[pid_key] = full.lower()
-            app_entry = {
-                "app": "blockmd",
-                "id": pid,
-                "name": m["name"],
-                "version": m["version"],
-                "author": m["author"],
-                "repo": full,
-                "summary": m["summary"],
-                "download_url": dl_url,
-                "sha256": sha_hex,
-                "downloads": max(prev_dl.get(pid, 0), gh_downloads),
-                "stars": int(repo.get("stargazers_count") or 0),
-                "verified": is_verified,
-                "updated_at": updated,
-                "permissions": m.get("permissions", []),
-                "surfaces": m.get("surfaces", ["settings_page"]),
-                "icon": m["icon"],
-            }
-            if m.get("beta") is True:
-                app_entry["beta"] = True
-            apps.append(app_entry)
-        except Exception as exc:
-            print(f"[WARN] skip {full}: {exc}")
+    candidates = [repo for repo in search_items if repo["full_name"].lower() not in blocklist]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+        futures = [(repo, pool.submit(fetch_repo_fn, repo, now_iso)) for repo in candidates]
+        for repo, future in futures:
+            full = repo["full_name"]
+            try:
+                fetched = future.result()
+                if len(fetched) == 6:
+                    dl_url, sha_hex, gh_downloads, updated, m, docs = fetched
+                else:
+                    dl_url, sha_hex, gh_downloads, updated, m = fetched
+                    docs = {}
+                if not m or m.get("app") != "blockmd":
+                    continue
+                pid = (m.get("id") or "").strip()
+                if not pid:
+                    continue
+                pid_key = pid.lower()
+                if pid_key in RESERVED_IDS or pid_key in blocklist:
+                    continue
+                allowed, is_verified, reason = is_repo_allowed_for_id(pid, full, id_to_repo, repo_to_id)
+                if not allowed:
+                    print(f"[WARN] skip {full}: {reason}")
+                    continue
+                declared = str(m.get("repo") or "").strip().lower()
+                if declared and declared != full.lower():
+                    continue
+                if is_verified or full.lower().startswith("blockmd-plugins/"):
+                    validate_official_bilingual(m, docs)
+                if pid_key in owners:
+                    if owners[pid_key] != full.lower():
+                        ambiguous.add(pid_key)
+                    continue
+                owners[pid_key] = full.lower()
+                app_entry = {
+                    "app": "blockmd",
+                    "id": pid,
+                    "name": m["name"],
+                    "version": m["version"],
+                    "author": m["author"],
+                    "repo": full,
+                    "summary": m["summary"],
+                    "download_url": dl_url,
+                    "sha256": sha_hex,
+                    "downloads": max(prev_dl.get(pid, 0), gh_downloads),
+                    "stars": int(repo.get("stargazers_count") or 0),
+                    "verified": is_verified,
+                    "updated_at": updated,
+                    "permissions": m.get("permissions", []),
+                    "surfaces": m.get("surfaces", ["settings_page"]),
+                    "icon": m["icon"],
+                }
+                if m.get("beta") is True:
+                    app_entry["beta"] = True
+                apps.append(app_entry)
+            except Exception as exc:
+                print(f"[WARN] skip {full}: {exc}")
 
     apps = [app for app in apps if app["id"].lower() not in ambiguous]
     validate_apps_against_verified(apps, id_to_repo)
@@ -271,7 +272,7 @@ def fetch_github_repo(repo, now_iso):
     full = repo["full_name"]
     dl_url, gh_downloads, updated = "", 0, repo.get("pushed_at") or now_iso
     try:
-        rels = json.loads(gh_get(f"{API}/repos/{full}/releases"))
+        rels = json.loads(gh_get(f"{API}/repos/{full}/releases?per_page=30"))
         for r in rels:
             for ast in r.get("assets", []):
                 gh_downloads += int(ast.get("download_count") or 0)
