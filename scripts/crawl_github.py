@@ -129,7 +129,7 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                     ambiguous.add(pid_key)
                 continue
             owners[pid_key] = full.lower()
-            apps.append({
+            app_entry = {
                 "app": "blockmd",
                 "id": pid,
                 "name": m["name"],
@@ -146,7 +146,10 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                 "permissions": m.get("permissions", []),
                 "surfaces": m.get("surfaces", ["settings_page"]),
                 "icon": m["icon"],
-            })
+            }
+            if m.get("beta") is True:
+                app_entry["beta"] = True
+            apps.append(app_entry)
         except Exception as exc:
             print(f"[WARN] skip {full}: {exc}")
 
