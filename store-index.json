@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-19T18:17:14Z",
+  "updated_at": "2026-11-19T18:20:07Z",
   "apps": [
     {
       "app": "blockmd",
@@ -196,19 +196,19 @@
         "zh": "顶栏图标",
         "en": "Titlebar Icons"
       },
-      "version": "1.0.0",
-      "author": "Block Community",
-      "repo": "blockmd-plugins/block-titlebar",
+      "version": "1.0.5",
+      "author": "eachann1024",
+      "repo": "eachann1024/block-titlebar",
       "summary": {
         "zh": "自定义顶栏右上角显示的图标，隐藏不需要的按钮",
         "en": "Choose which icons appear in the top-right titlebar"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.0.0/block-titlebar-v1.0.0.tar.gz",
-      "sha256": "a104122579b45e7f56de2a67d04299a52085a2c3266314b3c914ec0b70978933",
+      "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.5/block-titlebar-v1.0.5.tar.gz",
+      "sha256": "6cabfc6945fa7d684c0d0e7835a837c0e5fc8425a709474c3b284033e8fd6e0f",
       "downloads": 0,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-19T18:15:09Z",
+      "updated_at": "2026-11-19T18:19:19Z",
       "permissions": [
         "storage",
         "ui:titlebar",
