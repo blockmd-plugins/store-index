@@ -367,9 +367,41 @@ def _read_bounded(stream, limit, label):
     return data
 
 
+def _record_dir_entry(raw_name, seen_dirs, seen_files):
+    stripped = raw_name.rstrip("/")
+    if not stripped or stripped == ".":
+        return
+    norm = _normalize_archive_path(stripped)
+    if norm in seen_files:
+        raise ValueError(f"archive directory conflicts with file: {norm!r}")
+    parts = norm.split("/")
+    for i in range(1, len(parts) + 1):
+        prefix = "/".join(parts[:i])
+        if prefix in seen_files:
+            raise ValueError(f"archive directory conflicts with file: {prefix!r}")
+        seen_dirs.add(prefix)
+
+
+def _record_file_entry(raw_name, seen_dirs, seen_files):
+    norm = _normalize_archive_path(raw_name)
+    if norm in seen_files:
+        raise ValueError(f"duplicate archive path: {norm!r}")
+    if norm in seen_dirs:
+        raise ValueError(f"archive file conflicts with directory: {norm!r}")
+    parts = norm.split("/")
+    for i in range(1, len(parts)):
+        parent = "/".join(parts[:i])
+        if parent in seen_files:
+            raise ValueError(f"archive file parent conflicts with file: {parent!r}")
+        seen_dirs.add(parent)
+    seen_files.add(norm)
+    return norm
+
+
 def extract_manifest_and_docs(raw_bytes, url):
     files = {}
-    seen_paths = set()
+    seen_dirs = set()
+    seen_files = set()
     entry_count = 0
     total_extracted = 0
 
@@ -386,18 +418,17 @@ def extract_manifest_and_docs(raw_bytes, url):
                 if info.is_dir():
                     if file_type == stat.S_IFREG:
                         raise ValueError(f"invalid directory entry in zip archive: {info.filename!r}")
+                    _record_dir_entry(info.filename, seen_dirs, seen_files)
                     continue
                 if file_type == stat.S_IFDIR:
+                    _record_dir_entry(info.filename, seen_dirs, seen_files)
                     continue
                 if info.file_size > MAX_SINGLE_FILE_BYTES:
                     raise ValueError(f"archive member too large: {info.filename!r}")
                 total_extracted += info.file_size
                 if total_extracted > MAX_TOTAL_EXTRACTED_BYTES:
                     raise ValueError("archive extracted size exceeds limit")
-                norm = _normalize_archive_path(info.filename)
-                if norm in seen_paths:
-                    raise ValueError(f"duplicate archive path: {norm!r}")
-                seen_paths.add(norm)
+                norm = _record_file_entry(info.filename, seen_dirs, seen_files)
                 base = norm.rsplit("/", 1)[-1]
                 if norm.count("/") <= 1 and base in ("manifest.json", "README.md", "README.en.md"):
                     limit = MAX_MANIFEST_BYTES if base == "manifest.json" else MAX_README_BYTES
@@ -410,6 +441,7 @@ def extract_manifest_and_docs(raw_bytes, url):
                 if entry_count > MAX_ARCHIVE_ENTRIES:
                     raise ValueError("archive exceeds max entry limit")
                 if m.isdir():
+                    _record_dir_entry(m.name, seen_dirs, seen_files)
                     continue
                 if not m.isreg():
                     raise ValueError(f"non-regular file in tar archive: {m.name!r}")
@@ -418,10 +450,7 @@ def extract_manifest_and_docs(raw_bytes, url):
                 total_extracted += m.size
                 if total_extracted > MAX_TOTAL_EXTRACTED_BYTES:
                     raise ValueError("archive extracted size exceeds limit")
-                norm = _normalize_archive_path(m.name)
-                if norm in seen_paths:
-                    raise ValueError(f"duplicate archive path: {norm!r}")
-                seen_paths.add(norm)
+                norm = _record_file_entry(m.name, seen_dirs, seen_files)
                 base = norm.rsplit("/", 1)[-1]
                 if norm.count("/") <= 1 and base in ("manifest.json", "README.md", "README.en.md"):
                     limit = MAX_MANIFEST_BYTES if base == "manifest.json" else MAX_README_BYTES
