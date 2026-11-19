@@ -1,10 +1,31 @@
 #!/usr/bin/env python3
-import hashlib, io, json, os, stat, sys, tarfile, urllib.parse, urllib.request, zipfile
+import hashlib, io, json, os, re, stat, sys, tarfile, urllib.parse, urllib.request, zipfile
 from datetime import datetime, timezone
 
 API = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 RESERVED_IDS = {"block-diagnostics"}
+PLUGIN_ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{1,47}$")
+SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$")
+REPO_SLUG_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
+HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
+VALID_PERMISSIONS = {
+    "storage",
+    "notes:read",
+    "notes:write",
+    "network",
+    "events:note_saved",
+    "ui:titlebar",
+    "ui:settings",
+    "ui:commands",
+    "ui:panels",
+    "ui:status",
+    "ui:notify",
+    "editor:read",
+    "editor:write",
+    "events:workspace",
+}
+VALID_SURFACES = {"settings_page"}
 MAX_API_BYTES = 8 * 1024 * 1024
 MAX_ARCHIVE_BYTES = 64 * 1024 * 1024
 MAX_SINGLE_FILE_BYTES = 32 * 1024 * 1024
@@ -141,13 +162,84 @@ def contains_han(text):
 def find_chinese_char(text):
     for ch in text:
         cp = ord(ch)
-        if contains_han(ch) or (0x3000 <= cp <= 0x303F) or (0xFF01 <= cp <= 0xFF5E):
+        if (
+            contains_han(ch)
+            or (0x3000 <= cp <= 0x303F)
+            or (0xFE10 <= cp <= 0xFE1F)
+            or (0xFE30 <= cp <= 0xFE4F)
+            or (0xFF01 <= cp <= 0xFF5E)
+        ):
             return ch
     return ""
 
 
 def contains_ascii_letter(text):
     return any(("a" <= ch <= "z") or ("A" <= ch <= "Z") for ch in text)
+
+
+def validate_manifest_core(m):
+    if not isinstance(m, dict):
+        raise ValueError("manifest must be a JSON object")
+    if m.get("app") != "blockmd":
+        raise ValueError(f"manifest.app must be 'blockmd', got {m.get('app')!r}")
+    if m.get("schema_version") != 1:
+        raise ValueError(f"manifest.schema_version must be 1, got {m.get('schema_version')!r}")
+    pid = str(m.get("id") or "").strip()
+    if not PLUGIN_ID_RE.match(pid):
+        raise ValueError(f"invalid manifest.id: {pid!r}")
+    version = str(m.get("version") or "").strip()
+    if not SEMVER_RE.match(version):
+        raise ValueError(f"invalid manifest.version: {version!r}")
+    author = str(m.get("author") or "").strip()
+    if not author or contains_emoji(author):
+        raise ValueError("manifest.author is required and must not contain emoji")
+    repo = str(m.get("repo") or "").strip()
+    if repo and not REPO_SLUG_RE.match(repo):
+        raise ValueError(f"invalid manifest.repo: {repo!r}")
+
+    for field, limits in (("name", None), ("summary", (80, 140))):
+        loc = m.get(field)
+        if not isinstance(loc, dict):
+            raise ValueError(f"manifest.{field} must be an object with zh and en")
+        zh = str(loc.get("zh") or "").strip()
+        en = str(loc.get("en") or "").strip()
+        if not zh or not en:
+            raise ValueError(f"manifest.{field}.zh and manifest.{field}.en are both required")
+        if contains_emoji(zh) or contains_emoji(en):
+            raise ValueError(f"manifest.{field} must not contain emoji")
+        if limits and (len(zh) > limits[0] or len(en) > limits[1]):
+            raise ValueError(f"manifest.{field} exceeds length limit")
+
+    entry = m.get("entry")
+    if not isinstance(entry, dict) or not isinstance(entry.get("command"), list) or not entry["command"]:
+        raise ValueError("manifest.entry.command must be a non-empty array")
+    if not all(isinstance(x, str) and x.strip() for x in entry["command"][:1]):
+        raise ValueError("manifest.entry.command[0] must be non-empty string")
+
+    perms = m.get("permissions")
+    if not isinstance(perms, list):
+        raise ValueError("manifest.permissions must be a list")
+    seen_perms = set()
+    for p in perms:
+        if not isinstance(p, str) or p not in VALID_PERMISSIONS or p in seen_perms:
+            raise ValueError(f"invalid or duplicate manifest permission: {p!r}")
+        seen_perms.add(p)
+
+    surfaces = m.get("surfaces")
+    if not isinstance(surfaces, list) or not surfaces:
+        raise ValueError("manifest.surfaces must declare ['settings_page']")
+    seen_surfaces = set()
+    for s in surfaces:
+        if not isinstance(s, str) or s not in VALID_SURFACES or s in seen_surfaces:
+            raise ValueError(f"invalid or duplicate manifest surface: {s!r}")
+        seen_surfaces.add(s)
+
+    icon = m.get("icon")
+    if not isinstance(icon, dict) or icon.get("view_box") != "0 0 24 24":
+        raise ValueError("manifest.icon.view_box must be '0 0 24 24'")
+    strokes = icon.get("stroke_paths")
+    if not isinstance(strokes, list) or not strokes or not all(isinstance(x, str) and x.strip() for x in strokes):
+        raise ValueError("manifest.icon.stroke_paths must contain at least one SVG path")
 
 
 def validate_localized_field(path_label, loc):
@@ -168,9 +260,6 @@ def validate_localized_field(path_label, loc):
 def validate_official_bilingual(manifest, docs):
     for field in ("name", "summary"):
         validate_localized_field(f"manifest.{field}", manifest.get(field))
-    author = str(manifest.get("author") or "").strip()
-    if not author or contains_emoji(author):
-        raise ValueError("manifest.author is required and must not contain emoji")
 
     contributes = manifest.get("contributes")
     if isinstance(contributes, dict):
@@ -188,7 +277,9 @@ def validate_official_bilingual(manifest, docs):
                     validate_localized_field(f"manifest.contributes.{group}[{idx}].{key}", item.get(key))
         for idx, item in enumerate(contributes.get("status_items") or []):
             if isinstance(item, dict) and item.get("text") is not None:
-                validate_localized_field(f"manifest.contributes.status_items[{idx}].text", item.get("text"))
+                text_obj = item.get("text")
+                if isinstance(text_obj, dict) and (str(text_obj.get("zh") or "").strip() or str(text_obj.get("en") or "").strip()):
+                    validate_localized_field(f"manifest.contributes.status_items[{idx}].text", text_obj)
 
     zh_raw = docs.get("README.md")
     en_raw = docs.get("README.en.md")
@@ -207,8 +298,9 @@ def validate_official_bilingual(manifest, docs):
     bad = find_chinese_char(en_text)
     if bad:
         raise ValueError(f"README.en.md must be English-only, found {bad!r}")
-    if not contains_ascii_letter(en_text):
-        raise ValueError("README.en.md must contain English text")
+    en_visible = HTML_COMMENT_RE.sub("", en_text).strip()
+    if not contains_ascii_letter(en_visible):
+        raise ValueError("README.en.md must contain visible English text")
     if zh_text == en_text:
         raise ValueError("README.en.md must not be identical to README.md")
 
@@ -265,6 +357,7 @@ def _read_bounded(stream, limit, label):
 
 def extract_manifest_and_docs(raw_bytes, url):
     files = {}
+    seen_paths = set()
     entry_count = 0
     total_extracted = 0
 
@@ -286,6 +379,9 @@ def extract_manifest_and_docs(raw_bytes, url):
                 if total_extracted > MAX_TOTAL_EXTRACTED_BYTES:
                     raise ValueError("archive extracted size exceeds limit")
                 norm = _normalize_archive_path(info.filename)
+                if norm in seen_paths:
+                    raise ValueError(f"duplicate archive path: {norm!r}")
+                seen_paths.add(norm)
                 base = norm.rsplit("/", 1)[-1]
                 if norm.count("/") <= 1 and base in ("manifest.json", "README.md", "README.en.md"):
                     limit = MAX_MANIFEST_BYTES if base == "manifest.json" else MAX_README_BYTES
@@ -307,6 +403,9 @@ def extract_manifest_and_docs(raw_bytes, url):
                 if total_extracted > MAX_TOTAL_EXTRACTED_BYTES:
                     raise ValueError("archive extracted size exceeds limit")
                 norm = _normalize_archive_path(m.name)
+                if norm in seen_paths:
+                    raise ValueError(f"duplicate archive path: {norm!r}")
+                seen_paths.add(norm)
                 base = norm.rsplit("/", 1)[-1]
                 if norm.count("/") <= 1 and base in ("manifest.json", "README.md", "README.en.md"):
                     limit = MAX_MANIFEST_BYTES if base == "manifest.json" else MAX_README_BYTES
@@ -345,11 +444,10 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
             else:
                 dl_url, sha_hex, gh_downloads, updated, m = fetched
                 docs = {}
-            if not m or m.get("app") != "blockmd":
+            if not m:
                 continue
-            pid = (m.get("id") or "").strip()
-            if not pid:
-                continue
+            validate_manifest_core(m)
+            pid = m["id"].strip()
             pid_key = pid.lower()
             if pid_key in RESERVED_IDS or pid_key in blocklist:
                 continue
