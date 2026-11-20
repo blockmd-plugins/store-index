@@ -1,6 +1,31 @@
 #!/usr/bin/env python3
-import hashlib, io, json, os, posixpath, re, stat, sys, tarfile, urllib.parse, urllib.request, zipfile
+import hashlib, io, json, os, posixpath, re, stat, sys, tarfile, unicodedata, urllib.parse, urllib.request, zipfile
 from datetime import datetime, timezone
+
+_GO_LATIN_SPACES = {0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x20, 0x85, 0xA0}
+
+
+def _is_go_space(ch):
+    cp = ord(ch)
+    if cp in _GO_LATIN_SPACES:
+        return True
+    return unicodedata.category(ch) in ("Zs", "Zl", "Zp")
+
+
+def _go_trim_space(s):
+    start = 0
+    end = len(s)
+    while start < end and _is_go_space(s[start]):
+        start += 1
+    while end > start and _is_go_space(s[end - 1]):
+        end -= 1
+    return s[start:end]
+
+
+def _go_lower(s):
+    # Matches Go strings.ToLower / unicode.ToLower across all 1.1M Unicode code points
+    # (single-rune lowercase: no contextual Greek final sigma, and U+0130 'İ' -> 'i').
+    return "".join("i" if ch == "\u0130" else ch.lower() for ch in s)
 
 API = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
@@ -614,7 +639,13 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                         continue
                     raw_display = lang.get("display_tags")
                     if isinstance(raw_display, list) and len(raw_display) > 0:
-                        cand = [t.strip() for t in raw_display if isinstance(t, str) and t.strip()]
+                        cand = []
+                        for t in raw_display:
+                            if not isinstance(t, str):
+                                continue
+                            trimmed = _go_trim_space(t)
+                            if trimmed:
+                                cand.append(trimmed)
                     else:
                         filenames = [fn for fn in (lang.get("filenames") or []) if isinstance(fn, str) and fn]
                         if filenames:
@@ -622,8 +653,7 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                         else:
                             cand = [ext for ext in (lang.get("extensions") or []) if isinstance(ext, str) and ext]
                     for tag in cand:
-                        # Match Go unicode.ToLower (single-rune lowercase: U+0130 'İ' -> 'i').
-                        low = tag.replace("\u0130", "i").lower()
+                        low = _go_lower(tag)
                         if low in seen_tags:
                             continue
                         seen_tags.add(low)
