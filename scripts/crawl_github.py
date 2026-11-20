@@ -29,6 +29,20 @@ VALID_PERMISSIONS = {
 }
 VALID_CATEGORIES = {"sync", "edit", "organize", "ai", "publish", "appearance", "tools", "language"}
 VALID_SURFACES = {"settings_page"}
+RUNTIME_CONTRIB_KEYS = (
+    "titlebar_buttons",
+    "settings_sections",
+    "commands",
+    "page_menu",
+    "editor_menu",
+    "sidebar_menu",
+    "panels",
+    "sidebar_sections",
+    "file_badges",
+    "backdrops",
+    "status_items",
+    "dialogs",
+)
 MAX_API_BYTES = 8 * 1024 * 1024
 MAX_ARCHIVE_BYTES = 64 * 1024 * 1024
 MAX_SINGLE_FILE_BYTES = 32 * 1024 * 1024
@@ -245,9 +259,23 @@ def validate_manifest_core(m):
         surfaces = []
     if not isinstance(surfaces, list):
         raise ValueError("manifest.surfaces must be a list")
-    declarative = has_languages and len(perms) == 0 and len(surfaces) == 0
+    entry = m.get("entry")
+    if entry is not None and not isinstance(entry, dict):
+        raise ValueError("manifest.entry must be an object")
+    has_entry_cmd = isinstance(entry, dict) and isinstance(entry.get("command"), list) and len(entry["command"]) > 0
+    has_runtime_contribs = isinstance(contributes, dict) and any(
+        isinstance(contributes.get(k), list) and len(contributes[k]) > 0
+        for k in RUNTIME_CONTRIB_KEYS
+    )
+    declarative = (
+        not has_entry_cmd
+        and len(perms) == 0
+        and len(surfaces) == 0
+        and raw_cat == "language"
+        and has_languages
+        and not has_runtime_contribs
+    )
     if not declarative:
-        entry = m.get("entry")
         if not isinstance(entry, dict) or not isinstance(entry.get("command"), list) or not entry["command"]:
             raise ValueError("manifest.entry.command must be a non-empty array")
         if not all(isinstance(x, str) for x in entry["command"]) or not entry["command"][0].strip():
@@ -567,18 +595,41 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                 app_entry["permission_reasons"] = m["permission_reasons"]
             contribs = m.get("contributes")
             if isinstance(contribs, dict) and isinstance(contribs.get("languages"), list):
-                exts = []
+                tags = []
+                seen_tags = set()
                 for lang in contribs["languages"]:
                     if not isinstance(lang, dict):
                         continue
-                    for ext in lang.get("extensions") or []:
-                        if isinstance(ext, str) and ext.strip() and ext.strip() not in exts:
-                            exts.append(ext.strip())
-                    for fn in lang.get("filenames") or []:
-                        if isinstance(fn, str) and fn.strip() and fn.strip() not in exts:
-                            exts.append(fn.strip())
-                if exts:
-                    app_entry["file_extensions"] = exts[:6]
+                    display_tags = [
+                        t.strip() for t in (lang.get("display_tags") or [])
+                        if isinstance(t, str) and t.strip()
+                    ]
+                    if display_tags:
+                        cand = display_tags
+                    else:
+                        filenames = [
+                            fn.strip() for fn in (lang.get("filenames") or [])
+                            if isinstance(fn, str) and fn.strip()
+                        ]
+                        if filenames:
+                            cand = filenames
+                        else:
+                            cand = [
+                                ext.strip() for ext in (lang.get("extensions") or [])
+                                if isinstance(ext, str) and ext.strip()
+                            ]
+                    for tag in cand:
+                        low = tag.lower()
+                        if low in seen_tags:
+                            continue
+                        seen_tags.add(low)
+                        tags.append(tag)
+                        if len(tags) >= 6:
+                            break
+                    if len(tags) >= 6:
+                        break
+                if tags:
+                    app_entry["file_extensions"] = tags
             if m.get("beta") is True:
                 app_entry["beta"] = True
             apps.append(app_entry)
@@ -604,7 +655,7 @@ def fetch_github_repo(repo, now_iso):
             latest = stable_rels[0]
             updated = latest.get("published_at") or updated
             for ast in latest.get("assets", []):
-                if ast["name"].endswith((".tar.gz", ".tgz", ".zip")):
+                if str(ast.get("name") or "").lower().endswith((".tar.gz", ".tgz", ".zip")):
                     dl_url = ast["browser_download_url"]
                     break
             if not dl_url:
