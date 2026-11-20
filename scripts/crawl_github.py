@@ -705,23 +705,42 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
 def fetch_github_repo(repo, now_iso):
     full = repo["full_name"]
     dl_url, gh_downloads, updated = "", 0, repo.get("pushed_at") or now_iso
-    try:
-        rels = json.loads(gh_api_get(f"{API}/repos/{full}/releases"))
+    latest = None
+    fetched_any = False
+    hit_page_cap = False
+    max_pages = 5
+    for page in range(1, max_pages + 1):
+        try:
+            rels = json.loads(gh_api_get(f"{API}/repos/{full}/releases?per_page=100&page={page}"))
+        except Exception:
+            break
+        if not isinstance(rels, list):
+            break
+        fetched_any = True
         for r in rels:
             for ast in r.get("assets", []):
                 gh_downloads += int(ast.get("download_count") or 0)
-        stable_rels = [r for r in rels if not r.get("draft") and not r.get("prerelease")]
-        if stable_rels:
-            latest = stable_rels[0]
-            updated = latest.get("published_at") or updated
-            for ast in latest.get("assets", []):
-                if str(ast.get("name") or "").lower().endswith((".tar.gz", ".tgz", ".zip")):
-                    dl_url = ast["browser_download_url"]
-                    break
-            if not dl_url:
-                dl_url = latest.get("tarball_url") or ""
-    except Exception:
-        pass
+            if latest is None and not r.get("draft") and not r.get("prerelease"):
+                latest = r
+        if len(rels) < 100:
+            break
+        if page == max_pages:
+            hit_page_cap = True
+    if latest is None and (hit_page_cap or not fetched_any):
+        try:
+            rel = json.loads(gh_api_get(f"{API}/repos/{full}/releases/latest"))
+            if isinstance(rel, dict) and not rel.get("draft") and not rel.get("prerelease"):
+                latest = rel
+        except Exception:
+            pass
+    if latest is not None:
+        updated = latest.get("published_at") or updated
+        for ast in latest.get("assets", []):
+            if str(ast.get("name") or "").lower().endswith((".tar.gz", ".tgz", ".zip")):
+                dl_url = ast["browser_download_url"]
+                break
+        if not dl_url:
+            dl_url = latest.get("tarball_url") or ""
     if not dl_url:
         branch = repo.get("default_branch") or "main"
         dl_url = f"https://codeload.github.com/{full}/tar.gz/{branch}"
