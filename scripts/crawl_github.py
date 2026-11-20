@@ -236,9 +236,19 @@ def validate_manifest_core(m):
             raise ValueError(f"manifest.{field} exceeds length limit")
 
     contributes = m.get("contributes")
+    if contributes is not None and not isinstance(contributes, dict):
+        raise ValueError("manifest.contributes must be an object")
+    if isinstance(contributes, dict):
+        for ck in (*RUNTIME_CONTRIB_KEYS, "languages"):
+            val = contributes.get(ck)
+            if val is not None and not isinstance(val, list):
+                raise ValueError(f"manifest.contributes.{ck} must be a list")
     has_languages = isinstance(contributes, dict) and isinstance(contributes.get("languages"), list) and len(contributes["languages"]) > 0
-    raw_cat = str(m.get("category") or "").strip().lower()
-    if raw_cat and raw_cat not in VALID_CATEGORIES:
+    raw_cat_field = m.get("category")
+    if raw_cat_field is not None and not isinstance(raw_cat_field, str):
+        raise ValueError("manifest.category must be a string")
+    raw_cat = raw_cat_field or ""
+    if raw_cat != "" and (raw_cat != raw_cat.strip() or raw_cat != raw_cat.lower() or raw_cat not in VALID_CATEGORIES):
         raise ValueError(f"invalid manifest.category: {raw_cat!r}")
     if has_languages and raw_cat != "language":
         raise ValueError("manifest.category must be 'language' when contributes.languages is declared")
@@ -262,7 +272,11 @@ def validate_manifest_core(m):
     entry = m.get("entry")
     if entry is not None and not isinstance(entry, dict):
         raise ValueError("manifest.entry must be an object")
-    has_entry_cmd = isinstance(entry, dict) and isinstance(entry.get("command"), list) and len(entry["command"]) > 0
+    entry_cmd = entry.get("command") if isinstance(entry, dict) else None
+    if entry_cmd is not None:
+        if not isinstance(entry_cmd, list) or not all(isinstance(x, str) for x in entry_cmd):
+            raise ValueError("manifest.entry.command must be an array of strings")
+    has_entry_cmd = isinstance(entry_cmd, list) and len(entry_cmd) > 0
     has_runtime_contribs = isinstance(contributes, dict) and any(
         isinstance(contributes.get(k), list) and len(contributes[k]) > 0
         for k in RUNTIME_CONTRIB_KEYS
@@ -276,10 +290,8 @@ def validate_manifest_core(m):
         and not has_runtime_contribs
     )
     if not declarative:
-        if not isinstance(entry, dict) or not isinstance(entry.get("command"), list) or not entry["command"]:
-            raise ValueError("manifest.entry.command must be a non-empty array")
-        if not all(isinstance(x, str) for x in entry["command"]) or not entry["command"][0].strip():
-            raise ValueError("manifest.entry.command must contain only strings with a non-empty executable")
+        if not has_entry_cmd or not entry_cmd[0].strip():
+            raise ValueError("manifest.entry.command must be a non-empty array of strings with a non-empty executable")
         if not surfaces:
             raise ValueError("manifest.surfaces must declare ['settings_page']")
     seen_surfaces = set()
@@ -600,26 +612,18 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                 for lang in contribs["languages"]:
                     if not isinstance(lang, dict):
                         continue
-                    display_tags = [
-                        t.strip() for t in (lang.get("display_tags") or [])
-                        if isinstance(t, str) and t.strip()
-                    ]
-                    if display_tags:
-                        cand = display_tags
+                    raw_display = lang.get("display_tags")
+                    if isinstance(raw_display, list) and len(raw_display) > 0:
+                        cand = [t.strip() for t in raw_display if isinstance(t, str) and t.strip()]
                     else:
-                        filenames = [
-                            fn.strip() for fn in (lang.get("filenames") or [])
-                            if isinstance(fn, str) and fn.strip()
-                        ]
+                        filenames = [fn for fn in (lang.get("filenames") or []) if isinstance(fn, str) and fn]
                         if filenames:
                             cand = filenames
                         else:
-                            cand = [
-                                ext.strip() for ext in (lang.get("extensions") or [])
-                                if isinstance(ext, str) and ext.strip()
-                            ]
+                            cand = [ext for ext in (lang.get("extensions") or []) if isinstance(ext, str) and ext]
                     for tag in cand:
-                        low = tag.lower()
+                        # Match Go unicode.ToLower (single-rune lowercase: U+0130 'İ' -> 'i').
+                        low = tag.replace("\u0130", "i").lower()
                         if low in seen_tags:
                             continue
                         seen_tags.add(low)
