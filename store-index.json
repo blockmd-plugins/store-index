@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-20T07:06:37Z",
+  "updated_at": "2026-11-20T07:09:13Z",
   "apps": [
     {
       "app": "blockmd",
@@ -243,19 +243,19 @@
         "zh": "塔罗模式",
         "en": "Tarot Mode"
       },
-      "version": "1.0.0",
+      "version": "1.0.6",
       "author": "eachann1024",
       "repo": "eachann1024/block-tarot",
       "summary": {
         "zh": "午夜铜版塔罗皮肤与写作仪式：牌桌三张牌阵、每日一牌反问、大阿卡纳牌册与速记换肤",
         "en": "Midnight Copperplate tarot skin and writing rituals: 3-card spread, daily card reflection, 22 Major Arcana deck, and Quick Note skin"
       },
-      "download_url": "https://codeload.github.com/eachann1024/block-tarot/tar.gz/main",
-      "sha256": "247afae287ee3e9035cd31c876ea4e64e96846b6d9ddedb2adbbdf2af816f91c",
+      "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.6/block-tarot-v1.0.6.tar.gz",
+      "sha256": "13c3943e176bfee312c886db07df38e6fd74e7924c6d07bcf7bfe6d1df8ff826",
       "downloads": 0,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-20T07:05:29Z",
+      "updated_at": "2026-11-20T07:08:17Z",
       "permissions": [
         "storage",
         "ui:titlebar",
