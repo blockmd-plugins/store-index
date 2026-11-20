@@ -89,6 +89,7 @@ VALID_PERMISSIONS = {
 }
 VALID_CATEGORIES = {"sync", "edit", "organize", "ai", "publish", "appearance", "tools", "language"}
 VALID_SURFACES = {"settings_page"}
+LEGACY_RELEASES = {"blockmd-plugins/block-sync": "v1.3.44"}
 RUNTIME_CONTRIB_KEYS = (
     "titlebar_buttons",
     "settings_sections",
@@ -711,14 +712,18 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
     return {"app": "blockmd", "schema_version": 1, "topic": "blockmd-plugin", "updated_at": now_iso, "apps": apps}
 
 
-def fetch_github_repo(repo, now_iso):
+def fetch_github_repo(repo, now_iso, release_tag=None):
     full = repo["full_name"]
     dl_url, gh_downloads, updated = "", 0, repo.get("pushed_at") or now_iso
     latest = None
     fetched_any = False
     hit_page_cap = False
     max_pages = 5
-    for page in range(1, max_pages + 1):
+    if release_tag:
+        latest = json.loads(gh_api_get(f"{API}/repos/{full}/releases/tags/{release_tag}"))
+        if not isinstance(latest, dict) or latest.get("draft") or latest.get("prerelease") or latest.get("tag_name") != release_tag:
+            raise ValueError(f"invalid compatibility release: {full}@{release_tag}")
+    for page in range(1, max_pages + 1) if release_tag is None else ():
         try:
             rels = json.loads(gh_api_get(f"{API}/repos/{full}/releases?per_page=100&page={page}"))
         except Exception:
@@ -759,18 +764,48 @@ def fetch_github_repo(repo, now_iso):
     return dl_url, sha_hex, gh_downloads, updated, m, docs
 
 
+def add_system_apps(index, repositories, blocklist, now_iso):
+    legacy, system = [], []
+    for entry in index["apps"]:
+        if not any(p.startswith("system:") or p == "events:system" for p in entry["permissions"]):
+            legacy.append(entry)
+            continue
+        system.append(entry)
+        repo = entry["repo"].lower()
+        tag = LEGACY_RELEASES.get(repo)
+        if not tag:
+            continue
+        plugin_id = entry["id"]
+        prior = build_index(
+            [repositories[repo]], {plugin_id: entry["downloads"]}, blocklist,
+            {plugin_id: repo}, {repo: plugin_id},
+            lambda source, timestamp: fetch_github_repo(source, timestamp, tag), now_iso,
+        )["apps"][0]
+        if prior["version"] != tag.removeprefix("v") or any(
+            p.startswith("system:") or p == "events:system" for p in prior["permissions"]
+        ):
+            raise ValueError(f"incompatible legacy release: {repo}@{tag}")
+        legacy.append(prior)
+    index["apps"] = legacy
+    if system:
+        index["system_apps"] = system
+
+
 def main():
     blocklist = load_set("blocklist.json")
     id_to_repo, repo_to_id = load_verified_map("verified.json")
     prev_dl = {}
     if os.path.exists("store-index.json"):
-        for a in json.load(open("store-index.json", encoding="utf-8")).get("apps", []):
-            prev_dl[a.get("id")] = int(a.get("downloads") or 0)
+        with open("store-index.json", encoding="utf-8") as previous:
+            previous_index = json.load(previous)
+        for a in previous_index.get("apps", []) + previous_index.get("system_apps", []):
+            prev_dl[a.get("id")] = max(prev_dl.get(a.get("id"), 0), int(a.get("downloads") or 0))
 
     search = json.loads(gh_api_get(f"{API}/search/repositories?q=topic:blockmd-plugin+fork:false+archived:false&sort=stars&order=desc&per_page=100"))
     now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    repositories = search.get("items", [])
     out = build_index(
-        search.get("items", []),
+        repositories,
         prev_dl,
         blocklist,
         id_to_repo,
@@ -778,6 +813,7 @@ def main():
         fetch_github_repo,
         now_iso,
     )
+    add_system_apps(out, {repo["full_name"].lower(): repo for repo in repositories}, blocklist, now_iso)
     tmp_path = "store-index.json.tmp"
     with open(tmp_path, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
