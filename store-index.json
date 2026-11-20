@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-20T21:05:36Z",
+  "updated_at": "2026-11-20T21:12:10Z",
   "apps": [
     {
       "app": "blockmd",
@@ -600,19 +600,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.3.76",
+      "version": "1.3.79",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "支持本地目录镜像、WebDAV 与 Git 仓库的多端增量同步",
         "en": "Incremental notebook sync via local mirror, WebDAV, and Git"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.76/block-sync-v1.3.76.tar.gz",
-      "sha256": "adcd45c3846c0178b2f8fa60f0b40213d8747777f60858d49d9917f2c3a3f790",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.79/block-sync-v1.3.79.tar.gz",
+      "sha256": "1757a6ca03bca06a58a04c31b0a8378eb37632ca94ce19d8915cc5ddfd91176e",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-20T21:03:39Z",
+      "updated_at": "2026-11-20T21:11:18Z",
       "permissions": [
         "storage",
         "notes:read",
