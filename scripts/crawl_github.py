@@ -221,13 +221,17 @@ def validate_manifest_core(m):
         if limits and (len(zh) > limits[0] or len(en) > limits[1]):
             raise ValueError(f"manifest.{field} exceeds length limit")
 
-    entry = m.get("entry")
-    if not isinstance(entry, dict) or not isinstance(entry.get("command"), list) or not entry["command"]:
-        raise ValueError("manifest.entry.command must be a non-empty array")
-    if not all(isinstance(x, str) for x in entry["command"]) or not entry["command"][0].strip():
-        raise ValueError("manifest.entry.command must contain only strings with a non-empty executable")
+    contributes = m.get("contributes")
+    has_languages = isinstance(contributes, dict) and isinstance(contributes.get("languages"), list) and len(contributes["languages"]) > 0
+    raw_cat = str(m.get("category") or "").strip().lower()
+    if raw_cat and raw_cat not in VALID_CATEGORIES:
+        raise ValueError(f"invalid manifest.category: {raw_cat!r}")
+    if has_languages and raw_cat != "language":
+        raise ValueError("manifest.category must be 'language' when contributes.languages is declared")
 
     perms = m.get("permissions")
+    if perms is None and has_languages:
+        perms = []
     if not isinstance(perms, list):
         raise ValueError("manifest.permissions must be a list")
     seen_perms = set()
@@ -237,8 +241,19 @@ def validate_manifest_core(m):
         seen_perms.add(p)
 
     surfaces = m.get("surfaces")
-    if not isinstance(surfaces, list) or not surfaces:
-        raise ValueError("manifest.surfaces must declare ['settings_page']")
+    if surfaces is None and has_languages:
+        surfaces = []
+    if not isinstance(surfaces, list):
+        raise ValueError("manifest.surfaces must be a list")
+    declarative = has_languages and len(perms) == 0 and len(surfaces) == 0
+    if not declarative:
+        entry = m.get("entry")
+        if not isinstance(entry, dict) or not isinstance(entry.get("command"), list) or not entry["command"]:
+            raise ValueError("manifest.entry.command must be a non-empty array")
+        if not all(isinstance(x, str) for x in entry["command"]) or not entry["command"][0].strip():
+            raise ValueError("manifest.entry.command must contain only strings with a non-empty executable")
+        if not surfaces:
+            raise ValueError("manifest.surfaces must declare ['settings_page']")
     seen_surfaces = set()
     for s in surfaces:
         if not isinstance(s, str) or s not in VALID_SURFACES or s in seen_surfaces:
@@ -282,7 +297,7 @@ def validate_official_bilingual(manifest, docs):
             ("editor_menu", "title"),
             ("sidebar_menu", "title"),
             ("sidebar_sections", "title"),
-            ("file_badges", "label"),
+            ("file_badges", "tooltip"),
             ("backdrops", "title"),
             ("panels", "title"),
             ("dialogs", "title"),
@@ -542,14 +557,28 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                 "stars": int(repo.get("stargazers_count") or 0),
                 "verified": is_verified,
                 "updated_at": updated,
-                "permissions": m.get("permissions", []),
-                "surfaces": m.get("surfaces", ["settings_page"]),
+                "permissions": m.get("permissions") or [],
+                "surfaces": m.get("surfaces") if isinstance(m.get("surfaces"), list) else [],
                 "icon": m["icon"],
             }
             if raw_cat:
                 app_entry["category"] = raw_cat
             if isinstance(m.get("permission_reasons"), dict) and m["permission_reasons"]:
                 app_entry["permission_reasons"] = m["permission_reasons"]
+            contribs = m.get("contributes")
+            if isinstance(contribs, dict) and isinstance(contribs.get("languages"), list):
+                exts = []
+                for lang in contribs["languages"]:
+                    if not isinstance(lang, dict):
+                        continue
+                    for ext in lang.get("extensions") or []:
+                        if isinstance(ext, str) and ext.strip() and ext.strip() not in exts:
+                            exts.append(ext.strip())
+                    for fn in lang.get("filenames") or []:
+                        if isinstance(fn, str) and fn.strip() and fn.strip() not in exts:
+                            exts.append(fn.strip())
+                if exts:
+                    app_entry["file_extensions"] = exts[:6]
             if m.get("beta") is True:
                 app_entry["beta"] = True
             apps.append(app_entry)
