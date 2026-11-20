@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-20T08:17:41Z",
+  "updated_at": "2026-11-20T08:34:06Z",
   "apps": [
     {
       "app": "blockmd",
@@ -148,19 +148,19 @@
         "zh": "编辑器背景",
         "en": "Editor Background"
       },
-      "version": "1.2.19",
+      "version": "1.2.21",
       "author": "eachann1024",
       "repo": "eachann1024/block-canvas-dots",
       "summary": {
         "zh": "为笔记铺上与行高对齐的点阵或方格，增加对比度，稳定追踪每一行",
         "en": "Line-aligned dot or grid background for notes, adding contrast to track each line"
       },
-      "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.19/block-canvas-dots-v1.2.19.tar.gz",
-      "sha256": "6aaeb22702f511e9b11aca2f8969872d7328b804d9337f504106aa3c29b5c701",
-      "downloads": 36,
+      "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.21/block-canvas-dots-v1.2.21.tar.gz",
+      "sha256": "683530076284d429945ec2121bb7a211d3e9e24bfd6e7bc608e759fdd50c9417",
+      "downloads": 38,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-20T08:17:19Z",
+      "updated_at": "2026-11-20T08:33:38Z",
       "permissions": [
         "storage",
         "ui:settings"
@@ -196,19 +196,19 @@
         "zh": "顶栏图标",
         "en": "Titlebar Icons"
       },
-      "version": "1.0.5",
+      "version": "1.0.13",
       "author": "eachann1024",
       "repo": "eachann1024/block-titlebar",
       "summary": {
         "zh": "自定义顶栏右上角显示的图标，隐藏不需要的按钮",
         "en": "Choose which icons appear in the top-right titlebar"
       },
-      "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.5/block-titlebar-v1.0.5.tar.gz",
-      "sha256": "6cabfc6945fa7d684c0d0e7835a837c0e5fc8425a709474c3b284033e8fd6e0f",
-      "downloads": 30,
+      "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.13/block-titlebar-v1.0.13.tar.gz",
+      "sha256": "71d5ef84a17e790289a9dfabfa6ae90be6cc9d59138fdd896fd6ce24aeb1473f",
+      "downloads": 31,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-19T18:19:19Z",
+      "updated_at": "2026-11-20T08:33:37Z",
       "permissions": [
         "storage",
         "ui:titlebar",
@@ -243,19 +243,19 @@
         "zh": "塔罗模式",
         "en": "Tarot Mode"
       },
-      "version": "1.0.6",
+      "version": "1.0.7",
       "author": "eachann1024",
       "repo": "eachann1024/block-tarot",
       "summary": {
         "zh": "午夜铜版塔罗皮肤与写作仪式：牌桌三张牌阵、每日一牌反问、大阿卡纳牌册与速记换肤",
         "en": "Midnight Copperplate tarot skin and writing rituals: 3-card spread, daily card reflection, 22 Major Arcana deck, and Quick Note skin"
       },
-      "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.6/block-tarot-v1.0.6.tar.gz",
-      "sha256": "13c3943e176bfee312c886db07df38e6fd74e7924c6d07bcf7bfe6d1df8ff826",
-      "downloads": 3,
+      "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.7/block-tarot-v1.0.7.tar.gz",
+      "sha256": "0ac60e7b79890ffe515f198cd40eb23fdd195e40b7f99ba6c373147c550e5d24",
+      "downloads": 4,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-20T07:08:17Z",
+      "updated_at": "2026-11-20T08:33:39Z",
       "permissions": [
         "storage",
         "ui:titlebar",
