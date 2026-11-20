@@ -21,10 +21,13 @@ VALID_PERMISSIONS = {
     "ui:panels",
     "ui:status",
     "ui:notify",
+    "ui:sidebar",
+    "ui:appearance",
     "editor:read",
     "editor:write",
     "events:workspace",
 }
+VALID_CATEGORIES = {"sync", "edit", "organize", "ai", "publish", "appearance", "tools", "language"}
 VALID_SURFACES = {"settings_page"}
 MAX_API_BYTES = 8 * 1024 * 1024
 MAX_ARCHIVE_BYTES = 64 * 1024 * 1024
@@ -277,6 +280,10 @@ def validate_official_bilingual(manifest, docs):
             ("commands", "title"),
             ("page_menu", "title"),
             ("editor_menu", "title"),
+            ("sidebar_menu", "title"),
+            ("sidebar_sections", "title"),
+            ("file_badges", "label"),
+            ("backdrops", "title"),
             ("panels", "title"),
             ("dialogs", "title"),
         ):
@@ -288,6 +295,10 @@ def validate_official_bilingual(manifest, docs):
                 text_obj = item.get("text")
                 if isinstance(text_obj, dict) and (str(text_obj.get("zh") or "").strip() or str(text_obj.get("en") or "").strip()):
                     validate_localized_field(f"manifest.contributes.status_items[{idx}].text", text_obj)
+    perm_reasons = manifest.get("permission_reasons")
+    if isinstance(perm_reasons, dict):
+        for perm_key, reason_obj in perm_reasons.items():
+            validate_localized_field(f"manifest.permission_reasons[{perm_key}]", reason_obj)
 
     zh_raw = docs.get("README.md")
     en_raw = docs.get("README.en.md")
@@ -514,6 +525,9 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                     ambiguous.add(pid_key)
                 continue
             owners[pid_key] = full.lower()
+            raw_cat = str(m.get("category") or "").strip().lower()
+            if raw_cat and raw_cat not in VALID_CATEGORIES:
+                raise ValueError(f"invalid manifest.category: {raw_cat!r}")
             app_entry = {
                 "app": "blockmd",
                 "id": pid,
@@ -532,6 +546,10 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                 "surfaces": m.get("surfaces", ["settings_page"]),
                 "icon": m["icon"],
             }
+            if raw_cat:
+                app_entry["category"] = raw_cat
+            if isinstance(m.get("permission_reasons"), dict) and m["permission_reasons"]:
+                app_entry["permission_reasons"] = m["permission_reasons"]
             if m.get("beta") is True:
                 app_entry["beta"] = True
             apps.append(app_entry)

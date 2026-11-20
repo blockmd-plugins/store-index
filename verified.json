@@ -1,3 +1,4 @@
 {
-  "block-sync": "blockmd-plugins/block-sync"
+  "block-sync": "blockmd-plugins/block-sync",
+  "block-poop-everywhere": "blockmd-plugins/block-poop-everywhere"
 }

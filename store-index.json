@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-20T09:10:00Z",
+  "updated_at": "2026-11-20T10:47:23Z",
   "apps": [
     {
       "app": "blockmd",
@@ -49,6 +49,123 @@
         ]
       },
       "beta": true
+    },
+    {
+      "app": "blockmd",
+      "id": "block-poop-everywhere",
+      "name": {
+        "zh": "到处拉屎",
+        "en": "Poop Everywhere"
+      },
+      "version": "1.0.0",
+      "author": "Block Community",
+      "repo": "blockmd-plugins/block-poop-everywhere",
+      "summary": {
+        "zh": "官方全扩展点示范插件：覆盖顶栏、侧栏、文件树角标、编辑区背景、面板、菜单、状态栏与弹窗",
+        "en": "Official kitchen-sink demo covering titlebar, sidebar sections, file badges, editor backdrops, panels, menus, status bar, and dialogs"
+      },
+      "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.0/block-poop-everywhere-v1.0.0.tar.gz",
+      "sha256": "d1e82ff2d1284fff8cb2f91b0dd93af62dd2d507a64e5796f312ee262e500c03",
+      "downloads": 0,
+      "stars": 0,
+      "verified": true,
+      "updated_at": "2026-11-20T10:45:12Z",
+      "permissions": [
+        "storage",
+        "notes:read",
+        "notes:write",
+        "events:note_saved",
+        "ui:titlebar",
+        "ui:settings",
+        "ui:commands",
+        "ui:panels",
+        "ui:status",
+        "ui:notify",
+        "ui:sidebar",
+        "ui:appearance",
+        "editor:read",
+        "editor:write",
+        "events:workspace"
+      ],
+      "surfaces": [
+        "settings_page"
+      ],
+      "icon": {
+        "view_box": "0 0 24 24",
+        "fill_paths": [
+          "M12 3c1.6 1 2.4 2.2 2.2 3.6 1.7.3 2.8 1.4 2.8 2.9 0 .5-.1 1-.4 1.4 1.5.4 2.4 1.5 2.4 2.9 0 .6-.2 1.2-.5 1.7 1 .5 1.5 1.3 1.5 2.3 0 1.6-1.3 2.7-3 2.7H7c-1.7 0-3-1.1-3-2.7 0-1 .5-1.8 1.5-2.3-.3-.5-.5-1.1-.5-1.7 0-1.4.9-2.5 2.4-2.9-.3-.4-.4-.9-.4-1.4 0-1.5 1.1-2.6 2.8-2.9C10.6 5.5 11 4.2 12 3Z"
+        ],
+        "stroke_paths": [
+          "M12 3c1.6 1 2.4 2.2 2.2 3.6 1.7.3 2.8 1.4 2.8 2.9 0 .5-.1 1-.4 1.4 1.5.4 2.4 1.5 2.4 2.9 0 .6-.2 1.2-.5 1.7 1 .5 1.5 1.3 1.5 2.3 0 1.6-1.3 2.7-3 2.7H7c-1.7 0-3-1.1-3-2.7 0-1 .5-1.8 1.5-2.3-.3-.5-.5-1.1-.5-1.7 0-1.4.9-2.5 2.4-2.9-.3-.4-.4-.9-.4-1.4 0-1.5 1.1-2.6 2.8-2.9C10.6 5.5 11 4.2 12 3Z"
+        ],
+        "accent_paths": [
+          "M9.2 10.9h4.2",
+          "M7.4 15.5h6.6"
+        ]
+      },
+      "category": "tools",
+      "permission_reasons": {
+        "storage": {
+          "zh": "保存拉屎风格、背景参数、笔记本白名单与战况记录。",
+          "en": "Save style preferences, backdrop settings, notebook allowlist, and drop history."
+        },
+        "notes:read": {
+          "zh": "扫描笔记中的标记数量、展示统计并支持点击列表打开对应笔记。",
+          "en": "Scan notes for drop markers, compute stats, and jump to notes from lists."
+        },
+        "notes:write": {
+          "zh": "向笔记写入可识别标记并在冲水时精确清理插件留下的标记行。",
+          "en": "Insert identifiable drop markers into notes and cleanly remove them on flush."
+        },
+        "events:note_saved": {
+          "zh": "保存笔记后自动重算该页标记数并刷新文件树角标与状态栏。",
+          "en": "Recount drop markers after note saves and refresh file badges and status bar."
+        },
+        "ui:titlebar": {
+          "zh": "在顶栏挂载面板、快捷拉一坨与冲水按钮，并动态展示数量角标。",
+          "en": "Mount panel, quick-drop, and flush buttons in the titlebar with live badges."
+        },
+        "ui:settings": {
+          "zh": "在「外观」内置设置页末尾追加编辑区矢量背景与夜光快捷设置卡片。",
+          "en": "Embed quick backdrop and dark-glow controls inside Appearance settings."
+        },
+        "ui:commands": {
+          "zh": "向命令面板、默认快捷键、页面「…」菜单与编辑器右键菜单注册操作。",
+          "en": "Register commands, default shortcuts, page menu items, and editor menu items."
+        },
+        "ui:panels": {
+          "zh": "在右侧打开「屎量面板」展示实时统计、战报与快捷操作。",
+          "en": "Open the right-hand Poop Board side panel for live metrics and actions."
+        },
+        "ui:status": {
+          "zh": "在底部状态栏展示带图标的当前总数，点击可一键切换右侧面板。",
+          "en": "Display a live icon counter in the bottom status bar to toggle the board."
+        },
+        "ui:notify": {
+          "zh": "弹出四类语气带图标轻提示，并在冲水前打开二次确认弹窗。",
+          "en": "Show icon-bearing toasts across all tones and open a flush confirmation dialog."
+        },
+        "ui:sidebar": {
+          "zh": "在左侧栏挂载「今日屎迹」分区、文件树行尾角标与笔记右键菜单。",
+          "en": "Add Today's Drops sidebar section, file-tree row badges, and tree context actions."
+        },
+        "ui:appearance": {
+          "zh": "在编辑区背景层绘制可调图案、密度与暗色夜光效果的矢量水印。",
+          "en": "Render configurable vector patterns, watermarks, and dark-glow editor backdrops."
+        },
+        "editor:read": {
+          "zh": "读取当前编辑器选中文本，以便将其包装成带附言的标记块。",
+          "en": "Read the active editor selection to wrap selected text into a marked block."
+        },
+        "editor:write": {
+          "zh": "在当前光标处插入标记块，或直接替换选中的正文内容。",
+          "en": "Insert marked blocks at the caret or replace the active editor selection."
+        },
+        "events:workspace": {
+          "zh": "监听笔记切换、深浅色主题与语言变化事件并同步界面状态。",
+          "en": "React to note open, theme change, and locale change workspace events."
+        }
+      }
     },
     {
       "app": "blockmd",
@@ -157,7 +274,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.22/block-canvas-dots-v1.2.22.tar.gz",
       "sha256": "ff05e7af713b658336d598aed31f94627194311f3542ddc194a45b00c25d2b3a",
-      "downloads": 44,
+      "downloads": 47,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-20T08:53:47Z",
@@ -205,7 +322,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.14/block-titlebar-v1.0.14.tar.gz",
       "sha256": "338bd1eb0cee951a8e4b3b12e6864aabb04df11802bacba17845419d98394d38",
-      "downloads": 35,
+      "downloads": 37,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-20T08:53:45Z",
@@ -252,7 +369,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.7/block-tarot-v1.0.7.tar.gz",
       "sha256": "0ac60e7b79890ffe515f198cd40eb23fdd195e40b7f99ba6c373147c550e5d24",
-      "downloads": 7,
+      "downloads": 9,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-20T08:33:39Z",
