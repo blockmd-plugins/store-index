@@ -22,10 +22,36 @@ def _go_trim_space(s):
     return s[start:end]
 
 
+_GO_LOWER_OVERRIDES = {
+    0x0130: "i",
+    0x1C89: "\u1c8a",
+    0xA7CB: "\u0264",
+    0xA7CC: "\ua7cd",
+    0xA7CE: "\ua7cf",
+    0xA7D2: "\ua7d3",
+    0xA7D4: "\ua7d5",
+    0xA7DA: "\ua7db",
+    0xA7DC: "\u019b",
+}
+
+
 def _go_lower(s):
-    # Matches Go strings.ToLower / unicode.ToLower across all 1.1M Unicode code points
-    # (single-rune lowercase: no contextual Greek final sigma, and U+0130 'İ' -> 'i').
-    return "".join("i" if ch == "\u0130" else ch.lower() for ch in s)
+    # Matches Go 1.27 unicode.ToLower across all 1.1M Unicode code points on Python 3.11-3.15
+    # (single-rune lowercase: no contextual Greek final sigma, U+0130 'İ' -> 'i',
+    # plus Unicode 16/17 Garay & Beria Erfe additions for older Python unicodedata).
+    out = []
+    for ch in s:
+        cp = ord(ch)
+        ov = _GO_LOWER_OVERRIDES.get(cp)
+        if ov is not None:
+            out.append(ov)
+        elif 0x10D50 <= cp <= 0x10D65:
+            out.append(chr(cp + 0x20))
+        elif 0x16EA0 <= cp <= 0x16EB8:
+            out.append(chr(cp + 0x1B))
+        else:
+            out.append(ch.lower())
+    return "".join(out)
 
 API = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
