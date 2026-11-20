@@ -77,6 +77,15 @@ VALID_PERMISSIONS = {
     "editor:read",
     "editor:write",
     "events:workspace",
+    "system:notify",
+    "system:secrets",
+    "system:open",
+    "system:dialogs",
+    "system:clipboard_read",
+    "system:clipboard_write",
+    "system:trash",
+    "system:badge",
+    "events:system",
 }
 VALID_CATEGORIES = {"sync", "edit", "organize", "ai", "publish", "appearance", "tools", "language"}
 VALID_SURFACES = {"settings_page"}
