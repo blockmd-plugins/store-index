@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-21T05:00:04Z",
+  "updated_at": "2026-11-21T06:19:09Z",
   "apps": [
     {
       "app": "blockmd",
@@ -79,26 +79,25 @@
         "zh": "到处拉屎",
         "en": "Poop Everywhere"
       },
-      "version": "1.0.23",
+      "version": "1.0.27",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-poop-everywhere",
       "summary": {
         "zh": "官方全扩展点示范插件：覆盖顶栏、侧栏、文件树角标、编辑区背景、面板、菜单、状态栏与弹窗",
         "en": "Official kitchen-sink demo covering titlebar, sidebar sections, file badges, editor backdrops, panels, menus, status bar, and dialogs"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.23/block-poop-everywhere-v1.0.23.tar.gz",
-      "sha256": "2ce9f6fc6d92537760aec7cd999160351da1531f2b2039768eeac1e49fe244c0",
-      "downloads": 57,
+      "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.27/block-poop-everywhere-v1.0.27.tar.gz",
+      "sha256": "f101dc2ebb617baee6018bbe8948178cba41d647f19993956ead406e7aeeb839",
+      "downloads": 58,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-20T17:55:50Z",
+      "updated_at": "2026-11-21T06:16:54Z",
       "permissions": [
         "storage",
         "notes:read",
         "notes:write",
         "events:note_saved",
         "ui:titlebar",
-        "ui:settings",
         "ui:commands",
         "ui:panels",
         "ui:status",
@@ -146,10 +145,6 @@
         "ui:titlebar": {
           "zh": "在顶栏挂载面板、快捷拉一坨与冲水按钮，并动态展示数量角标。",
           "en": "Mount panel, quick-drop, and flush buttons in the titlebar with live badges."
-        },
-        "ui:settings": {
-          "zh": "在「外观」内置设置页末尾追加编辑区矢量背景与夜光快捷设置卡片。",
-          "en": "Embed quick backdrop and dark-glow controls inside Appearance settings."
         },
         "ui:commands": {
           "zh": "向命令面板、默认快捷键、页面「…」菜单与编辑器右键菜单注册操作。",
@@ -205,7 +200,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-lang-gomod/releases/download/v1.0.3/block-lang-gomod-v1.0.3.tar.gz",
       "sha256": "d2c293cca0ac273f5d6e933f757718b15e19bd9f23b154e447411a27d536f986",
-      "downloads": 21,
+      "downloads": 23,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-20T14:00:39Z",
@@ -248,7 +243,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-lang-plist/releases/download/v1.0.3/block-lang-plist-v1.0.3.tar.gz",
       "sha256": "2d470b1d949305bbed57770f6205bff3af9c950657b6df5ff3777ac6e8a70bb9",
-      "downloads": 21,
+      "downloads": 23,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-20T14:00:34Z",
@@ -407,19 +402,19 @@
         "zh": "编辑器背景",
         "en": "Editor Background"
       },
-      "version": "1.2.25",
+      "version": "1.2.29",
       "author": "eachann1024",
       "repo": "eachann1024/block-canvas-dots",
       "summary": {
         "zh": "为笔记铺上与行高对齐的点阵或方格，增加对比度，稳定追踪每一行",
         "en": "Line-aligned dot or grid background for notes, adding contrast to track each line"
       },
-      "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.25/block-canvas-dots-v1.2.25.tar.gz",
-      "sha256": "4de6eb77061ccdd6b17b57626d8f6cb999c16348c5a12e25b21d851f39b62663",
-      "downloads": 78,
+      "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.29/block-canvas-dots-v1.2.29.tar.gz",
+      "sha256": "e64ca28742f7ad88bc2dba584b27416ce5158a5ab11d2579d652645d8a4face7",
+      "downloads": 79,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-20T13:59:33Z",
+      "updated_at": "2026-11-21T06:16:42Z",
       "permissions": [
         "storage",
         "ui:settings"
@@ -453,8 +448,8 @@
           "en": "Save editor background style, contrast, and alignment preferences"
         },
         "ui:settings": {
-          "zh": "在外观设置中应用并切换编辑器点阵或方格背景",
-          "en": "Apply and toggle editor dot or grid backgrounds in Appearance settings"
+          "zh": "应用并切换编辑器点阵或方格背景",
+          "en": "Apply and toggle editor dot or grid backgrounds"
         }
       }
     },
@@ -465,23 +460,22 @@
         "zh": "顶栏图标",
         "en": "Titlebar Icons"
       },
-      "version": "1.0.19",
+      "version": "1.0.23",
       "author": "eachann1024",
       "repo": "eachann1024/block-titlebar",
       "summary": {
         "zh": "自定义顶栏右上角显示的图标，隐藏不需要的按钮",
         "en": "Choose which icons appear in the top-right titlebar"
       },
-      "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.19/block-titlebar-v1.0.19.tar.gz",
-      "sha256": "4c187527a1a546f53893bb23da8dfe2649515fa96db938a6b7185085fb6c52b6",
-      "downloads": 70,
+      "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.23/block-titlebar-v1.0.23.tar.gz",
+      "sha256": "2c30bea7bc899c3296e637c35acc3776ab3a9f01e3ecd8d36563050342c2fb06",
+      "downloads": 73,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-21T04:59:32Z",
+      "updated_at": "2026-11-21T06:16:44Z",
       "permissions": [
         "storage",
-        "ui:titlebar",
-        "ui:settings"
+        "ui:titlebar"
       ],
       "surfaces": [
         "settings_page"
@@ -511,10 +505,6 @@
         "ui:titlebar": {
           "zh": "读取顶栏图标项并控制各个按钮的显示与隐藏",
           "en": "Read titlebar items and control visibility of individual buttons"
-        },
-        "ui:settings": {
-          "zh": "在「设置 → 外观」中嵌入顶栏图标管理区块并同步刷新",
-          "en": "Embed titlebar icon settings under Appearance and refresh the UI"
         }
       },
       "beta": true
@@ -526,23 +516,22 @@
         "zh": "塔罗模式",
         "en": "Tarot Mode"
       },
-      "version": "1.0.10",
+      "version": "1.0.13",
       "author": "eachann1024",
       "repo": "eachann1024/block-tarot",
       "summary": {
         "zh": "午夜铜版塔罗皮肤与写作仪式：牌桌三张牌阵、每日一牌反问、大阿卡纳牌册与速记换肤",
         "en": "Midnight Copperplate tarot skin and writing rituals: 3-card spread, daily card reflection, 22 Major Arcana deck, and Quick Note skin"
       },
-      "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.10/block-tarot-v1.0.10.tar.gz",
-      "sha256": "2d4cb7d3b0e8936e23920e6bfc52078c2477bbf03840fa432864923b874d3053",
-      "downloads": 40,
+      "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.13/block-tarot-v1.0.13.tar.gz",
+      "sha256": "7149faee25d8cff7715ecda9955609d3ee99591505a9c194e468678e45d25ba6",
+      "downloads": 41,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-20T13:59:43Z",
+      "updated_at": "2026-11-21T06:16:49Z",
       "permissions": [
         "storage",
         "ui:titlebar",
-        "ui:settings",
         "ui:commands",
         "ui:notify",
         "events:workspace"
@@ -573,10 +562,6 @@
           "zh": "在顶栏挂载塔罗模式月亮快捷切换按钮",
           "en": "Show the Tarot Mode moon toggle button in the titlebar"
         },
-        "ui:settings": {
-          "zh": "在外观设置中切换塔罗皮肤及进入牌桌、每日一牌与牌册房间",
-          "en": "Toggle Tarot skin in Appearance settings and open tarot ritual rooms"
-        },
         "ui:commands": {
           "zh": "向命令面板注册切换塔罗模式与打开各仪式房间的快捷命令",
           "en": "Register command palette actions for Tarot Mode and ritual rooms"
@@ -600,19 +585,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.3.96",
+      "version": "1.3.97",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "支持本地目录镜像、WebDAV 与 Git 仓库的多端增量同步",
         "en": "Incremental notebook sync via local mirror, WebDAV, and Git"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.96/block-sync-v1.3.96.tar.gz",
-      "sha256": "7915aa61704be3595ef8062e0000358e2f17c9b1fc80c60bffb77dc836697853",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.97/block-sync-v1.3.97.tar.gz",
+      "sha256": "e99c44f0dfc52cfc213b73be7e2f0e0c09214b44c6d0c5b0064c7e20392021af",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-21T03:50:21Z",
+      "updated_at": "2026-11-21T06:18:43Z",
       "permissions": [
         "storage",
         "notes:read",
