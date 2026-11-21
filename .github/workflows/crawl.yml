@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: store-index-crawl
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   crawl:
@@ -25,13 +25,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/crawl_github.py
 
-      - name: Commit updated store-index.json
+      - name: Commit updated store-index.json and changelogs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet store-index.json; then
-            git add store-index.json
-            git commit -m "chore: update auto-crawled store-index.json"
+          git add store-index.json changelogs/
+          if ! git diff --cached --quiet; then
+            CHANGED=$(git diff --cached --name-only)
+            git commit -m "chore: update auto-crawled store-index.json and changelogs"
             git push
-            curl -fsSL "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/store-index.json" || true
+            for path in $CHANGED; do
+              curl -fsSL "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/${path}" || true
+            done
           fi
