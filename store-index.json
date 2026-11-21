@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-21T07:56:38Z",
+  "updated_at": "2026-11-21T09:25:50Z",
   "apps": [
     {
       "app": "blockmd",
@@ -88,7 +88,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.28/block-poop-everywhere-v1.0.28.tar.gz",
       "sha256": "2d066d82850cce2f9cf722e123bc29888b8f937f9e241c098af7ec0f4d1cc626",
-      "downloads": 65,
+      "downloads": 66,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-21T07:39:42Z",
@@ -259,19 +259,19 @@
         "zh": "编辑器背景",
         "en": "Editor Background"
       },
-      "version": "1.2.29",
+      "version": "1.2.31",
       "author": "eachann1024",
       "repo": "eachann1024/block-canvas-dots",
       "summary": {
         "zh": "为笔记铺上与行高对齐的点阵或方格，增加对比度，稳定追踪每一行",
         "en": "Line-aligned dot or grid background for notes, adding contrast to track each line"
       },
-      "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.29/block-canvas-dots-v1.2.29.tar.gz",
-      "sha256": "e64ca28742f7ad88bc2dba584b27416ce5158a5ab11d2579d652645d8a4face7",
-      "downloads": 85,
+      "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.31/block-canvas-dots-v1.2.31.tar.gz",
+      "sha256": "a3d126f9fede8c1c1cc18246d1cfed27b7ae133137d696a36558c8cd7cec0203",
+      "downloads": 86,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-21T06:16:42Z",
+      "updated_at": "2026-11-21T09:24:46Z",
       "permissions": [
         "storage",
         "ui:settings"
@@ -326,7 +326,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.24/block-titlebar-v1.0.24.tar.gz",
       "sha256": "fd83da3b13c244667b268b8ac97e0c2379cd82e158bcd4cb0511900554cb4f1a",
-      "downloads": 79,
+      "downloads": 81,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T07:55:30Z",
@@ -381,7 +381,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.13/block-tarot-v1.0.13.tar.gz",
       "sha256": "7149faee25d8cff7715ecda9955609d3ee99591505a9c194e468678e45d25ba6",
-      "downloads": 47,
+      "downloads": 48,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T06:16:49Z",
@@ -441,19 +441,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.3.99",
+      "version": "1.3.102",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "支持本地目录镜像、WebDAV 与 Git 仓库的多端增量同步",
         "en": "Incremental notebook sync via local mirror, WebDAV, and Git"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.99/block-sync-v1.3.99.tar.gz",
-      "sha256": "ac7f611b812c72ea49e95124e1cc96f5ffea042026d6a697fcaf2ee77c4782da",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.102/block-sync-v1.3.102.tar.gz",
+      "sha256": "fd614e10f27619c916ed2cde45dacc346eccba8679603bb0ec6c807b8b516a95",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-21T07:39:29Z",
+      "updated_at": "2026-11-21T09:24:53Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -532,7 +532,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-copy-path/releases/download/v1.0.3/block-copy-path-v1.0.3.tar.gz",
       "sha256": "1382f91dc76e34306e54b4070f0ba0e457b29b259e12737c6ee2cc28b69fbf3a",
-      "downloads": 6,
+      "downloads": 7,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T07:24:30Z",
