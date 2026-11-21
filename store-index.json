@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-21T03:43:27Z",
+  "updated_at": "2026-11-21T03:50:53Z",
   "apps": [
     {
       "app": "blockmd",
@@ -280,19 +280,19 @@
         "zh": "图床上传",
         "en": "Image Host"
       },
-      "version": "1.2.31",
+      "version": "1.2.32",
       "author": "eachann1024",
       "repo": "eachann1024/block-image-host",
       "summary": {
         "zh": "支持 Cloudflare R2、S3 兼容存储与 GitHub 仓库的笔记图片自动上传",
         "en": "Upload local note images to Cloudflare R2, S3-compatible storage, or GitHub"
       },
-      "download_url": "https://github.com/eachann1024/block-image-host/releases/download/v1.2.31/block-image-host-v1.2.31.tar.gz",
-      "sha256": "15d41f7778b6dffccfd20c2b7382d891566cbf2f3e16eb527f73dae51a17b19f",
+      "download_url": "https://github.com/eachann1024/block-image-host/releases/download/v1.2.32/block-image-host-v1.2.32.tar.gz",
+      "sha256": "0bbd1ff06eed078f2f1865299ccd4504edfc333fd51704d7d96273d8bfa5b5eb",
       "downloads": 941,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-20T13:59:37Z",
+      "updated_at": "2026-11-21T03:50:20Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -600,19 +600,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.3.95",
+      "version": "1.3.96",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "支持本地目录镜像、WebDAV 与 Git 仓库的多端增量同步",
         "en": "Incremental notebook sync via local mirror, WebDAV, and Git"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.95/block-sync-v1.3.95.tar.gz",
-      "sha256": "68aaa3d9ae51539a69e4cb6932090dea38d7611fd707046ab475c7183343e7f6",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.96/block-sync-v1.3.96.tar.gz",
+      "sha256": "7915aa61704be3595ef8062e0000358e2f17c9b1fc80c60bffb77dc836697853",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-21T03:42:39Z",
+      "updated_at": "2026-11-21T03:50:21Z",
       "permissions": [
         "storage",
         "notes:read",
