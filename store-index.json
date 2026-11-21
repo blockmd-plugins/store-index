@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-21T07:25:45Z",
+  "updated_at": "2026-11-21T07:56:38Z",
   "apps": [
     {
       "app": "blockmd",
@@ -79,19 +79,19 @@
         "zh": "到处拉屎",
         "en": "Poop Everywhere"
       },
-      "version": "1.0.27",
+      "version": "1.0.28",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-poop-everywhere",
       "summary": {
         "zh": "官方全扩展点示范插件：覆盖顶栏、侧栏、文件树角标、编辑区背景、面板、菜单、状态栏与弹窗",
         "en": "Official kitchen-sink demo covering titlebar, sidebar sections, file badges, editor backdrops, panels, menus, status bar, and dialogs"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.27/block-poop-everywhere-v1.0.27.tar.gz",
-      "sha256": "f101dc2ebb617baee6018bbe8948178cba41d647f19993956ead406e7aeeb839",
-      "downloads": 62,
+      "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.28/block-poop-everywhere-v1.0.28.tar.gz",
+      "sha256": "2d066d82850cce2f9cf722e123bc29888b8f937f9e241c098af7ec0f4d1cc626",
+      "downloads": 65,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-21T06:16:54Z",
+      "updated_at": "2026-11-21T07:39:42Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -191,19 +191,19 @@
         "zh": "图床上传",
         "en": "Image Host"
       },
-      "version": "1.2.32",
+      "version": "1.2.34",
       "author": "eachann1024",
       "repo": "eachann1024/block-image-host",
       "summary": {
         "zh": "支持 Cloudflare R2、S3 兼容存储与 GitHub 仓库的笔记图片自动上传",
         "en": "Upload local note images to Cloudflare R2, S3-compatible storage, or GitHub"
       },
-      "download_url": "https://github.com/eachann1024/block-image-host/releases/download/v1.2.32/block-image-host-v1.2.32.tar.gz",
-      "sha256": "0bbd1ff06eed078f2f1865299ccd4504edfc333fd51704d7d96273d8bfa5b5eb",
+      "download_url": "https://github.com/eachann1024/block-image-host/releases/download/v1.2.34/block-image-host-v1.2.34.tar.gz",
+      "sha256": "f68a9d840904d3daec5bbc8dc2353643ab7b4b73131ebecf4750c1a5aea8d42f",
       "downloads": 941,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-21T03:50:20Z",
+      "updated_at": "2026-11-21T07:55:38Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -250,66 +250,7 @@
           "zh": "在保存笔记时自动检测并上传其中的本地图片",
           "en": "Automatically detect and upload local images when a note is saved"
         }
-      },
-      "beta": true
-    },
-    {
-      "app": "blockmd",
-      "id": "block-migrator",
-      "name": {
-        "zh": "笔记迁移",
-        "en": "Migrator"
-      },
-      "version": "1.2.34",
-      "author": "eachann1024",
-      "repo": "eachann1024/block-migrator",
-      "summary": {
-        "zh": "从 Obsidian、Notion 与语雀导出目录或 ZIP 包迁移笔记，自动清洗语法并拷贝附件",
-        "en": "Migrate notes from Obsidian, Notion, and Yuque folders or ZIP archives with syntax cleanup and asset copy"
-      },
-      "download_url": "https://github.com/eachann1024/block-migrator/releases/download/v1.2.34/block-migrator-v1.2.34.tar.gz",
-      "sha256": "070cf8191997a0fea6d8c7628fbcb6e38f8c0305526ceb2f7cde061d568e1c72",
-      "downloads": 616,
-      "stars": 0,
-      "verified": false,
-      "updated_at": "2026-11-20T13:59:33Z",
-      "permissions": [
-        "storage",
-        "notes:read",
-        "notes:write"
-      ],
-      "surfaces": [
-        "settings_page"
-      ],
-      "icon": {
-        "view_box": "0 0 24 24",
-        "fill_paths": [
-          "M4 6a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
-        ],
-        "stroke_paths": [
-          "M4 6a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z",
-          "M8 13h8"
-        ],
-        "accent_paths": [
-          "M13 10l3 3-3 3",
-          "M8 16h3"
-        ]
-      },
-      "permission_reasons": {
-        "storage": {
-          "zh": "保存导入配置偏好、迁移统计与历史记录",
-          "en": "Save import preferences, migration statistics, and history"
-        },
-        "notes:read": {
-          "zh": "检查目标工作区现有笔记路径，避免导入时意外覆盖",
-          "en": "Check existing note paths in the workspace to avoid unintended overwrites"
-        },
-        "notes:write": {
-          "zh": "将转换后的 Markdown 笔记及附件写入当前工作区",
-          "en": "Write converted Markdown notes and attachments into the workspace"
-        }
-      },
-      "beta": true
+      }
     },
     {
       "app": "blockmd",
@@ -327,7 +268,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.29/block-canvas-dots-v1.2.29.tar.gz",
       "sha256": "e64ca28742f7ad88bc2dba584b27416ce5158a5ab11d2579d652645d8a4face7",
-      "downloads": 83,
+      "downloads": 85,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T06:16:42Z",
@@ -376,19 +317,19 @@
         "zh": "顶栏图标",
         "en": "Titlebar Icons"
       },
-      "version": "1.0.23",
+      "version": "1.0.24",
       "author": "eachann1024",
       "repo": "eachann1024/block-titlebar",
       "summary": {
         "zh": "自定义顶栏右上角显示的图标，隐藏不需要的按钮",
         "en": "Choose which icons appear in the top-right titlebar"
       },
-      "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.23/block-titlebar-v1.0.23.tar.gz",
-      "sha256": "2c30bea7bc899c3296e637c35acc3776ab3a9f01e3ecd8d36563050342c2fb06",
-      "downloads": 77,
+      "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.24/block-titlebar-v1.0.24.tar.gz",
+      "sha256": "fd83da3b13c244667b268b8ac97e0c2379cd82e158bcd4cb0511900554cb4f1a",
+      "downloads": 79,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-21T06:16:44Z",
+      "updated_at": "2026-11-21T07:55:30Z",
       "permissions": [
         "storage",
         "ui:titlebar"
@@ -422,8 +363,7 @@
           "zh": "读取顶栏图标项并控制各个按钮的显示与隐藏",
           "en": "Read titlebar items and control visibility of individual buttons"
         }
-      },
-      "beta": true
+      }
     },
     {
       "app": "blockmd",
@@ -441,7 +381,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.13/block-tarot-v1.0.13.tar.gz",
       "sha256": "7149faee25d8cff7715ecda9955609d3ee99591505a9c194e468678e45d25ba6",
-      "downloads": 45,
+      "downloads": 47,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T06:16:49Z",
@@ -501,19 +441,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.3.98",
+      "version": "1.3.99",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "支持本地目录镜像、WebDAV 与 Git 仓库的多端增量同步",
         "en": "Incremental notebook sync via local mirror, WebDAV, and Git"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.98/block-sync-v1.3.98.tar.gz",
-      "sha256": "da86ea30ff33a0a0560ff01a4be25a4e50b654408672fb5e11103a31b5e43c8c",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.99/block-sync-v1.3.99.tar.gz",
+      "sha256": "ac7f611b812c72ea49e95124e1cc96f5ffea042026d6a697fcaf2ee77c4782da",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-21T07:24:35Z",
+      "updated_at": "2026-11-21T07:39:29Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -592,7 +532,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-copy-path/releases/download/v1.0.3/block-copy-path-v1.0.3.tar.gz",
       "sha256": "1382f91dc76e34306e54b4070f0ba0e457b29b259e12737c6ee2cc28b69fbf3a",
-      "downloads": 3,
+      "downloads": 6,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T07:24:30Z",
