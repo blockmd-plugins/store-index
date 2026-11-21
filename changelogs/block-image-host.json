@@ -1,0 +1,182 @@
+{
+  "app": "blockmd",
+  "schema_version": 1,
+  "id": "block-image-host",
+  "repo": "eachann1024/block-image-host",
+  "updated_at": "2026-11-21T09:49:03Z",
+  "latest_version": "1.2.34",
+  "releases": [
+    {
+      "version": "1.2.34",
+      "tag": "v1.2.34",
+      "published_at": "2026-11-21T07:55:38Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.34",
+      "en": {
+        "other": [
+          "chore: drop beta flag (`b531b2e`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore: drop beta flag (`b531b2e`)"
+    },
+    {
+      "version": "1.2.33",
+      "tag": "v1.2.33",
+      "published_at": "2026-11-21T07:39:34Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.33",
+      "en": {
+        "other": [
+          "chore: simplify status copy and remove redundant counts (`dc2871e`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore: simplify status copy and remove redundant counts (`dc2871e`)"
+    },
+    {
+      "version": "1.2.32",
+      "tag": "v1.2.32",
+      "published_at": "2026-11-21T03:50:20Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.32",
+      "en": {
+        "other": [
+          "feat: list only folders the user adds with the plus button (`4587c65`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat: list only folders the user adds with the plus button (`4587c65`)"
+    },
+    {
+      "version": "1.2.31",
+      "tag": "v1.2.31",
+      "published_at": "2026-11-20T13:59:37Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.31",
+      "en": {
+        "other": [
+          "feat: unify titlebar actions, status badge, and deduplicated upload progress (`656feb2`)",
+          "chore(git): ignore local agent prompts, design files, and build artifacts (`78634b1`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat: unify titlebar actions, status badge, and deduplicated upload progress (`656feb2`)\n- chore(git): ignore local agent prompts, design files, and build artifacts (`78634b1`)"
+    },
+    {
+      "version": "1.2.27",
+      "tag": "v1.2.27",
+      "published_at": "2026-11-20T09:09:41Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.27",
+      "en": {
+        "other": [
+          "fix(parser): handle inline list fenced code blocks and indented code after headings (`e452d46`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(parser): handle inline list fenced code blocks and indented code after headings (`e452d46`)"
+    },
+    {
+      "version": "1.2.26",
+      "tag": "v1.2.26",
+      "published_at": "2026-11-20T08:55:39Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.26",
+      "en": {
+        "other": [
+          "fix(parser): ignore quoted fenced code blocks and 4-space indented code blocks (`76e06d3`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(parser): ignore quoted fenced code blocks and 4-space indented code blocks (`76e06d3`)"
+    },
+    {
+      "version": "1.2.17",
+      "tag": "v1.2.17",
+      "published_at": "2026-11-19T18:10:52Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.17",
+      "en": {
+        "other": [
+          "chore(manifest): switch author and repo to eachann1024 (`65618b7`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore(manifest): switch author and repo to eachann1024 (`65618b7`)"
+    },
+    {
+      "version": "1.2.15",
+      "tag": "v1.2.15",
+      "published_at": "2026-11-19T17:59:05Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.15",
+      "en": {
+        "other": [
+          "feat(i18n): add English UI support (`fb6da9c`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(i18n): add English UI support (`fb6da9c`)"
+    },
+    {
+      "version": "1.2.12",
+      "tag": "v1.2.12",
+      "published_at": "2026-11-19T16:55:57Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.12",
+      "en": {
+        "other": [
+          "fix: support reference-style images, strict host validation, and safe path replacement (`dccdd99`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix: support reference-style images, strict host validation, and safe path replacement (`dccdd99`)"
+    },
+    {
+      "version": "1.2.11",
+      "tag": "v1.2.11",
+      "published_at": "2026-11-19T14:58:58Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.11",
+      "en": {
+        "other": [
+          "chore: mark plugin as beta in manifest (`cd42d3d`)",
+          "feat: support multi-notebook image scanning, HTML img tags, and action feedback (`a606f4c`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore: mark plugin as beta in manifest (`cd42d3d`)\n- feat: support multi-notebook image scanning, HTML img tags, and action feedback (`a606f4c`)"
+    },
+    {
+      "version": "1.2.9",
+      "tag": "v1.2.9",
+      "published_at": "2026-11-19T10:09:43Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.9",
+      "en": {
+        "other": [
+          "feat: streamline image host to 2 cards with unified config save and aligned logs (v1.2.0) (`4a4faa5`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat: streamline image host to 2 cards with unified config save and aligned logs (v1.2.0) (`4a4faa5`)"
+    },
+    {
+      "version": "1.1.7",
+      "tag": "v1.1.7",
+      "published_at": "2026-11-18T18:22:44Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.1.7",
+      "en": {
+        "other": [
+          "fix: clean up idle status and persist upload policy toggles immediately (`52f8cf0`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix: clean up idle status and persist upload policy toggles immediately (`52f8cf0`)"
+    },
+    {
+      "version": "1.1.6",
+      "tag": "v1.1.6",
+      "published_at": "2026-11-18T18:11:11Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.1.6",
+      "en": {
+        "other": [
+          "Simplify image host path and branch settings (`451a647`)"
+        ]
+      },
+      "body": "## Changes\n\n- Simplify image host path and branch settings (`451a647`)"
+    },
+    {
+      "version": "1.1.0",
+      "tag": "v1.1.0",
+      "published_at": "2026-11-18T13:54:00Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.1.0",
+      "body": "**Full Changelog**: https://github.com/blockmd-plugins/block-image-host/compare/v1.0.0...v1.1.0"
+    },
+    {
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "published_at": "2026-11-18T12:09:27Z",
+      "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.0.0",
+      "body": "Initial release for Block App Store (blockmd)."
+    }
+  ]
+}

@@ -113,6 +113,132 @@ MAX_TOTAL_EXTRACTED_BYTES = 256 * 1024 * 1024
 MAX_ARCHIVE_ENTRIES = 8192
 MAX_MANIFEST_BYTES = 256 * 1024
 MAX_README_BYTES = 512 * 1024
+MAX_CHANGELOG_INLINE = 5
+MAX_CHANGELOG_FULL = 20
+MAX_RELEASE_BODY_BYTES = 8192
+CHANGELOG_BASE_URL = "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs"
+
+
+def _looks_chinese(text):
+    if any(k in text for k in ("## 中文", "本次更新重点", "### 新功能", "### 改进", "### 修复", "✨ 新功能")):
+        return True
+    return any(0x4E00 <= ord(ch) <= 0x9FFF for ch in text)
+
+
+def _parse_single_notes(text):
+    out = {}
+    highlights = ""
+    buckets = {"new": [], "improvements": [], "fixes": [], "other": []}
+    section = ""
+    for raw_line in text.split("\n"):
+        line = raw_line.strip()
+        if not line:
+            continue
+        if line.startswith(("Website:", "官网：", "官网:")):
+            section = "skip"
+            continue
+        if not highlights and (line.startswith("🌈") or "本次更新重点" in line or "Highlights" in line):
+            hl = line.lstrip("🌈# ").strip()
+            for prefix in ("本次更新重点：", "本次更新重点:", "Highlights:", "Highlights："):
+                if hl.startswith(prefix):
+                    hl = hl[len(prefix):]
+            highlights = hl.strip()
+            continue
+        if line.startswith(("#", "✨", "🪐", "🐛")):
+            h = line.lstrip("#✨🪐🐛 ").strip()
+            h_low = h.lower()
+            if h_low == "english" or h == "中文":
+                continue
+            if h_low in ("download", "install") or "下载" in h or "安装" in h:
+                section = "skip"
+            elif h_low == "new" or "新功能" in h or h_low.startswith("new ") or h_low == "features":
+                section = "new"
+            elif h_low in ("improvements", "improved") or "改进" in h or "优化" in h:
+                section = "improvements"
+            elif h_low in ("fixes", "fixed") or "修复" in h:
+                section = "fixes"
+            elif h_low in ("other", "changes") or "其他" in h or "改动" in h:
+                section = "other"
+            elif line.startswith("✨"):
+                section = "new"
+            elif line.startswith("🪐"):
+                section = "improvements"
+            elif line.startswith("🐛"):
+                section = "fixes"
+            continue
+        if section == "skip":
+            continue
+        bullet = ""
+        if line.startswith("- "):
+            bullet = line[2:].strip()
+        elif line.startswith("* "):
+            bullet = line[2:].strip()
+        elif line.startswith("• "):
+            bullet = line[2:].strip()
+        elif line.startswith("•"):
+            bullet = line[1:].strip()
+        if not bullet:
+            continue
+        bullet = bullet.replace("**", "")
+        key = section if section in buckets else "other"
+        buckets[key].append(bullet)
+    if highlights:
+        out["highlights"] = highlights
+    for k in ("new", "improvements", "fixes", "other"):
+        if buckets[k]:
+            out[k] = buckets[k]
+    return out
+
+
+def parse_bilingual_release_body(raw):
+    norm = (raw or "").replace("\r\n", "\n").strip()
+    if not norm:
+        return {}, {}
+    idx = norm.find("\n---\n")
+    sep_len = 5
+    if idx < 0:
+        idx = norm.find("\n---")
+        sep_len = 4
+    if idx < 0:
+        parsed = _parse_single_notes(norm)
+        if _looks_chinese(norm):
+            return parsed, {}
+        return {}, parsed
+    left = norm[:idx].strip()
+    right = norm[idx + sep_len:].strip()
+    if not right:
+        parsed = _parse_single_notes(left)
+        return (parsed, {}) if _looks_chinese(left) else ({}, parsed)
+    if _looks_chinese(right) and not _looks_chinese(left):
+        return _parse_single_notes(right), _parse_single_notes(left)
+    if _looks_chinese(left) and not _looks_chinese(right):
+        return _parse_single_notes(left), _parse_single_notes(right)
+    return _parse_single_notes(right), _parse_single_notes(left)
+
+
+def normalize_release_entry(rel, include_body=True):
+    tag = str(rel.get("tag_name") or "").strip()
+    if not tag:
+        return None
+    version = tag[1:] if tag.startswith(("v", "V")) else tag
+    body = str(rel.get("body") or "").replace("\r\n", "\n").strip()
+    if len(body.encode("utf-8")) > MAX_RELEASE_BODY_BYTES:
+        body = body.encode("utf-8")[:MAX_RELEASE_BODY_BYTES].decode("utf-8", errors="ignore").rstrip()
+    zh, en = parse_bilingual_release_body(body)
+    entry = {"version": version, "tag": tag}
+    pub = str(rel.get("published_at") or rel.get("created_at") or "").strip()
+    if pub:
+        entry["published_at"] = pub
+    html_url = str(rel.get("html_url") or "").strip()
+    if html_url:
+        entry["html_url"] = html_url
+    if zh:
+        entry["zh"] = zh
+    if en:
+        entry["en"] = en
+    if body and (include_body or (not zh and not en)):
+        entry["body"] = body
+    return entry
 
 
 def read_limited(resp, limit, label):
@@ -618,7 +744,10 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
             continue
         try:
             fetched = fetch_repo_fn(repo, now_iso)
-            if len(fetched) == 6:
+            releases = []
+            if len(fetched) == 7:
+                dl_url, sha_hex, gh_downloads, updated, m, docs, releases = fetched
+            elif len(fetched) == 6:
                 dl_url, sha_hex, gh_downloads, updated, m, docs = fetched
             else:
                 dl_url, sha_hex, gh_downloads, updated, m = fetched
@@ -705,6 +834,13 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                     app_entry["file_extensions"] = tags
             if m.get("beta") is True:
                 app_entry["beta"] = True
+            if releases:
+                inline = [normalize_release_entry(r, include_body=False) for r in releases[:MAX_CHANGELOG_INLINE]]
+                inline = [item for item in inline if item]
+                if inline:
+                    app_entry["changelog_url"] = f"{CHANGELOG_BASE_URL}/{pid}.json"
+                    app_entry["changelog"] = inline
+                app_entry["_full_releases"] = releases[:MAX_CHANGELOG_FULL]
             apps.append(app_entry)
         except Exception as exc:
             print(f"[WARN] skip {full}: {exc}")
@@ -719,6 +855,7 @@ def fetch_github_repo(repo, now_iso, release_tag=None):
     full = repo["full_name"]
     dl_url, gh_downloads, updated = "", 0, repo.get("pushed_at") or now_iso
     latest = None
+    stable_releases = []
     fetched_any = False
     hit_page_cap = False
     max_pages = 5
@@ -726,6 +863,7 @@ def fetch_github_repo(repo, now_iso, release_tag=None):
         latest = json.loads(gh_api_get(f"{API}/repos/{full}/releases/tags/{release_tag}"))
         if not isinstance(latest, dict) or latest.get("draft") or latest.get("prerelease") or latest.get("tag_name") != release_tag:
             raise ValueError(f"invalid compatibility release: {full}@{release_tag}")
+        stable_releases.append(latest)
     for page in range(1, max_pages + 1) if release_tag is None else ():
         try:
             rels = json.loads(gh_api_get(f"{API}/repos/{full}/releases?per_page=100&page={page}"))
@@ -737,8 +875,11 @@ def fetch_github_repo(repo, now_iso, release_tag=None):
         for r in rels:
             for ast in r.get("assets", []):
                 gh_downloads += int(ast.get("download_count") or 0)
-            if latest is None and not r.get("draft") and not r.get("prerelease"):
-                latest = r
+            if not r.get("draft") and not r.get("prerelease"):
+                if latest is None:
+                    latest = r
+                if len(stable_releases) < MAX_CHANGELOG_FULL:
+                    stable_releases.append(r)
         if len(rels) < 100:
             break
         if page == max_pages:
@@ -748,6 +889,7 @@ def fetch_github_repo(repo, now_iso, release_tag=None):
             rel = json.loads(gh_api_get(f"{API}/repos/{full}/releases/latest"))
             if isinstance(rel, dict) and not rel.get("draft") and not rel.get("prerelease"):
                 latest = rel
+                stable_releases.append(rel)
         except Exception:
             pass
     if latest is not None:
@@ -764,7 +906,7 @@ def fetch_github_repo(repo, now_iso, release_tag=None):
     raw = download_archive(dl_url)
     sha_hex = hashlib.sha256(raw).hexdigest()
     m, docs = extract_manifest_and_docs(raw, dl_url)
-    return dl_url, sha_hex, gh_downloads, updated, m, docs
+    return dl_url, sha_hex, gh_downloads, updated, m, docs, stable_releases
 
 
 def add_system_apps(index, repositories, blocklist, now_iso):
@@ -794,6 +936,45 @@ def add_system_apps(index, repositories, blocklist, now_iso):
         index["system_apps"] = system
 
 
+def write_changelog_files(index, now_iso, out_dir="changelogs"):
+    by_id = {}
+    for bucket in (index.get("apps", []), index.get("system_apps", [])):
+        for entry in bucket:
+            raw_releases = entry.pop("_full_releases", None)
+            if not raw_releases:
+                continue
+            pid = entry["id"]
+            if pid in by_id and len(by_id[pid]["releases"]) >= len(raw_releases):
+                continue
+            normalized = [normalize_release_entry(r, include_body=True) for r in raw_releases[:MAX_CHANGELOG_FULL]]
+            normalized = [item for item in normalized if item]
+            if not normalized:
+                continue
+            by_id[pid] = {
+                "app": "blockmd",
+                "schema_version": 1,
+                "id": pid,
+                "repo": entry.get("repo", ""),
+                "updated_at": now_iso,
+                "latest_version": normalized[0]["version"],
+                "releases": normalized,
+            }
+    os.makedirs(out_dir, exist_ok=True)
+    written = set()
+    for pid, doc in sorted(by_id.items()):
+        filename = f"{pid}.json"
+        written.add(filename)
+        path = os.path.join(out_dir, filename)
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(doc, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        os.replace(tmp, path)
+    for existing in os.listdir(out_dir):
+        if existing.endswith(".json") and existing not in written:
+            os.remove(os.path.join(out_dir, existing))
+
+
 def main():
     blocklist = load_set("blocklist.json")
     id_to_repo, repo_to_id = load_verified_map("verified.json")
@@ -817,6 +998,7 @@ def main():
         now_iso,
     )
     add_system_apps(out, {repo["full_name"].lower(): repo for repo in repositories}, blocklist, now_iso)
+    write_changelog_files(out, now_iso)
     tmp_path = "store-index.json.tmp"
     with open(tmp_path, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)

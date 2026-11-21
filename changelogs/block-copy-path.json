@@ -1,0 +1,34 @@
+{
+  "app": "blockmd",
+  "schema_version": 1,
+  "id": "block-copy-path",
+  "repo": "eachann1024/block-copy-path",
+  "updated_at": "2026-11-21T09:49:03Z",
+  "latest_version": "1.0.3",
+  "releases": [
+    {
+      "version": "1.0.3",
+      "tag": "v1.0.3",
+      "published_at": "2026-11-21T07:24:30Z",
+      "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.3",
+      "en": {
+        "other": [
+          "chore: drop beta flag (`ad5a3d1`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore: drop beta flag (`ad5a3d1`)"
+    },
+    {
+      "version": "1.0.2",
+      "tag": "v1.0.2",
+      "published_at": "2026-11-21T07:06:32Z",
+      "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.2",
+      "en": {
+        "other": [
+          "Automated release from `06c236d`."
+        ]
+      },
+      "body": "## Changes\n\n- Automated release from `06c236d`."
+    }
+  ]
+}

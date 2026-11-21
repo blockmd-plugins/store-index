@@ -1,0 +1,59 @@
+{
+  "app": "blockmd",
+  "schema_version": 1,
+  "id": "block-tarot",
+  "repo": "eachann1024/block-tarot",
+  "updated_at": "2026-11-21T09:49:03Z",
+  "latest_version": "1.0.13",
+  "releases": [
+    {
+      "version": "1.0.13",
+      "tag": "v1.0.13",
+      "published_at": "2026-11-21T06:16:49Z",
+      "html_url": "https://github.com/eachann1024/block-tarot/releases/tag/v1.0.13",
+      "en": {
+        "other": [
+          "feat(manifest): remove appearance settings section and ui:settings permission (`c18ba31`)",
+          "refactor(ui): remove settings_section surface handling (`7fcb3ca`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(manifest): remove appearance settings section and ui:settings permission (`c18ba31`)\n- refactor(ui): remove settings_section surface handling (`7fcb3ca`)"
+    },
+    {
+      "version": "1.0.10",
+      "tag": "v1.0.10",
+      "published_at": "2026-11-20T13:59:43Z",
+      "html_url": "https://github.com/eachann1024/block-tarot/releases/tag/v1.0.10",
+      "en": {
+        "other": [
+          "chore(git): ignore local agent prompts, design files, and build artifacts (`602557f`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore(git): ignore local agent prompts, design files, and build artifacts (`602557f`)"
+    },
+    {
+      "version": "1.0.7",
+      "tag": "v1.0.7",
+      "published_at": "2026-11-20T08:33:39Z",
+      "html_url": "https://github.com/eachann1024/block-tarot/releases/tag/v1.0.7",
+      "en": {
+        "other": [
+          "fix(ui): avoid duplicate Appearance section title and handle locale.changed (`b0e483b`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(ui): avoid duplicate Appearance section title and handle locale.changed (`b0e483b`)"
+    },
+    {
+      "version": "1.0.6",
+      "tag": "v1.0.6",
+      "published_at": "2026-11-20T07:08:17Z",
+      "html_url": "https://github.com/eachann1024/block-tarot/releases/tag/v1.0.6",
+      "en": {
+        "other": [
+          "Automated release from `76d9989`."
+        ]
+      },
+      "body": "## Changes\n\n- Automated release from `76d9989`."
+    }
+  ]
+}

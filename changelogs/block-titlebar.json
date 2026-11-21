@@ -1,0 +1,119 @@
+{
+  "app": "blockmd",
+  "schema_version": 1,
+  "id": "block-titlebar",
+  "repo": "eachann1024/block-titlebar",
+  "updated_at": "2026-11-21T09:49:03Z",
+  "latest_version": "1.0.24",
+  "releases": [
+    {
+      "version": "1.0.24",
+      "tag": "v1.0.24",
+      "published_at": "2026-11-21T07:55:30Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.24",
+      "en": {
+        "other": [
+          "chore: drop beta flag (`8c0ade0`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore: drop beta flag (`8c0ade0`)"
+    },
+    {
+      "version": "1.0.23",
+      "tag": "v1.0.23",
+      "published_at": "2026-11-21T06:16:44Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.23",
+      "en": {
+        "other": [
+          "feat(manifest): remove appearance settings section and ui:settings permission (`9f95c33`)",
+          "refactor(ui): remove settings_section surface handling (`8d5f268`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(manifest): remove appearance settings section and ui:settings permission (`9f95c33`)\n- refactor(ui): remove settings_section surface handling (`8d5f268`)"
+    },
+    {
+      "version": "1.0.19",
+      "tag": "v1.0.19",
+      "published_at": "2026-11-21T04:59:32Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.19",
+      "en": {
+        "other": [
+          "feat(ui): group titlebar icons into Markdown and Source Mode with per-mode previews (`ea142d1`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(ui): group titlebar icons into Markdown and Source Mode with per-mode previews (`ea142d1`)"
+    },
+    {
+      "version": "1.0.18",
+      "tag": "v1.0.18",
+      "published_at": "2026-11-21T03:55:14Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.18",
+      "en": {
+        "other": [
+          "feat(ui): show real titlebar icons and a live preview strip (`284a99b`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(ui): show real titlebar icons and a live preview strip (`284a99b`)"
+    },
+    {
+      "version": "1.0.17",
+      "tag": "v1.0.17",
+      "published_at": "2026-11-20T13:59:41Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.17",
+      "en": {
+        "other": [
+          "chore(git): ignore local agent prompts, design files, and build artifacts (`128746c`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore(git): ignore local agent prompts, design files, and build artifacts (`128746c`)"
+    },
+    {
+      "version": "1.0.14",
+      "tag": "v1.0.14",
+      "published_at": "2026-11-20T08:53:45Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.14",
+      "en": {
+        "other": [
+          "fix(ui): preserve hidden plugin slots while their owner plugin is disabled (`0ae35f4`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(ui): preserve hidden plugin slots while their owner plugin is disabled (`0ae35f4`)"
+    },
+    {
+      "version": "1.0.13",
+      "tag": "v1.0.13",
+      "published_at": "2026-11-20T08:33:37Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.13",
+      "en": {
+        "other": [
+          "fix(ui): avoid duplicate Appearance section title and sync sibling surfaces (`cc9abc4`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(ui): avoid duplicate Appearance section title and sync sibling surfaces (`cc9abc4`)"
+    },
+    {
+      "version": "1.0.5",
+      "tag": "v1.0.5",
+      "published_at": "2026-11-19T18:19:19Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.5",
+      "en": {
+        "other": [
+          "chore(manifest): switch block-titlebar ownership to eachann1024 (`e465da3`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore(manifest): switch block-titlebar ownership to eachann1024 (`e465da3`)"
+    },
+    {
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "published_at": "2026-11-19T18:15:09Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.0",
+      "en": {
+        "other": [
+          "Automated release from `8381428`."
+        ]
+      },
+      "body": "## Changes\n\n- Automated release from `8381428`."
+    }
+  ]
+}

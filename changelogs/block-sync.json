@@ -1,0 +1,299 @@
+{
+  "app": "blockmd",
+  "schema_version": 1,
+  "id": "block-sync",
+  "repo": "blockmd-plugins/block-sync",
+  "updated_at": "2026-11-21T09:49:03Z",
+  "latest_version": "1.3.102",
+  "releases": [
+    {
+      "version": "1.3.102",
+      "tag": "v1.3.102",
+      "published_at": "2026-11-21T09:24:53Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.102",
+      "zh": {
+        "other": [
+          "本次为维护版本，没有面向用户的变化。"
+        ]
+      },
+      "en": {
+        "other": [
+          "This is a maintenance release with no user-facing changes."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- This is a maintenance release with no user-facing changes.\n\n---\n\n## 中文\n\n### 其他\n\n- 本次为维护版本，没有面向用户的变化。"
+    },
+    {
+      "version": "1.3.100",
+      "tag": "v1.3.100",
+      "published_at": "2026-11-21T09:16:40Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.100",
+      "en": {
+        "other": [
+          "feat(sync): record scheduled no-op checks and render timeline quiet spans (`63d5689`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(sync): record scheduled no-op checks and render timeline quiet spans (`63d5689`)"
+    },
+    {
+      "version": "1.3.99",
+      "tag": "v1.3.99",
+      "published_at": "2026-11-21T07:39:29Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.99",
+      "en": {
+        "other": [
+          "chore: simplify status copy and remove redundant counts (`367e44e`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore: simplify status copy and remove redundant counts (`367e44e`)"
+    },
+    {
+      "version": "1.3.98",
+      "tag": "v1.3.98",
+      "published_at": "2026-11-21T07:24:35Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.98",
+      "en": {
+        "other": [
+          "chore: drop beta flag (`119c5ea`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore: drop beta flag (`119c5ea`)"
+    },
+    {
+      "version": "1.3.97",
+      "tag": "v1.3.97",
+      "published_at": "2026-11-21T06:18:43Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.97",
+      "en": {
+        "other": [
+          "fix(sync): use default preview palette for confirmation card (`f7c6af3`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): use default preview palette for confirmation card (`f7c6af3`)"
+    },
+    {
+      "version": "1.3.96",
+      "tag": "v1.3.96",
+      "published_at": "2026-11-21T03:50:21Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.96",
+      "en": {
+        "other": [
+          "feat: list only folders the user adds with the plus button (`7da211c`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat: list only folders the user adds with the plus button (`7da211c`)"
+    },
+    {
+      "version": "1.3.95",
+      "tag": "v1.3.95",
+      "published_at": "2026-11-21T03:42:39Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.95",
+      "en": {
+        "other": [
+          "feat(sync): add scheduled sync interval (`bb202b2`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(sync): add scheduled sync interval (`bb202b2`)"
+    },
+    {
+      "version": "1.3.93",
+      "tag": "v1.3.93",
+      "published_at": "2026-11-20T23:19:48Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.93",
+      "en": {
+        "other": [
+          "fix(sync): lock the worktree and branch while applying Git plans (`960a9f2`)",
+          "fix(sync): clear approved plans in the result transaction (`92f6f79`)",
+          "fix(sync): retain queued reminders until acknowledged (`549cfc9`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): lock the worktree and branch while applying Git plans (`960a9f2`)\n- fix(sync): clear approved plans in the result transaction (`92f6f79`)\n- fix(sync): retain queued reminders until acknowledged (`549cfc9`)"
+    },
+    {
+      "version": "1.3.90",
+      "tag": "v1.3.90",
+      "published_at": "2026-11-20T22:35:41Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.90",
+      "en": {
+        "other": [
+          "fix(sync): keep user Git worktree updates in Git (`5a44cec`)",
+          "fix(sync): scope confirmation failures to the affected note (`836474b`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): keep user Git worktree updates in Git (`5a44cec`)\n- fix(sync): scope confirmation failures to the affected note (`836474b`)"
+    },
+    {
+      "version": "1.3.87",
+      "tag": "v1.3.87",
+      "published_at": "2026-11-20T22:10:56Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.87",
+      "en": {
+        "other": [
+          "fix(sync): require durable approval before background writes (`00ef76e`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): require durable approval before background writes (`00ef76e`)"
+    },
+    {
+      "version": "1.3.85",
+      "tag": "v1.3.85",
+      "published_at": "2026-11-20T22:02:35Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.85",
+      "en": {
+        "other": [
+          "fix(sync): distinguish independent failure notices (`c337329`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): distinguish independent failure notices (`c337329`)"
+    },
+    {
+      "version": "1.3.84",
+      "tag": "v1.3.84",
+      "published_at": "2026-11-20T21:49:12Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.84",
+      "en": {
+        "other": [
+          "fix(sync): retain ordered retryable failure and conflict notices (`39918f3`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): retain ordered retryable failure and conflict notices (`39918f3`)"
+    },
+    {
+      "version": "1.3.83",
+      "tag": "v1.3.83",
+      "published_at": "2026-11-20T21:37:28Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.83",
+      "en": {
+        "other": [
+          "fix(sync): retain pending alerts within their file and configuration scope (`af5afac`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): retain pending alerts within their file and configuration scope (`af5afac`)"
+    },
+    {
+      "version": "1.3.82",
+      "tag": "v1.3.82",
+      "published_at": "2026-11-20T21:29:46Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.82",
+      "en": {
+        "other": [
+          "fix(sync): validate Git worktrees and history before writing (`805f82e`)",
+          "fix(sync): account for Git push URLs on reconnect (`c7876e5`)",
+          "fix(sync): retire stale pause notices and distinguish confirmation plans (`6cad22a`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): validate Git worktrees and history before writing (`805f82e`)\n- fix(sync): account for Git push URLs on reconnect (`c7876e5`)\n- fix(sync): retire stale pause notices and distinguish confirmation plans (`6cad22a`)"
+    },
+    {
+      "version": "1.3.79",
+      "tag": "v1.3.79",
+      "published_at": "2026-11-20T21:11:18Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.79",
+      "en": {
+        "other": [
+          "fix(sync): protect unpublished Git history during sync (`8288220`)",
+          "fix(sync): retry undelivered conflict and approval notices (`bf608ff`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): protect unpublished Git history during sync (`8288220`)\n- fix(sync): retry undelivered conflict and approval notices (`bf608ff`)"
+    },
+    {
+      "version": "1.3.76",
+      "tag": "v1.3.76",
+      "published_at": "2026-11-20T21:03:39Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.76",
+      "en": {
+        "other": [
+          "fix(sync): preserve confirmation scope and report notebook outcomes (`2638566`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): preserve confirmation scope and report notebook outcomes (`2638566`)"
+    },
+    {
+      "version": "1.3.75",
+      "tag": "v1.3.75",
+      "published_at": "2026-11-20T20:44:05Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.75",
+      "en": {
+        "other": [
+          "fix(sync): handle legacy wake targets and report sync failures consistently (`d09d9f2`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): handle legacy wake targets and report sync failures consistently (`d09d9f2`)"
+    },
+    {
+      "version": "1.3.73",
+      "tag": "v1.3.73",
+      "published_at": "2026-11-20T20:19:37Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.73",
+      "en": {
+        "other": [
+          "fix(sync): anchor writes via dir_fd, preserve HFS+ old inodes, guard Git index/submodules/pending commits, fix scoped assets & Markdown blocks (`54c96e0`)",
+          "fix(sync): preserve pending initial commit on empty Git remote and check staged conflicts across full batch before writing (`eee1357`)",
+          "fix(git): abort instead of recreating deleted remote branch (`22bf327`)",
+          "fix(git): include synced and rewritten pull paths in pre-write staged check (`2a1402a`)",
+          "fix(sync): reject invalid UTF-8 notes instead of silently replacing bytes (`eca6ef5`)",
+          "fix(sync): handle case-only note renames and collisions on case-insensitive filesystems (`fb474d6`)",
+          "fix(git): check .gitignore rules across full batch before writing any notebook (`7a8b93e`)",
+          "fix(git): prevent deleted remote branch revival across local clones, pruned refs, push TOCTOU, and test_conn (`4fa33e1`)",
+          "fix(git): commit exact planned blobs via index-locked plumbing to prevent races and assume-unchanged false success (`e06c0cb`)",
+          "fix(sync): resolve actual on-disk casing during single-note mirror and Git scans (`43797cb`)",
+          "fix(git): detect case-colliding note paths in Git tree on case-insensitive disks (`bb465da`)",
+          "fix(webdav): detect remote case-only note renames during single-note auto-sync (`12ad08e`)",
+          "fix(git): detect pre-pruned local clones with upstream tracking config before pushing to empty remote (`ee60e5f`)",
+          "fix(git): allow retrying failed initial push on empty-remote clone with upstream config (`715f98a`)",
+          "fix(webdav): detect remote directory case-only renames in single-note and scoped scans (`69508a6`)",
+          "fix(sync): pair case-only renamed attachments and detect case-colliding Git tracked assets (`e2a296f`)",
+          "fix(sync): avoid duplicating local asset keys under remote casing during full sync (`17ac45b`)",
+          "fix(git): inspect case-variant remote note text for asset collisions during single-note sync (`d516ddc`)",
+          "fix(sync): match sync_scope case-insensitively on case-insensitive filesystems (`066fc0e`)",
+          "fix(sync): pair paths that differ only by Unicode normalization (`e892b56`)",
+          "fix(git): push the checked commit, recover a killed index, and apply clean filters (`cd210bc`)",
+          "feat(sync): integrate system alerts, credentials and resume events (`e41447e`)",
+          "fix(sync): protect Git credentials and atomically save confirmation state (`3d07374`)",
+          "fix(sync): keep credential recovery outside the host storage quota (`0cb2a3b`)",
+          "fix(sync): preserve pending confirmation on note saves (`90dd475`)",
+          "fix(sync): reserve time to release WebDAV locks on resume (`8e57f90`)",
+          "fix(sync): bound save-triggered WebDAV work and preserve time for cleanup (`3d6ac15`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(sync): anchor writes via dir_fd, preserve HFS+ old inodes, guard Git index/submodules/pending commits, fix scoped assets & Markdown blocks (`54c96e0`)\n- fix(sync): preserve pending initial commit on empty Git remote and check staged conflicts across full batch before writing (`eee1357`)\n- fix(git): abort instead of recreating deleted remote branch (`22bf327`)\n- fix(git): include synced and rewritten pull paths in pre-write staged check (`2a1402a`)\n- fix(sync): reject invalid UTF-8 notes instead of silently replacing bytes (`eca6ef5`)\n- fix(sync): handle case-only note renames and collisions on case-insensitive filesystems (`fb474d6`)\n- fix(git): check .gitignore rules across full batch before writing any notebook (`7a8b93e`)\n- fix(git): prevent deleted remote branch revival across local clones, pruned refs, push TOCTOU, and test_conn (`4fa33e1`)\n- fix(git): commit exact planned blobs via index-locked plumbing to prevent races and assume-unchanged false success (`e06c0cb`)\n- fix(sync): resolve actual on-disk casing during single-note mirror and Git scans (`43797cb`)\n- fix(git): detect case-colliding note paths in Git tree on case-insensitive disks (`bb465da`)\n- fix(webdav): detect remote case-only note renames during single-note auto-sync (`12ad08e`)\n- fix(git): detect pre-pruned local clones with upstream tracking config before pushing to empty remote (`ee60e5f`)\n- fix(git): allow retrying failed initial push on empty-remote clone with upstream config (`715f98a`)\n- fix(webdav): detect remote directory case-only renames in single-note and scoped scans (`69508a6`)\n- fix(sync): pair case-only renamed attachments and detect case-colliding Git tracked assets (`e2a296f`)\n- fix(sync): avoid duplicating local asset keys under remote casing during full sync (`17ac45b`)\n- fix(git): inspect case-variant remote note text for asset collisions during single-note sync (`d516ddc`)\n- fix(sync): match sync_scope case-insensitively on case-insensitive filesystems (`066fc0e`)\n- fix(sync): pair paths that differ only by Unicode normalization (`e892b56`)\n- fix(git): push the checked commit, recover a killed index, and apply clean filters (`cd210bc`)\n- feat(sync): integrate system alerts, credentials and resume events (`e41447e`)\n- fix(sync): protect Git credentials and atomically save confirmation state (`3d07374`)\n- fix(sync): keep credential recovery outside the host storage quota (`0cb2a3b`)\n- fix(sync): preserve pending confirmation on note saves (`90dd475`)\n- fix(sync): reserve time to release WebDAV locks on resume (`8e57f90`)\n- fix(sync): bound save-triggered WebDAV work and preserve time for cleanup (`3d6ac15`)"
+    },
+    {
+      "version": "1.3.44",
+      "tag": "v1.3.44",
+      "published_at": "2026-11-20T14:03:35Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.44",
+      "en": {
+        "other": [
+          "fix(markdown): unify code segment scanner across list containers and escape rewritten links (`0738412`)",
+          "fix(mirror): harden inode stash fallbacks and support .git pointer files in cleanup (`6f2136f`)",
+          "fix(webdav): keep placeholder on unknown PUT transport outcome (`43f731b`)",
+          "fix(git): support .git pointer markers and enforce strict tracked file listing (`63cf680`)",
+          "fix(sync): verify physical target directory identities before mirror/git writes (`1745e12`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(markdown): unify code segment scanner across list containers and escape rewritten links (`0738412`)\n- fix(mirror): harden inode stash fallbacks and support .git pointer files in cleanup (`6f2136f`)\n- fix(webdav): keep placeholder on unknown PUT transport outcome (`43f731b`)\n- fix(git): support .git pointer markers and enforce strict tracked file listing (`63cf680`)\n- fix(sync): verify physical target directory identities before mirror/git writes (`1745e12`)"
+    },
+    {
+      "version": "1.3.39",
+      "tag": "v1.3.39",
+      "published_at": "2026-11-20T13:59:38Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.39",
+      "en": {
+        "other": [
+          "fix(git): retry transient network errors and humanize git error messages (`18f3075`)",
+          "feat: report live sync progress and harden atomic mirror writes (`582a3ec`)",
+          "fix(sync): skip false danger prompt on fast-forward/policy edits and make confirmation persistent and visible (`bfb2068`)",
+          "fix(sync): harden mirror/webdav/git protocols, asset planning, guards, and structured i18n confirmation (`322fc77`)",
+          "fix(sync): Python 3.9 compat, RENAME_SWAP, literal git commit --only, WebDAV LOCK/scoped scan, and pulled asset link rewrite (`6083df9`)",
+          "fix(sync): handle WebDAV LOCK 201 placeholders and RENAME_SWAP double-race (`cead4cf`)",
+          "fix(sync): harden mirror inode stash, alias/overlap guards, WebDAV cleanup, and Git recovery (`9990d86`)",
+          "fix(sync): fix Apple Git check-ignore, validate all bindings on auto-sync, defer asset overwrite, harden stash/markdown/WebDAV/Git (`637e459`)",
+          "chore(git): ignore local agent prompts, design files, and build artifacts (`143c411`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(git): retry transient network errors and humanize git error messages (`18f3075`)\n- feat: report live sync progress and harden atomic mirror writes (`582a3ec`)\n- fix(sync): skip false danger prompt on fast-forward/policy edits and make confirmation persistent and visible (`bfb2068`)\n- fix(sync): harden mirror/webdav/git protocols, asset planning, guards, and structured i18n confirmation (`322fc77`)\n- fix(sync): Python 3.9 compat, RENAME_SWAP, literal git commit --only, WebDAV LOCK/scoped scan, and pulled asset link rewrite (`6083df9`)\n- fix(sync): handle WebDAV LOCK 201 placeholders and RENAME_SWAP double-race (`cead4cf`)\n- fix(sync): harden mirror inode stash, alias/overlap guards, WebDAV cleanup, and Git recovery (`9990d86`)\n- fix(sync): fix Apple Git check-ignore, validate all bindings on auto-sync, defer asset overwrite, harden stash/markdown/WebDAV/Git (`637e459`)\n- chore(git): ignore local agent prompts, design files, and build artifacts (`143c411`)"
+    }
+  ]
+}

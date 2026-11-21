@@ -1,0 +1,136 @@
+{
+  "app": "blockmd",
+  "schema_version": 1,
+  "id": "block-canvas-dots",
+  "repo": "eachann1024/block-canvas-dots",
+  "updated_at": "2026-11-21T09:49:03Z",
+  "latest_version": "1.2.31",
+  "releases": [
+    {
+      "version": "1.2.31",
+      "tag": "v1.2.31",
+      "published_at": "2026-11-21T09:24:46Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.31",
+      "zh": {
+        "other": [
+          "本次为维护版本，没有面向用户的变化。"
+        ]
+      },
+      "en": {
+        "other": [
+          "This is a maintenance release with no user-facing changes."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- This is a maintenance release with no user-facing changes.\n\n---\n\n## 中文\n\n### 其他\n\n- 本次为维护版本，没有面向用户的变化。"
+    },
+    {
+      "version": "1.2.29",
+      "tag": "v1.2.29",
+      "published_at": "2026-11-21T06:16:42Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.29",
+      "en": {
+        "other": [
+          "feat(manifest): remove appearance settings section and bump version to 1.2.1 (`0f56922`)",
+          "refactor(ui): remove settings_section surface handling (`795f75f`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(manifest): remove appearance settings section and bump version to 1.2.1 (`0f56922`)\n- refactor(ui): remove settings_section surface handling (`795f75f`)"
+    },
+    {
+      "version": "1.2.25",
+      "tag": "v1.2.25",
+      "published_at": "2026-11-20T13:59:33Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.25",
+      "en": {
+        "other": [
+          "chore(git): ignore local agent prompts, design files, and build artifacts (`ad4e323`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore(git): ignore local agent prompts, design files, and build artifacts (`ad4e323`)"
+    },
+    {
+      "version": "1.2.22",
+      "tag": "v1.2.22",
+      "published_at": "2026-11-20T08:53:47Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.22",
+      "en": {
+        "other": [
+          "feat(ui): expose Reset Default action inside Appearance settings section (`afdf6ad`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(ui): expose Reset Default action inside Appearance settings section (`afdf6ad`)"
+    },
+    {
+      "version": "1.2.21",
+      "tag": "v1.2.21",
+      "published_at": "2026-11-20T08:33:38Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.21",
+      "en": {
+        "other": [
+          "feat(ui): refresh sibling settings surface when background changes (`e776e11`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(ui): refresh sibling settings surface when background changes (`e776e11`)"
+    },
+    {
+      "version": "1.2.19",
+      "tag": "v1.2.19",
+      "published_at": "2026-11-20T08:17:19Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.19",
+      "en": {
+        "other": [
+          "fix(ui): avoid duplicate section heading in Appearance settings (`ff70094`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(ui): avoid duplicate section heading in Appearance settings (`ff70094`)"
+    },
+    {
+      "version": "1.2.18",
+      "tag": "v1.2.18",
+      "published_at": "2026-11-20T07:58:39Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.18",
+      "en": {
+        "other": [
+          "feat: sync native editor background via host.ui.set_editor_background (`8a3aef6`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat: sync native editor background via host.ui.set_editor_background (`8a3aef6`)"
+    },
+    {
+      "version": "1.2.15",
+      "tag": "v1.2.15",
+      "published_at": "2026-11-20T06:54:05Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.15",
+      "en": {
+        "other": [
+          "chore(copy): rename plugin to Editor Background and emphasize contrast (`03134a6`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore(copy): rename plugin to Editor Background and emphasize contrast (`03134a6`)"
+    },
+    {
+      "version": "1.2.5",
+      "tag": "v1.2.5",
+      "published_at": "2026-11-19T18:11:33Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.5",
+      "en": {
+        "other": [
+          "feat(i18n): add English locale support to UI, actions, and reader output (`d67e3c9`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat(i18n): add English locale support to UI, actions, and reader output (`d67e3c9`)"
+    },
+    {
+      "version": "1.2.0",
+      "tag": "v1.2.0",
+      "published_at": "2026-11-19T15:35:43Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.0",
+      "en": {
+        "other": [
+          "Automated release from `cdc033e`."
+        ]
+      },
+      "body": "## Changes\n\n- Automated release from `cdc033e`."
+    }
+  ]
+}

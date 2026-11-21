@@ -1,0 +1,170 @@
+{
+  "app": "blockmd",
+  "schema_version": 1,
+  "id": "block-poop-everywhere",
+  "repo": "blockmd-plugins/block-poop-everywhere",
+  "updated_at": "2026-11-21T09:49:03Z",
+  "latest_version": "1.0.28",
+  "releases": [
+    {
+      "version": "1.0.28",
+      "tag": "v1.0.28",
+      "published_at": "2026-11-21T07:39:42Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.28",
+      "en": {
+        "other": [
+          "chore: simplify status copy and remove redundant counts (`f94ee08`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore: simplify status copy and remove redundant counts (`f94ee08`)"
+    },
+    {
+      "version": "1.0.27",
+      "tag": "v1.0.27",
+      "published_at": "2026-11-21T06:16:54Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.27",
+      "en": {
+        "other": [
+          "feat: remove appearance settings section and ui:settings permission (`56e9cea`)",
+          "refactor: remove settings_section surface and update extension map (`ae76a15`)"
+        ]
+      },
+      "body": "## Changes\n\n- feat: remove appearance settings section and ui:settings permission (`56e9cea`)\n- refactor: remove settings_section surface and update extension map (`ae76a15`)"
+    },
+    {
+      "version": "1.0.23",
+      "tag": "v1.0.23",
+      "published_at": "2026-11-20T17:55:50Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.23",
+      "en": {
+        "other": [
+          "fix: keep everyday settings to three choices (`906357f`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix: keep everyday settings to three choices (`906357f`)"
+    },
+    {
+      "version": "1.0.9",
+      "tag": "v1.0.9",
+      "published_at": "2026-11-20T15:58:54Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.9",
+      "en": {
+        "other": [
+          "fix(backdrop): apply editor background from settings (`1fca85b`)",
+          "fix: harden nested CommonMark parsing, link titles, legacy list wraps, and O(N) bq refdefs (v1.0.9) (`574d405`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(backdrop): apply editor background from settings (`1fca85b`)\n- fix: harden nested CommonMark parsing, link titles, legacy list wraps, and O(N) bq refdefs (v1.0.9) (`574d405`)"
+    },
+    {
+      "version": "1.0.8",
+      "tag": "v1.0.8",
+      "published_at": "2026-11-20T15:03:58Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.8",
+      "en": {
+        "other": [
+          "chore(git): ignore local agent prompts, design files, and build artifacts (`ef85173`)",
+          "fix: harden CommonMark container parsing, legacy wrap stripping, caption safety, dialog token validation, IPC queueing, and O(N) line splitting (v1.0.8) (`b1e8e8c`)"
+        ]
+      },
+      "body": "## Changes\n\n- chore(git): ignore local agent prompts, design files, and build artifacts (`ef85173`)\n- fix: harden CommonMark container parsing, legacy wrap stripping, caption safety, dialog token validation, IPC queueing, and O(N) line splitting (v1.0.8) (`b1e8e8c`)"
+    },
+    {
+      "version": "1.0.7",
+      "tag": "v1.0.7",
+      "published_at": "2026-11-20T13:47:25Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.7",
+      "en": {
+        "other": [
+          "fix(parser,wrap): preserve CommonMark lazy blockquote continuations, ordered list interruption, and separate quote pairs (v1.0.7) (`430a4f5`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(parser,wrap): preserve CommonMark lazy blockquote continuations, ordered list interruption, and separate quote pairs (v1.0.7) (`430a4f5`)"
+    },
+    {
+      "version": "1.0.6",
+      "tag": "v1.0.6",
+      "published_at": "2026-11-20T13:22:18Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.6",
+      "en": {
+        "other": [
+          "fix(parser,wrap): protect BOM fences, nested lazy quotes, multiline code spans, and lossless EOL/quote wrap (v1.0.6) (`b98f201`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(parser,wrap): protect BOM fences, nested lazy quotes, multiline code spans, and lossless EOL/quote wrap (v1.0.6) (`b98f201`)"
+    },
+    {
+      "version": "1.0.5",
+      "tag": "v1.0.5",
+      "published_at": "2026-11-20T12:56:12Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.5",
+      "en": {
+        "other": [
+          "fix(parser,wrap): harden CommonMark block boundaries, lossless file append, and strict dialog token (v1.0.5) (`a7fb48a`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix(parser,wrap): harden CommonMark block boundaries, lossless file append, and strict dialog token (v1.0.5) (`a7fb48a`)"
+    },
+    {
+      "version": "1.0.4",
+      "tag": "v1.0.4",
+      "published_at": "2026-11-20T12:22:17Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.4",
+      "en": {
+        "other": [
+          "fix: harden CommonMark bq/html/wrap boundaries, bind dialog_token to dialog actions, strict active flush (v1.0.4) (`0716643`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix: harden CommonMark bq/html/wrap boundaries, bind dialog_token to dialog actions, strict active flush (v1.0.4) (`0716643`)"
+    },
+    {
+      "version": "1.0.3",
+      "tag": "v1.0.3",
+      "published_at": "2026-11-20T11:53:56Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.3",
+      "en": {
+        "other": [
+          "fix: harden markdown container safety, clean drop rendering, lossless wrap, and dialog token (`48b8203`)",
+          "chore: bump version to 1.0.3 for clean blockquote drop format (`978bf8b`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix: harden markdown container safety, clean drop rendering, lossless wrap, and dialog token (`48b8203`)\n- chore: bump version to 1.0.3 for clean blockquote drop format (`978bf8b`)"
+    },
+    {
+      "version": "1.0.2",
+      "tag": "v1.0.2",
+      "published_at": "2026-11-20T11:40:41Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.2",
+      "en": {
+        "other": [
+          "fix: harden markdown container safety, lossless wrap, notebook isolation, and dialog token (`8e72fff`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix: harden markdown container safety, lossless wrap, notebook isolation, and dialog token (`8e72fff`)"
+    },
+    {
+      "version": "1.0.1",
+      "tag": "v1.0.1",
+      "published_at": "2026-11-20T11:12:27Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.1",
+      "en": {
+        "other": [
+          "fix: harden flush marker boundaries, path preservation, confirmation tokens, and atomic panel toggle (`c94145f`)"
+        ]
+      },
+      "body": "## Changes\n\n- fix: harden flush marker boundaries, path preservation, confirmation tokens, and atomic panel toggle (`c94145f`)"
+    },
+    {
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "published_at": "2026-11-20T10:45:12Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.0",
+      "en": {
+        "other": [
+          "Automated release from `6c5ca3f`."
+        ]
+      },
+      "body": "## Changes\n\n- Automated release from `6c5ca3f`."
+    }
+  ]
+}

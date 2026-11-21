@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-21T09:25:50Z",
+  "updated_at": "2026-11-21T09:49:03Z",
   "apps": [
     {
       "app": "blockmd",
@@ -70,7 +70,25 @@
           "en": "Automatically trigger incremental sync when a note is saved"
         }
       },
-      "beta": true
+      "beta": true,
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-sync.json",
+      "changelog": [
+        {
+          "version": "1.3.44",
+          "tag": "v1.3.44",
+          "published_at": "2026-11-20T14:03:35Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.44",
+          "en": {
+            "other": [
+              "fix(markdown): unify code segment scanner across list containers and escape rewritten links (`0738412`)",
+              "fix(mirror): harden inode stash fallbacks and support .git pointer files in cleanup (`6f2136f`)",
+              "fix(webdav): keep placeholder on unknown PUT transport outcome (`43f731b`)",
+              "fix(git): support .git pointer markers and enforce strict tracked file listing (`63cf680`)",
+              "fix(sync): verify physical target directory identities before mirror/git writes (`1745e12`)"
+            ]
+          }
+        }
+      ]
     },
     {
       "app": "blockmd",
@@ -88,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.28/block-poop-everywhere-v1.0.28.tar.gz",
       "sha256": "2d066d82850cce2f9cf722e123bc29888b8f937f9e241c098af7ec0f4d1cc626",
-      "downloads": 66,
+      "downloads": 67,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-21T07:39:42Z",
@@ -182,7 +200,68 @@
           "zh": "监听笔记切换、深浅色主题与语言变化事件并同步界面状态。",
           "en": "React to note open, theme change, and locale change workspace events."
         }
-      }
+      },
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-poop-everywhere.json",
+      "changelog": [
+        {
+          "version": "1.0.28",
+          "tag": "v1.0.28",
+          "published_at": "2026-11-21T07:39:42Z",
+          "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.28",
+          "en": {
+            "other": [
+              "chore: simplify status copy and remove redundant counts (`f94ee08`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.27",
+          "tag": "v1.0.27",
+          "published_at": "2026-11-21T06:16:54Z",
+          "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.27",
+          "en": {
+            "other": [
+              "feat: remove appearance settings section and ui:settings permission (`56e9cea`)",
+              "refactor: remove settings_section surface and update extension map (`ae76a15`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.23",
+          "tag": "v1.0.23",
+          "published_at": "2026-11-20T17:55:50Z",
+          "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.23",
+          "en": {
+            "other": [
+              "fix: keep everyday settings to three choices (`906357f`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.9",
+          "tag": "v1.0.9",
+          "published_at": "2026-11-20T15:58:54Z",
+          "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.9",
+          "en": {
+            "other": [
+              "fix(backdrop): apply editor background from settings (`1fca85b`)",
+              "fix: harden nested CommonMark parsing, link titles, legacy list wraps, and O(N) bq refdefs (v1.0.9) (`574d405`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.8",
+          "tag": "v1.0.8",
+          "published_at": "2026-11-20T15:03:58Z",
+          "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.8",
+          "en": {
+            "other": [
+              "chore(git): ignore local agent prompts, design files, and build artifacts (`ef85173`)",
+              "fix: harden CommonMark container parsing, legacy wrap stripping, caption safety, dialog token validation, IPC queueing, and O(N) line splitting (v1.0.8) (`b1e8e8c`)"
+            ]
+          }
+        }
+      ]
     },
     {
       "app": "blockmd",
@@ -250,7 +329,66 @@
           "zh": "在保存笔记时自动检测并上传其中的本地图片",
           "en": "Automatically detect and upload local images when a note is saved"
         }
-      }
+      },
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-image-host.json",
+      "changelog": [
+        {
+          "version": "1.2.34",
+          "tag": "v1.2.34",
+          "published_at": "2026-11-21T07:55:38Z",
+          "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.34",
+          "en": {
+            "other": [
+              "chore: drop beta flag (`b531b2e`)"
+            ]
+          }
+        },
+        {
+          "version": "1.2.33",
+          "tag": "v1.2.33",
+          "published_at": "2026-11-21T07:39:34Z",
+          "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.33",
+          "en": {
+            "other": [
+              "chore: simplify status copy and remove redundant counts (`dc2871e`)"
+            ]
+          }
+        },
+        {
+          "version": "1.2.32",
+          "tag": "v1.2.32",
+          "published_at": "2026-11-21T03:50:20Z",
+          "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.32",
+          "en": {
+            "other": [
+              "feat: list only folders the user adds with the plus button (`4587c65`)"
+            ]
+          }
+        },
+        {
+          "version": "1.2.31",
+          "tag": "v1.2.31",
+          "published_at": "2026-11-20T13:59:37Z",
+          "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.31",
+          "en": {
+            "other": [
+              "feat: unify titlebar actions, status badge, and deduplicated upload progress (`656feb2`)",
+              "chore(git): ignore local agent prompts, design files, and build artifacts (`78634b1`)"
+            ]
+          }
+        },
+        {
+          "version": "1.2.27",
+          "tag": "v1.2.27",
+          "published_at": "2026-11-20T09:09:41Z",
+          "html_url": "https://github.com/eachann1024/block-image-host/releases/tag/v1.2.27",
+          "en": {
+            "other": [
+              "fix(parser): handle inline list fenced code blocks and indented code after headings (`e452d46`)"
+            ]
+          }
+        }
+      ]
     },
     {
       "app": "blockmd",
@@ -268,7 +406,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.31/block-canvas-dots-v1.2.31.tar.gz",
       "sha256": "a3d126f9fede8c1c1cc18246d1cfed27b7ae133137d696a36558c8cd7cec0203",
-      "downloads": 86,
+      "downloads": 88,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T09:24:46Z",
@@ -308,7 +446,71 @@
           "zh": "应用并切换编辑器点阵或方格背景",
           "en": "Apply and toggle editor dot or grid backgrounds"
         }
-      }
+      },
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-canvas-dots.json",
+      "changelog": [
+        {
+          "version": "1.2.31",
+          "tag": "v1.2.31",
+          "published_at": "2026-11-21T09:24:46Z",
+          "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.31",
+          "zh": {
+            "other": [
+              "本次为维护版本，没有面向用户的变化。"
+            ]
+          },
+          "en": {
+            "other": [
+              "This is a maintenance release with no user-facing changes."
+            ]
+          }
+        },
+        {
+          "version": "1.2.29",
+          "tag": "v1.2.29",
+          "published_at": "2026-11-21T06:16:42Z",
+          "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.29",
+          "en": {
+            "other": [
+              "feat(manifest): remove appearance settings section and bump version to 1.2.1 (`0f56922`)",
+              "refactor(ui): remove settings_section surface handling (`795f75f`)"
+            ]
+          }
+        },
+        {
+          "version": "1.2.25",
+          "tag": "v1.2.25",
+          "published_at": "2026-11-20T13:59:33Z",
+          "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.25",
+          "en": {
+            "other": [
+              "chore(git): ignore local agent prompts, design files, and build artifacts (`ad4e323`)"
+            ]
+          }
+        },
+        {
+          "version": "1.2.22",
+          "tag": "v1.2.22",
+          "published_at": "2026-11-20T08:53:47Z",
+          "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.22",
+          "en": {
+            "other": [
+              "feat(ui): expose Reset Default action inside Appearance settings section (`afdf6ad`)"
+            ]
+          }
+        },
+        {
+          "version": "1.2.21",
+          "tag": "v1.2.21",
+          "published_at": "2026-11-20T08:33:38Z",
+          "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.21",
+          "en": {
+            "other": [
+              "feat(ui): refresh sibling settings surface when background changes (`e776e11`)"
+            ]
+          }
+        }
+      ]
     },
     {
       "app": "blockmd",
@@ -326,7 +528,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.24/block-titlebar-v1.0.24.tar.gz",
       "sha256": "fd83da3b13c244667b268b8ac97e0c2379cd82e158bcd4cb0511900554cb4f1a",
-      "downloads": 81,
+      "downloads": 82,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T07:55:30Z",
@@ -363,7 +565,66 @@
           "zh": "读取顶栏图标项并控制各个按钮的显示与隐藏",
           "en": "Read titlebar items and control visibility of individual buttons"
         }
-      }
+      },
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-titlebar.json",
+      "changelog": [
+        {
+          "version": "1.0.24",
+          "tag": "v1.0.24",
+          "published_at": "2026-11-21T07:55:30Z",
+          "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.24",
+          "en": {
+            "other": [
+              "chore: drop beta flag (`8c0ade0`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.23",
+          "tag": "v1.0.23",
+          "published_at": "2026-11-21T06:16:44Z",
+          "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.23",
+          "en": {
+            "other": [
+              "feat(manifest): remove appearance settings section and ui:settings permission (`9f95c33`)",
+              "refactor(ui): remove settings_section surface handling (`8d5f268`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.19",
+          "tag": "v1.0.19",
+          "published_at": "2026-11-21T04:59:32Z",
+          "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.19",
+          "en": {
+            "other": [
+              "feat(ui): group titlebar icons into Markdown and Source Mode with per-mode previews (`ea142d1`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.18",
+          "tag": "v1.0.18",
+          "published_at": "2026-11-21T03:55:14Z",
+          "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.18",
+          "en": {
+            "other": [
+              "feat(ui): show real titlebar icons and a live preview strip (`284a99b`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.17",
+          "tag": "v1.0.17",
+          "published_at": "2026-11-20T13:59:41Z",
+          "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.17",
+          "en": {
+            "other": [
+              "chore(git): ignore local agent prompts, design files, and build artifacts (`128746c`)"
+            ]
+          }
+        }
+      ]
     },
     {
       "app": "blockmd",
@@ -381,7 +642,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.13/block-tarot-v1.0.13.tar.gz",
       "sha256": "7149faee25d8cff7715ecda9955609d3ee99591505a9c194e468678e45d25ba6",
-      "downloads": 48,
+      "downloads": 49,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T06:16:49Z",
@@ -430,7 +691,55 @@
           "zh": "监听语言与主题切换事件，同步更新顶栏按钮与界面状态",
           "en": "Listen to locale and theme change events to sync button and UI state"
         }
-      }
+      },
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-tarot.json",
+      "changelog": [
+        {
+          "version": "1.0.13",
+          "tag": "v1.0.13",
+          "published_at": "2026-11-21T06:16:49Z",
+          "html_url": "https://github.com/eachann1024/block-tarot/releases/tag/v1.0.13",
+          "en": {
+            "other": [
+              "feat(manifest): remove appearance settings section and ui:settings permission (`c18ba31`)",
+              "refactor(ui): remove settings_section surface handling (`7fcb3ca`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.10",
+          "tag": "v1.0.10",
+          "published_at": "2026-11-20T13:59:43Z",
+          "html_url": "https://github.com/eachann1024/block-tarot/releases/tag/v1.0.10",
+          "en": {
+            "other": [
+              "chore(git): ignore local agent prompts, design files, and build artifacts (`602557f`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.7",
+          "tag": "v1.0.7",
+          "published_at": "2026-11-20T08:33:39Z",
+          "html_url": "https://github.com/eachann1024/block-tarot/releases/tag/v1.0.7",
+          "en": {
+            "other": [
+              "fix(ui): avoid duplicate Appearance section title and handle locale.changed (`b0e483b`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.6",
+          "tag": "v1.0.6",
+          "published_at": "2026-11-20T07:08:17Z",
+          "html_url": "https://github.com/eachann1024/block-tarot/releases/tag/v1.0.6",
+          "en": {
+            "other": [
+              "Automated release from `76d9989`."
+            ]
+          }
+        }
+      ]
     }
   ],
   "system_apps": [
@@ -514,7 +823,70 @@
           "zh": "系统唤醒或恢复联网后按现有规则补做自动同步",
           "en": "Resume automatic sync after waking or reconnecting, using the existing sync rules"
         }
-      }
+      },
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-sync.json",
+      "changelog": [
+        {
+          "version": "1.3.102",
+          "tag": "v1.3.102",
+          "published_at": "2026-11-21T09:24:53Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.102",
+          "zh": {
+            "other": [
+              "本次为维护版本，没有面向用户的变化。"
+            ]
+          },
+          "en": {
+            "other": [
+              "This is a maintenance release with no user-facing changes."
+            ]
+          }
+        },
+        {
+          "version": "1.3.100",
+          "tag": "v1.3.100",
+          "published_at": "2026-11-21T09:16:40Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.100",
+          "en": {
+            "other": [
+              "feat(sync): record scheduled no-op checks and render timeline quiet spans (`63d5689`)"
+            ]
+          }
+        },
+        {
+          "version": "1.3.99",
+          "tag": "v1.3.99",
+          "published_at": "2026-11-21T07:39:29Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.99",
+          "en": {
+            "other": [
+              "chore: simplify status copy and remove redundant counts (`367e44e`)"
+            ]
+          }
+        },
+        {
+          "version": "1.3.98",
+          "tag": "v1.3.98",
+          "published_at": "2026-11-21T07:24:35Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.98",
+          "en": {
+            "other": [
+              "chore: drop beta flag (`119c5ea`)"
+            ]
+          }
+        },
+        {
+          "version": "1.3.97",
+          "tag": "v1.3.97",
+          "published_at": "2026-11-21T06:18:43Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.97",
+          "en": {
+            "other": [
+              "fix(sync): use default preview palette for confirmation card (`f7c6af3`)"
+            ]
+          }
+        }
+      ]
     },
     {
       "app": "blockmd",
@@ -532,7 +904,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-copy-path/releases/download/v1.0.3/block-copy-path-v1.0.3.tar.gz",
       "sha256": "1382f91dc76e34306e54b4070f0ba0e457b29b259e12737c6ee2cc28b69fbf3a",
-      "downloads": 7,
+      "downloads": 8,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T07:24:30Z",
@@ -581,7 +953,32 @@
           "zh": "把路径写入剪贴板",
           "en": "Write the path to the clipboard"
         }
-      }
+      },
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-copy-path.json",
+      "changelog": [
+        {
+          "version": "1.0.3",
+          "tag": "v1.0.3",
+          "published_at": "2026-11-21T07:24:30Z",
+          "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.3",
+          "en": {
+            "other": [
+              "chore: drop beta flag (`ad5a3d1`)"
+            ]
+          }
+        },
+        {
+          "version": "1.0.2",
+          "tag": "v1.0.2",
+          "published_at": "2026-11-21T07:06:32Z",
+          "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.2",
+          "en": {
+            "other": [
+              "Automated release from `06c236d`."
+            ]
+          }
+        }
+      ]
     }
   ]
 }
