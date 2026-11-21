@@ -1,3 +1,5 @@
 [
-  "maotiaosan/block-dot-matrix"
+  "maotiaosan/block-dot-matrix",
+  "block-lang-gomod",
+  "block-lang-plist"
 ]
