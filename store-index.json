@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-22T06:25:23Z",
+  "updated_at": "2026-11-22T06:26:52Z",
   "apps": [
     {
       "app": "blockmd",
@@ -750,19 +750,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.3.108",
+      "version": "1.3.109",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "支持本地目录镜像、WebDAV 与 Git 仓库的多端增量同步",
         "en": "Incremental notebook sync via local mirror, WebDAV, and Git"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.108/block-sync-v1.3.108.tar.gz",
-      "sha256": "ce8485a198ce5bfec17c9a18eb175a8ae611e9ada35f82c26568c40329fb292f",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.109/block-sync-v1.3.109.tar.gz",
+      "sha256": "96d491c8ca6c75fa08058e917ee1cfc10b2cf4157b8863f01db931b1e98aa083",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-22T06:18:39Z",
+      "updated_at": "2026-11-22T06:26:35Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -827,6 +827,22 @@
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-sync.json",
       "changelog": [
         {
+          "version": "1.3.109",
+          "tag": "v1.3.109",
+          "published_at": "2026-11-22T06:26:35Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.109",
+          "zh": {
+            "fixes": [
+              "每个同步目标标签页现在独立展示各自的最近同步活动，不同目标的记录不再相互混杂。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "Sync now displays recent sync activity separately within each sync target tab, preventing records from different targets from mixing together."
+            ]
+          }
+        },
+        {
           "version": "1.3.108",
           "tag": "v1.3.108",
           "published_at": "2026-11-22T06:18:39Z",
@@ -883,17 +899,6 @@
           "en": {
             "other": [
               "chore: simplify status copy and remove redundant counts (`367e44e`)"
-            ]
-          }
-        },
-        {
-          "version": "1.3.98",
-          "tag": "v1.3.98",
-          "published_at": "2026-11-21T07:24:35Z",
-          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.98",
-          "en": {
-            "other": [
-              "chore: drop beta flag (`119c5ea`)"
             ]
           }
         }
