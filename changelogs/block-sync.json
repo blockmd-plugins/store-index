@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-22T06:48:42Z",
-  "latest_version": "1.3.109",
+  "updated_at": "2026-11-22T06:59:41Z",
+  "latest_version": "1.3.110",
   "releases": [
+    {
+      "version": "1.3.110",
+      "tag": "v1.3.110",
+      "published_at": "2026-11-22T06:59:24Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.110",
+      "zh": {
+        "fixes": [
+          "对于尚未完成配置的同步目标，同步界面不再显示最近同步活动卡片。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "Sync now hides the recent sync activity card for sync targets that have not been configured."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- Sync now hides the recent sync activity card for sync targets that have not been configured.\n\n---\n\n## 中文\n\n### 修复\n\n- 对于尚未完成配置的同步目标，同步界面不再显示最近同步活动卡片。"
+    },
     {
       "version": "1.3.109",
       "tag": "v1.3.109",
@@ -260,44 +277,6 @@
         ]
       },
       "body": "## Changes\n\n- fix(sync): handle legacy wake targets and report sync failures consistently (`d09d9f2`)"
-    },
-    {
-      "version": "1.3.73",
-      "tag": "v1.3.73",
-      "published_at": "2026-11-20T20:19:37Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.73",
-      "en": {
-        "other": [
-          "fix(sync): anchor writes via dir_fd, preserve HFS+ old inodes, guard Git index/submodules/pending commits, fix scoped assets & Markdown blocks (`54c96e0`)",
-          "fix(sync): preserve pending initial commit on empty Git remote and check staged conflicts across full batch before writing (`eee1357`)",
-          "fix(git): abort instead of recreating deleted remote branch (`22bf327`)",
-          "fix(git): include synced and rewritten pull paths in pre-write staged check (`2a1402a`)",
-          "fix(sync): reject invalid UTF-8 notes instead of silently replacing bytes (`eca6ef5`)",
-          "fix(sync): handle case-only note renames and collisions on case-insensitive filesystems (`fb474d6`)",
-          "fix(git): check .gitignore rules across full batch before writing any notebook (`7a8b93e`)",
-          "fix(git): prevent deleted remote branch revival across local clones, pruned refs, push TOCTOU, and test_conn (`4fa33e1`)",
-          "fix(git): commit exact planned blobs via index-locked plumbing to prevent races and assume-unchanged false success (`e06c0cb`)",
-          "fix(sync): resolve actual on-disk casing during single-note mirror and Git scans (`43797cb`)",
-          "fix(git): detect case-colliding note paths in Git tree on case-insensitive disks (`bb465da`)",
-          "fix(webdav): detect remote case-only note renames during single-note auto-sync (`12ad08e`)",
-          "fix(git): detect pre-pruned local clones with upstream tracking config before pushing to empty remote (`ee60e5f`)",
-          "fix(git): allow retrying failed initial push on empty-remote clone with upstream config (`715f98a`)",
-          "fix(webdav): detect remote directory case-only renames in single-note and scoped scans (`69508a6`)",
-          "fix(sync): pair case-only renamed attachments and detect case-colliding Git tracked assets (`e2a296f`)",
-          "fix(sync): avoid duplicating local asset keys under remote casing during full sync (`17ac45b`)",
-          "fix(git): inspect case-variant remote note text for asset collisions during single-note sync (`d516ddc`)",
-          "fix(sync): match sync_scope case-insensitively on case-insensitive filesystems (`066fc0e`)",
-          "fix(sync): pair paths that differ only by Unicode normalization (`e892b56`)",
-          "fix(git): push the checked commit, recover a killed index, and apply clean filters (`cd210bc`)",
-          "feat(sync): integrate system alerts, credentials and resume events (`e41447e`)",
-          "fix(sync): protect Git credentials and atomically save confirmation state (`3d07374`)",
-          "fix(sync): keep credential recovery outside the host storage quota (`0cb2a3b`)",
-          "fix(sync): preserve pending confirmation on note saves (`90dd475`)",
-          "fix(sync): reserve time to release WebDAV locks on resume (`8e57f90`)",
-          "fix(sync): bound save-triggered WebDAV work and preserve time for cleanup (`3d6ac15`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix(sync): anchor writes via dir_fd, preserve HFS+ old inodes, guard Git index/submodules/pending commits, fix scoped assets & Markdown blocks (`54c96e0`)\n- fix(sync): preserve pending initial commit on empty Git remote and check staged conflicts across full batch before writing (`eee1357`)\n- fix(git): abort instead of recreating deleted remote branch (`22bf327`)\n- fix(git): include synced and rewritten pull paths in pre-write staged check (`2a1402a`)\n- fix(sync): reject invalid UTF-8 notes instead of silently replacing bytes (`eca6ef5`)\n- fix(sync): handle case-only note renames and collisions on case-insensitive filesystems (`fb474d6`)\n- fix(git): check .gitignore rules across full batch before writing any notebook (`7a8b93e`)\n- fix(git): prevent deleted remote branch revival across local clones, pruned refs, push TOCTOU, and test_conn (`4fa33e1`)\n- fix(git): commit exact planned blobs via index-locked plumbing to prevent races and assume-unchanged false success (`e06c0cb`)\n- fix(sync): resolve actual on-disk casing during single-note mirror and Git scans (`43797cb`)\n- fix(git): detect case-colliding note paths in Git tree on case-insensitive disks (`bb465da`)\n- fix(webdav): detect remote case-only note renames during single-note auto-sync (`12ad08e`)\n- fix(git): detect pre-pruned local clones with upstream tracking config before pushing to empty remote (`ee60e5f`)\n- fix(git): allow retrying failed initial push on empty-remote clone with upstream config (`715f98a`)\n- fix(webdav): detect remote directory case-only renames in single-note and scoped scans (`69508a6`)\n- fix(sync): pair case-only renamed attachments and detect case-colliding Git tracked assets (`e2a296f`)\n- fix(sync): avoid duplicating local asset keys under remote casing during full sync (`17ac45b`)\n- fix(git): inspect case-variant remote note text for asset collisions during single-note sync (`d516ddc`)\n- fix(sync): match sync_scope case-insensitively on case-insensitive filesystems (`066fc0e`)\n- fix(sync): pair paths that differ only by Unicode normalization (`e892b56`)\n- fix(git): push the checked commit, recover a killed index, and apply clean filters (`cd210bc`)\n- feat(sync): integrate system alerts, credentials and resume events (`e41447e`)\n- fix(sync): protect Git credentials and atomically save confirmation state (`3d07374`)\n- fix(sync): keep credential recovery outside the host storage quota (`0cb2a3b`)\n- fix(sync): preserve pending confirmation on note saves (`90dd475`)\n- fix(sync): reserve time to release WebDAV locks on resume (`8e57f90`)\n- fix(sync): bound save-triggered WebDAV work and preserve time for cleanup (`3d6ac15`)"
     }
   ]
 }
