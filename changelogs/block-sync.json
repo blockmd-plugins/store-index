@@ -3,9 +3,32 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-21T23:16:50Z",
-  "latest_version": "1.3.102",
+  "updated_at": "2026-11-22T06:19:21Z",
+  "latest_version": "1.3.108",
   "releases": [
+    {
+      "version": "1.3.108",
+      "tag": "v1.3.108",
+      "published_at": "2026-11-22T06:18:39Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.108",
+      "zh": {
+        "new": [
+          "同步插件现已支持同时向多个目标执行同步，并为各个通道独立显示实时进度。"
+        ],
+        "fixes": [
+          "同步插件现会在保存设置时拦截清空唯一同步目标的操作，防止所有同步目的地被意外移除。"
+        ]
+      },
+      "en": {
+        "new": [
+          "Sync now supports simultaneous synchronization across multiple targets and displays independent real-time progress for each channel."
+        ],
+        "fixes": [
+          "Sync now rejects saving configuration changes that would clear the only remaining sync target, preventing all destinations from being accidentally removed."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- Sync now supports simultaneous synchronization across multiple targets and displays independent real-time progress for each channel.\n\n### Fixes\n\n- Sync now rejects saving configuration changes that would clear the only remaining sync target, preventing all destinations from being accidentally removed.\n\n---\n\n## 中文\n\n### 新功能\n\n- 同步插件现已支持同时向多个目标执行同步，并为各个通道独立显示实时进度。\n\n### 修复\n\n- 同步插件现会在保存设置时拦截清空唯一同步目标的操作，防止所有同步目的地被意外移除。"
+    },
     {
       "version": "1.3.102",
       "tag": "v1.3.102",
@@ -274,26 +297,6 @@
         ]
       },
       "body": "## Changes\n\n- fix(markdown): unify code segment scanner across list containers and escape rewritten links (`0738412`)\n- fix(mirror): harden inode stash fallbacks and support .git pointer files in cleanup (`6f2136f`)\n- fix(webdav): keep placeholder on unknown PUT transport outcome (`43f731b`)\n- fix(git): support .git pointer markers and enforce strict tracked file listing (`63cf680`)\n- fix(sync): verify physical target directory identities before mirror/git writes (`1745e12`)"
-    },
-    {
-      "version": "1.3.39",
-      "tag": "v1.3.39",
-      "published_at": "2026-11-20T13:59:38Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.39",
-      "en": {
-        "other": [
-          "fix(git): retry transient network errors and humanize git error messages (`18f3075`)",
-          "feat: report live sync progress and harden atomic mirror writes (`582a3ec`)",
-          "fix(sync): skip false danger prompt on fast-forward/policy edits and make confirmation persistent and visible (`bfb2068`)",
-          "fix(sync): harden mirror/webdav/git protocols, asset planning, guards, and structured i18n confirmation (`322fc77`)",
-          "fix(sync): Python 3.9 compat, RENAME_SWAP, literal git commit --only, WebDAV LOCK/scoped scan, and pulled asset link rewrite (`6083df9`)",
-          "fix(sync): handle WebDAV LOCK 201 placeholders and RENAME_SWAP double-race (`cead4cf`)",
-          "fix(sync): harden mirror inode stash, alias/overlap guards, WebDAV cleanup, and Git recovery (`9990d86`)",
-          "fix(sync): fix Apple Git check-ignore, validate all bindings on auto-sync, defer asset overwrite, harden stash/markdown/WebDAV/Git (`637e459`)",
-          "chore(git): ignore local agent prompts, design files, and build artifacts (`143c411`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix(git): retry transient network errors and humanize git error messages (`18f3075`)\n- feat: report live sync progress and harden atomic mirror writes (`582a3ec`)\n- fix(sync): skip false danger prompt on fast-forward/policy edits and make confirmation persistent and visible (`bfb2068`)\n- fix(sync): harden mirror/webdav/git protocols, asset planning, guards, and structured i18n confirmation (`322fc77`)\n- fix(sync): Python 3.9 compat, RENAME_SWAP, literal git commit --only, WebDAV LOCK/scoped scan, and pulled asset link rewrite (`6083df9`)\n- fix(sync): handle WebDAV LOCK 201 placeholders and RENAME_SWAP double-race (`cead4cf`)\n- fix(sync): harden mirror inode stash, alias/overlap guards, WebDAV cleanup, and Git recovery (`9990d86`)\n- fix(sync): fix Apple Git check-ignore, validate all bindings on auto-sync, defer asset overwrite, harden stash/markdown/WebDAV/Git (`637e459`)\n- chore(git): ignore local agent prompts, design files, and build artifacts (`143c411`)"
     }
   ]
 }
