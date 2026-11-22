@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-copy-path",
   "repo": "eachann1024/block-copy-path",
-  "updated_at": "2026-11-22T06:59:41Z",
-  "latest_version": "1.0.9",
+  "updated_at": "2026-11-22T07:00:36Z",
+  "latest_version": "1.0.10",
   "releases": [
+    {
+      "version": "1.0.10",
+      "tag": "v1.0.10",
+      "published_at": "2026-11-22T07:00:13Z",
+      "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.10",
+      "zh": {
+        "fixes": [
+          "示例路径预览现已基于用户的主目录生成，能够准确展示真实的文件路径效果。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "The sample path preview now builds example paths from your home directory to accurately reflect real file paths."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- The sample path preview now builds example paths from your home directory to accurately reflect real file paths.\n\n---\n\n## 中文\n\n### 修复\n\n- 示例路径预览现已基于用户的主目录生成，能够准确展示真实的文件路径效果。"
+    },
     {
       "version": "1.0.9",
       "tag": "v1.0.9",

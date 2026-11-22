@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-22T06:59:41Z",
+  "updated_at": "2026-11-22T07:00:36Z",
   "apps": [
     {
       "app": "blockmd",
@@ -927,19 +927,19 @@
         "zh": "复制路径",
         "en": "Copy Path"
       },
-      "version": "1.0.9",
+      "version": "1.0.10",
       "author": "eachann1024",
       "repo": "eachann1024/block-copy-path",
       "summary": {
         "zh": "在页面菜单、标签页和文件树右键里复制文件路径，可选完整路径、相对路径或文件名",
         "en": "Copy a file path from the page menu, tab or file tree, as a full path, relative path or file name"
       },
-      "download_url": "https://github.com/eachann1024/block-copy-path/releases/download/v1.0.9/block-copy-path-v1.0.9.tar.gz",
-      "sha256": "3ba8f140d03fcabdcd98bf792f687513ca3f1c6068902a8cf1a7ef947f321fff",
+      "download_url": "https://github.com/eachann1024/block-copy-path/releases/download/v1.0.10/block-copy-path-v1.0.10.tar.gz",
+      "sha256": "6aea32748fb760ab0d56004b68160ccbced896d851bb17939c9263ba1c3cd859",
       "downloads": 19,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-22T06:25:06Z",
+      "updated_at": "2026-11-22T07:00:13Z",
       "permissions": [
         "storage",
         "ui:commands",
@@ -988,6 +988,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-copy-path.json",
       "changelog": [
+        {
+          "version": "1.0.10",
+          "tag": "v1.0.10",
+          "published_at": "2026-11-22T07:00:13Z",
+          "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.10",
+          "zh": {
+            "fixes": [
+              "示例路径预览现已基于用户的主目录生成，能够准确展示真实的文件路径效果。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "The sample path preview now builds example paths from your home directory to accurately reflect real file paths."
+            ]
+          }
+        },
         {
           "version": "1.0.9",
           "tag": "v1.0.9",
