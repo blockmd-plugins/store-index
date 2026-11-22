@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-22T06:19:21Z",
+  "updated_at": "2026-11-22T06:25:23Z",
   "apps": [
     {
       "app": "blockmd",
@@ -906,19 +906,19 @@
         "zh": "复制路径",
         "en": "Copy Path"
       },
-      "version": "1.0.3",
+      "version": "1.0.9",
       "author": "eachann1024",
       "repo": "eachann1024/block-copy-path",
       "summary": {
         "zh": "在页面菜单、标签页和文件树右键里复制文件路径，可选完整路径、相对路径或文件名",
         "en": "Copy a file path from the page menu, tab or file tree, as a full path, relative path or file name"
       },
-      "download_url": "https://github.com/eachann1024/block-copy-path/releases/download/v1.0.3/block-copy-path-v1.0.3.tar.gz",
-      "sha256": "1382f91dc76e34306e54b4070f0ba0e457b29b259e12737c6ee2cc28b69fbf3a",
+      "download_url": "https://github.com/eachann1024/block-copy-path/releases/download/v1.0.9/block-copy-path-v1.0.9.tar.gz",
+      "sha256": "3ba8f140d03fcabdcd98bf792f687513ca3f1c6068902a8cf1a7ef947f321fff",
       "downloads": 13,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-21T07:24:30Z",
+      "updated_at": "2026-11-22T06:25:06Z",
       "permissions": [
         "storage",
         "ui:commands",
@@ -967,6 +967,28 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-copy-path.json",
       "changelog": [
+        {
+          "version": "1.0.9",
+          "tag": "v1.0.9",
+          "published_at": "2026-11-22T06:25:06Z",
+          "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.9",
+          "zh": {
+            "fixes": [
+              "示例路径预览现已改用通用的示例路径，不再展开显示本地用户的主目录。"
+            ],
+            "other": [
+              "发版说明生成工具已更新，以优化版本发布流程。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "The sample path preview now displays a neutral example instead of expanding the local user home directory."
+            ],
+            "other": [
+              "The release notes generation tooling is updated to streamline version publishing."
+            ]
+          }
+        },
         {
           "version": "1.0.3",
           "tag": "v1.0.3",

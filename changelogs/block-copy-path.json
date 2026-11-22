@@ -3,9 +3,32 @@
   "schema_version": 1,
   "id": "block-copy-path",
   "repo": "eachann1024/block-copy-path",
-  "updated_at": "2026-11-22T06:19:21Z",
-  "latest_version": "1.0.3",
+  "updated_at": "2026-11-22T06:25:23Z",
+  "latest_version": "1.0.9",
   "releases": [
+    {
+      "version": "1.0.9",
+      "tag": "v1.0.9",
+      "published_at": "2026-11-22T06:25:06Z",
+      "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.9",
+      "zh": {
+        "fixes": [
+          "示例路径预览现已改用通用的示例路径，不再展开显示本地用户的主目录。"
+        ],
+        "other": [
+          "发版说明生成工具已更新，以优化版本发布流程。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "The sample path preview now displays a neutral example instead of expanding the local user home directory."
+        ],
+        "other": [
+          "The release notes generation tooling is updated to streamline version publishing."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- The sample path preview now displays a neutral example instead of expanding the local user home directory.\n\n### Other\n\n- The release notes generation tooling is updated to streamline version publishing.\n\n---\n\n## 中文\n\n### 修复\n\n- 示例路径预览现已改用通用的示例路径，不再展开显示本地用户的主目录。\n\n### 其他\n\n- 发版说明生成工具已更新，以优化版本发布流程。"
+    },
     {
       "version": "1.0.3",
       "tag": "v1.0.3",
