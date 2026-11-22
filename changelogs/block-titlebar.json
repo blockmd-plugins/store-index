@@ -3,9 +3,32 @@
   "schema_version": 1,
   "id": "block-titlebar",
   "repo": "eachann1024/block-titlebar",
-  "updated_at": "2026-11-22T06:26:52Z",
-  "latest_version": "1.0.24",
+  "updated_at": "2026-11-22T06:33:31Z",
+  "latest_version": "1.0.30",
   "releases": [
+    {
+      "version": "1.0.30",
+      "tag": "v1.0.30",
+      "published_at": "2026-11-22T06:33:08Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.30",
+      "zh": {
+        "fixes": [
+          "设置界面中的源码模式预览现已调整至源码模式设置选项上方。"
+        ],
+        "other": [
+          "更新了用于生成发版说明的自动化脚本。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "The Source Mode preview in settings is now positioned above the Source Mode section."
+        ],
+        "other": [
+          "Updated the automated script used to generate release notes."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- The Source Mode preview in settings is now positioned above the Source Mode section.\n\n### Other\n\n- Updated the automated script used to generate release notes.\n\n---\n\n## 中文\n\n### 修复\n\n- 设置界面中的源码模式预览现已调整至源码模式设置选项上方。\n\n### 其他\n\n- 更新了用于生成发版说明的自动化脚本。"
+    },
     {
       "version": "1.0.24",
       "tag": "v1.0.24",

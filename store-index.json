@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-22T06:26:52Z",
+  "updated_at": "2026-11-22T06:33:31Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.28/block-poop-everywhere-v1.0.28.tar.gz",
       "sha256": "2d066d82850cce2f9cf722e123bc29888b8f937f9e241c098af7ec0f4d1cc626",
-      "downloads": 71,
+      "downloads": 72,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-21T07:39:42Z",
@@ -406,7 +406,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-canvas-dots/releases/download/v1.2.31/block-canvas-dots-v1.2.31.tar.gz",
       "sha256": "a3d126f9fede8c1c1cc18246d1cfed27b7ae133137d696a36558c8cd7cec0203",
-      "downloads": 92,
+      "downloads": 93,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T09:24:46Z",
@@ -519,19 +519,19 @@
         "zh": "顶栏图标",
         "en": "Titlebar Icons"
       },
-      "version": "1.0.24",
+      "version": "1.0.30",
       "author": "eachann1024",
       "repo": "eachann1024/block-titlebar",
       "summary": {
         "zh": "自定义顶栏右上角显示的图标，隐藏不需要的按钮",
         "en": "Choose which icons appear in the top-right titlebar"
       },
-      "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.24/block-titlebar-v1.0.24.tar.gz",
-      "sha256": "fd83da3b13c244667b268b8ac97e0c2379cd82e158bcd4cb0511900554cb4f1a",
-      "downloads": 86,
+      "download_url": "https://github.com/eachann1024/block-titlebar/releases/download/v1.0.30/block-titlebar-v1.0.30.tar.gz",
+      "sha256": "b9962c1835b3df6453dc95c400ea83a14f27b0c01ab503a856dc0e6079e4c531",
+      "downloads": 90,
       "stars": 0,
       "verified": false,
-      "updated_at": "2026-11-21T07:55:30Z",
+      "updated_at": "2026-11-22T06:33:08Z",
       "permissions": [
         "storage",
         "ui:titlebar"
@@ -568,6 +568,28 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-titlebar.json",
       "changelog": [
+        {
+          "version": "1.0.30",
+          "tag": "v1.0.30",
+          "published_at": "2026-11-22T06:33:08Z",
+          "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.30",
+          "zh": {
+            "fixes": [
+              "设置界面中的源码模式预览现已调整至源码模式设置选项上方。"
+            ],
+            "other": [
+              "更新了用于生成发版说明的自动化脚本。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "The Source Mode preview in settings is now positioned above the Source Mode section."
+            ],
+            "other": [
+              "Updated the automated script used to generate release notes."
+            ]
+          }
+        },
         {
           "version": "1.0.24",
           "tag": "v1.0.24",
@@ -612,17 +634,6 @@
               "feat(ui): show real titlebar icons and a live preview strip (`284a99b`)"
             ]
           }
-        },
-        {
-          "version": "1.0.17",
-          "tag": "v1.0.17",
-          "published_at": "2026-11-20T13:59:41Z",
-          "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.17",
-          "en": {
-            "other": [
-              "chore(git): ignore local agent prompts, design files, and build artifacts (`128746c`)"
-            ]
-          }
         }
       ]
     },
@@ -642,7 +653,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-tarot/releases/download/v1.0.13/block-tarot-v1.0.13.tar.gz",
       "sha256": "7149faee25d8cff7715ecda9955609d3ee99591505a9c194e468678e45d25ba6",
-      "downloads": 53,
+      "downloads": 57,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-21T06:16:49Z",
@@ -920,7 +931,7 @@
       },
       "download_url": "https://github.com/eachann1024/block-copy-path/releases/download/v1.0.9/block-copy-path-v1.0.9.tar.gz",
       "sha256": "3ba8f140d03fcabdcd98bf792f687513ca3f1c6068902a8cf1a7ef947f321fff",
-      "downloads": 13,
+      "downloads": 14,
       "stars": 0,
       "verified": false,
       "updated_at": "2026-11-22T06:25:06Z",
