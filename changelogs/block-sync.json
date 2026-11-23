@@ -3,9 +3,40 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-23T12:41:30Z",
-  "latest_version": "1.3.110",
+  "updated_at": "2026-11-23T17:18:27Z",
+  "latest_version": "1.3.116",
   "releases": [
+    {
+      "version": "1.3.116",
+      "tag": "v1.3.116",
+      "published_at": "2026-11-23T17:17:38Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.116",
+      "zh": {
+        "new": [
+          "同步现在会将删除操作传播到本地目录、镜像目录、Git 仓库和 WebDAV 目标。",
+          "同步现在会将同步活动记录到 Block 的活动日志中。"
+        ],
+        "fixes": [
+          "保存配置时，同步现在会阻止关闭唯一启用的目标。"
+        ],
+        "other": [
+          "同步在商店中的分类现为「工具」。"
+        ]
+      },
+      "en": {
+        "new": [
+          "Sync now propagates deletions across local folders, mirror directories, Git repositories, and WebDAV targets.",
+          "Sync now records its activity in Block’s activity log."
+        ],
+        "fixes": [
+          "Sync now prevents you from disabling the only enabled target when saving its configuration."
+        ],
+        "other": [
+          "Sync’s store listing is now classified under Tools."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- Sync now propagates deletions across local folders, mirror directories, Git repositories, and WebDAV targets.\n- Sync now records its activity in Block’s activity log.\n\n### Fixes\n\n- Sync now prevents you from disabling the only enabled target when saving its configuration.\n\n### Other\n\n- Sync’s store listing is now classified under Tools.\n\n---\n\n## 中文\n\n### 新功能\n\n- 同步现在会将删除操作传播到本地目录、镜像目录、Git 仓库和 WebDAV 目标。\n- 同步现在会将同步活动记录到 Block 的活动日志中。\n\n### 修复\n\n- 保存配置时，同步现在会阻止关闭唯一启用的目标。\n\n### 其他\n\n- 同步在商店中的分类现为「工具」。"
+    },
     {
       "version": "1.3.110",
       "tag": "v1.3.110",
@@ -265,18 +296,6 @@
         ]
       },
       "body": "## Changes\n\n- fix(sync): preserve confirmation scope and report notebook outcomes (`2638566`)"
-    },
-    {
-      "version": "1.3.75",
-      "tag": "v1.3.75",
-      "published_at": "2026-11-20T20:44:05Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.75",
-      "en": {
-        "other": [
-          "fix(sync): handle legacy wake targets and report sync failures consistently (`d09d9f2`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix(sync): handle legacy wake targets and report sync failures consistently (`d09d9f2`)"
     }
   ]
 }

@@ -3,9 +3,28 @@
   "schema_version": 1,
   "id": "block-tarot",
   "repo": "eachann1024/block-tarot",
-  "updated_at": "2026-11-23T12:41:30Z",
-  "latest_version": "1.0.13",
+  "updated_at": "2026-11-23T17:18:27Z",
+  "latest_version": "1.0.19",
   "releases": [
+    {
+      "version": "1.0.19",
+      "tag": "v1.0.19",
+      "published_at": "2026-11-23T17:15:06Z",
+      "html_url": "https://github.com/eachann1024/block-tarot/releases/tag/v1.0.19",
+      "zh": {
+        "other": [
+          "插件的发版说明配置已更新。",
+          "插件在商店中的分类已设为“外观”。"
+        ]
+      },
+      "en": {
+        "other": [
+          "Release note configuration is updated for the plugin.",
+          "The plugin is now listed under the “Appearance” category in the store."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- Release note configuration is updated for the plugin.\n- The plugin is now listed under the “Appearance” category in the store.\n\n---\n\n## 中文\n\n### 其他\n\n- 插件的发版说明配置已更新。\n- 插件在商店中的分类已设为“外观”。"
+    },
     {
       "version": "1.0.13",
       "tag": "v1.0.13",

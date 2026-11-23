@@ -3,9 +3,28 @@
   "schema_version": 1,
   "id": "block-canvas-dots",
   "repo": "eachann1024/block-canvas-dots",
-  "updated_at": "2026-11-23T12:41:30Z",
-  "latest_version": "1.2.31",
+  "updated_at": "2026-11-23T17:18:27Z",
+  "latest_version": "1.2.35",
   "releases": [
+    {
+      "version": "1.2.35",
+      "tag": "v1.2.35",
+      "published_at": "2026-11-23T17:14:57Z",
+      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.35",
+      "zh": {
+        "other": [
+          "发版说明生成流程现已采用更新后的配置。",
+          "插件现已在商店中归类为「外观」。"
+        ]
+      },
+      "en": {
+        "other": [
+          "Release note generation now uses the updated configuration.",
+          "The plugin is now listed under Appearance in the store."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- Release note generation now uses the updated configuration.\n- The plugin is now listed under Appearance in the store.\n\n---\n\n## 中文\n\n### 其他\n\n- 发版说明生成流程现已采用更新后的配置。\n- 插件现已在商店中归类为「外观」。"
+    },
     {
       "version": "1.2.31",
       "tag": "v1.2.31",

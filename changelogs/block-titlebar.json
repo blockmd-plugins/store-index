@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-titlebar",
   "repo": "eachann1024/block-titlebar",
-  "updated_at": "2026-11-23T12:41:30Z",
-  "latest_version": "1.0.30",
+  "updated_at": "2026-11-23T17:18:27Z",
+  "latest_version": "1.0.31",
   "releases": [
+    {
+      "version": "1.0.31",
+      "tag": "v1.0.31",
+      "published_at": "2026-11-23T17:13:09Z",
+      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.31",
+      "zh": {
+        "other": [
+          "插件在插件市场中现已归入「外观」分类。"
+        ]
+      },
+      "en": {
+        "other": [
+          "The plugin is now listed under the Appearance category in the plugin marketplace."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- The plugin is now listed under the Appearance category in the plugin marketplace.\n\n---\n\n## 中文\n\n### 其他\n\n- 插件在插件市场中现已归入「外观」分类。"
+    },
     {
       "version": "1.0.30",
       "tag": "v1.0.30",
