@@ -2,15 +2,32 @@
   "app": "blockmd",
   "schema_version": 1,
   "id": "block-titlebar",
-  "repo": "eachann1024/block-titlebar",
-  "updated_at": "2026-11-23T17:18:27Z",
-  "latest_version": "1.0.31",
+  "repo": "blockmd-plugins/block-titlebar",
+  "updated_at": "2026-11-23T18:13:41Z",
+  "latest_version": "1.0.33",
   "releases": [
+    {
+      "version": "1.0.33",
+      "tag": "v1.0.33",
+      "published_at": "2026-11-23T18:13:05Z",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.33",
+      "zh": {
+        "other": [
+          "插件详情中的作者信息与仓库链接已更新为新的维护组织。"
+        ]
+      },
+      "en": {
+        "other": [
+          "The plugin details now reflect the updated author information and repository link under the new organization."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- The plugin details now reflect the updated author information and repository link under the new organization.\n\n---\n\n## 中文\n\n### 其他\n\n- 插件详情中的作者信息与仓库链接已更新为新的维护组织。"
+    },
     {
       "version": "1.0.31",
       "tag": "v1.0.31",
       "published_at": "2026-11-23T17:13:09Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.31",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.31",
       "zh": {
         "other": [
           "插件在插件市场中现已归入「外观」分类。"
@@ -27,7 +44,7 @@
       "version": "1.0.30",
       "tag": "v1.0.30",
       "published_at": "2026-11-22T06:33:08Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.30",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.30",
       "zh": {
         "fixes": [
           "设置界面中的源码模式预览现已调整至源码模式设置选项上方。"
@@ -50,7 +67,7 @@
       "version": "1.0.24",
       "tag": "v1.0.24",
       "published_at": "2026-11-21T07:55:30Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.24",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.24",
       "en": {
         "other": [
           "chore: drop beta flag (`8c0ade0`)"
@@ -62,7 +79,7 @@
       "version": "1.0.23",
       "tag": "v1.0.23",
       "published_at": "2026-11-21T06:16:44Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.23",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.23",
       "en": {
         "other": [
           "feat(manifest): remove appearance settings section and ui:settings permission (`9f95c33`)",
@@ -75,7 +92,7 @@
       "version": "1.0.19",
       "tag": "v1.0.19",
       "published_at": "2026-11-21T04:59:32Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.19",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.19",
       "en": {
         "other": [
           "feat(ui): group titlebar icons into Markdown and Source Mode with per-mode previews (`ea142d1`)"
@@ -87,7 +104,7 @@
       "version": "1.0.18",
       "tag": "v1.0.18",
       "published_at": "2026-11-21T03:55:14Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.18",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.18",
       "en": {
         "other": [
           "feat(ui): show real titlebar icons and a live preview strip (`284a99b`)"
@@ -99,7 +116,7 @@
       "version": "1.0.17",
       "tag": "v1.0.17",
       "published_at": "2026-11-20T13:59:41Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.17",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.17",
       "en": {
         "other": [
           "chore(git): ignore local agent prompts, design files, and build artifacts (`128746c`)"
@@ -111,7 +128,7 @@
       "version": "1.0.14",
       "tag": "v1.0.14",
       "published_at": "2026-11-20T08:53:45Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.14",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.14",
       "en": {
         "other": [
           "fix(ui): preserve hidden plugin slots while their owner plugin is disabled (`0ae35f4`)"
@@ -123,7 +140,7 @@
       "version": "1.0.13",
       "tag": "v1.0.13",
       "published_at": "2026-11-20T08:33:37Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.13",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.13",
       "en": {
         "other": [
           "fix(ui): avoid duplicate Appearance section title and sync sibling surfaces (`cc9abc4`)"
@@ -135,7 +152,7 @@
       "version": "1.0.5",
       "tag": "v1.0.5",
       "published_at": "2026-11-19T18:19:19Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.5",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.5",
       "en": {
         "other": [
           "chore(manifest): switch block-titlebar ownership to eachann1024 (`e465da3`)"
@@ -147,7 +164,7 @@
       "version": "1.0.0",
       "tag": "v1.0.0",
       "published_at": "2026-11-19T18:15:09Z",
-      "html_url": "https://github.com/eachann1024/block-titlebar/releases/tag/v1.0.0",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.0",
       "en": {
         "other": [
           "Automated release from `8381428`."

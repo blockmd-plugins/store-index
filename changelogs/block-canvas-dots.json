@@ -2,15 +2,32 @@
   "app": "blockmd",
   "schema_version": 1,
   "id": "block-canvas-dots",
-  "repo": "eachann1024/block-canvas-dots",
-  "updated_at": "2026-11-23T17:18:27Z",
-  "latest_version": "1.2.35",
+  "repo": "blockmd-plugins/block-canvas-dots",
+  "updated_at": "2026-11-23T18:13:41Z",
+  "latest_version": "1.2.37",
   "releases": [
+    {
+      "version": "1.2.37",
+      "tag": "v1.2.37",
+      "published_at": "2026-11-23T18:12:58Z",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.37",
+      "zh": {
+        "other": [
+          "插件信息中的作者与代码仓库链接已更新为新的官方组织。"
+        ]
+      },
+      "en": {
+        "other": [
+          "The plugin author and repository links have been updated to the official organization."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- The plugin author and repository links have been updated to the official organization.\n\n---\n\n## 中文\n\n### 其他\n\n- 插件信息中的作者与代码仓库链接已更新为新的官方组织。"
+    },
     {
       "version": "1.2.35",
       "tag": "v1.2.35",
       "published_at": "2026-11-23T17:14:57Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.35",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.35",
       "zh": {
         "other": [
           "发版说明生成流程现已采用更新后的配置。",
@@ -29,7 +46,7 @@
       "version": "1.2.31",
       "tag": "v1.2.31",
       "published_at": "2026-11-21T09:24:46Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.31",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.31",
       "zh": {
         "other": [
           "本次为维护版本，没有面向用户的变化。"
@@ -46,7 +63,7 @@
       "version": "1.2.29",
       "tag": "v1.2.29",
       "published_at": "2026-11-21T06:16:42Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.29",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.29",
       "en": {
         "other": [
           "feat(manifest): remove appearance settings section and bump version to 1.2.1 (`0f56922`)",
@@ -59,7 +76,7 @@
       "version": "1.2.25",
       "tag": "v1.2.25",
       "published_at": "2026-11-20T13:59:33Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.25",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.25",
       "en": {
         "other": [
           "chore(git): ignore local agent prompts, design files, and build artifacts (`ad4e323`)"
@@ -71,7 +88,7 @@
       "version": "1.2.22",
       "tag": "v1.2.22",
       "published_at": "2026-11-20T08:53:47Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.22",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.22",
       "en": {
         "other": [
           "feat(ui): expose Reset Default action inside Appearance settings section (`afdf6ad`)"
@@ -83,7 +100,7 @@
       "version": "1.2.21",
       "tag": "v1.2.21",
       "published_at": "2026-11-20T08:33:38Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.21",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.21",
       "en": {
         "other": [
           "feat(ui): refresh sibling settings surface when background changes (`e776e11`)"
@@ -95,7 +112,7 @@
       "version": "1.2.19",
       "tag": "v1.2.19",
       "published_at": "2026-11-20T08:17:19Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.19",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.19",
       "en": {
         "other": [
           "fix(ui): avoid duplicate section heading in Appearance settings (`ff70094`)"
@@ -107,7 +124,7 @@
       "version": "1.2.18",
       "tag": "v1.2.18",
       "published_at": "2026-11-20T07:58:39Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.18",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.18",
       "en": {
         "other": [
           "feat: sync native editor background via host.ui.set_editor_background (`8a3aef6`)"
@@ -119,7 +136,7 @@
       "version": "1.2.15",
       "tag": "v1.2.15",
       "published_at": "2026-11-20T06:54:05Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.15",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.15",
       "en": {
         "other": [
           "chore(copy): rename plugin to Editor Background and emphasize contrast (`03134a6`)"
@@ -131,7 +148,7 @@
       "version": "1.2.5",
       "tag": "v1.2.5",
       "published_at": "2026-11-19T18:11:33Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.5",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.5",
       "en": {
         "other": [
           "feat(i18n): add English locale support to UI, actions, and reader output (`d67e3c9`)"
@@ -143,7 +160,7 @@
       "version": "1.2.0",
       "tag": "v1.2.0",
       "published_at": "2026-11-19T15:35:43Z",
-      "html_url": "https://github.com/eachann1024/block-canvas-dots/releases/tag/v1.2.0",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.0",
       "en": {
         "other": [
           "Automated release from `cdc033e`."

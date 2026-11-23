@@ -2,15 +2,32 @@
   "app": "blockmd",
   "schema_version": 1,
   "id": "block-copy-path",
-  "repo": "eachann1024/block-copy-path",
-  "updated_at": "2026-11-23T17:18:27Z",
-  "latest_version": "1.0.10",
+  "repo": "blockmd-plugins/block-copy-path",
+  "updated_at": "2026-11-23T18:13:41Z",
+  "latest_version": "1.0.12",
   "releases": [
+    {
+      "version": "1.0.12",
+      "tag": "v1.0.12",
+      "published_at": "2026-11-23T18:13:07Z",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.12",
+      "zh": {
+        "other": [
+          "插件详情中的作者与代码仓库链接已更新至新的维护组织。"
+        ]
+      },
+      "en": {
+        "other": [
+          "The author and repository links in the plugin details have been updated to point to the new organization."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- The author and repository links in the plugin details have been updated to point to the new organization.\n\n---\n\n## 中文\n\n### 其他\n\n- 插件详情中的作者与代码仓库链接已更新至新的维护组织。"
+    },
     {
       "version": "1.0.10",
       "tag": "v1.0.10",
       "published_at": "2026-11-22T07:00:13Z",
-      "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.10",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.10",
       "zh": {
         "fixes": [
           "示例路径预览现已基于用户的主目录生成，能够准确展示真实的文件路径效果。"
@@ -27,7 +44,7 @@
       "version": "1.0.9",
       "tag": "v1.0.9",
       "published_at": "2026-11-22T06:25:06Z",
-      "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.9",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.9",
       "zh": {
         "fixes": [
           "示例路径预览现已改用通用的示例路径，不再展开显示本地用户的主目录。"
@@ -50,7 +67,7 @@
       "version": "1.0.3",
       "tag": "v1.0.3",
       "published_at": "2026-11-21T07:24:30Z",
-      "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.3",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.3",
       "en": {
         "other": [
           "chore: drop beta flag (`ad5a3d1`)"
@@ -62,7 +79,7 @@
       "version": "1.0.2",
       "tag": "v1.0.2",
       "published_at": "2026-11-21T07:06:32Z",
-      "html_url": "https://github.com/eachann1024/block-copy-path/releases/tag/v1.0.2",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.2",
       "en": {
         "other": [
           "Automated release from `06c236d`."
