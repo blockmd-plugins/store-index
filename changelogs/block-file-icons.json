@@ -1,0 +1,27 @@
+{
+  "app": "blockmd",
+  "schema_version": 1,
+  "id": "block-file-icons",
+  "repo": "blockmd-plugins/block-file-icons",
+  "updated_at": "2026-11-23T18:32:06Z",
+  "latest_version": "1.0.3",
+  "releases": [
+    {
+      "version": "1.0.3",
+      "tag": "v1.0.3",
+      "published_at": "2026-11-23T18:28:51Z",
+      "html_url": "https://github.com/blockmd-plugins/block-file-icons/releases/tag/v1.0.3",
+      "zh": {
+        "other": [
+          "本次为维护版本，没有面向用户的变化。"
+        ]
+      },
+      "en": {
+        "other": [
+          "This is a maintenance release with no user-facing changes."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- This is a maintenance release with no user-facing changes.\n\n---\n\n## 中文\n\n### 其他\n\n- 本次为维护版本，没有面向用户的变化。"
+    }
+  ]
+}
