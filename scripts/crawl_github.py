@@ -89,6 +89,7 @@ VALID_PERMISSIONS = {
     "events:system",
 }
 VALID_CATEGORIES = {"sync", "edit", "organize", "ai", "publish", "appearance", "tools", "language"}
+RETIRED_CATEGORIES = {"sync", "publish"}
 VALID_SURFACES = {"settings_page"}
 LEGACY_RELEASES = {"blockmd-plugins/block-sync": "v1.3.44"}
 RUNTIME_CONTRIB_KEYS = (
@@ -512,6 +513,16 @@ def validate_localized_field(path_label, loc):
         raise ValueError(f"{path_label}.en must be English-only, found {bad!r}")
 
 
+def validate_official_category(manifest):
+    # Official plugins must choose their store tab themselves; retired
+    # values ("sync", "publish") are accepted for third-party plugins only.
+    cat = str(manifest.get("category") or "").strip().lower()
+    if not cat:
+        raise ValueError("official plugin must declare manifest.category")
+    if cat in RETIRED_CATEGORIES:
+        raise ValueError(f"official plugin uses retired manifest.category {cat!r}; use 'tools'")
+
+
 def validate_official_bilingual(manifest, docs):
     for field in ("name", "summary"):
         validate_localized_field(f"manifest.{field}", manifest.get(field))
@@ -736,7 +747,7 @@ def extract_manifest_and_docs(raw_bytes, url):
     return json_loads_strict(files[manifest_key].decode("utf-8")), docs
 
 
-def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_repo_fn, now_iso):
+def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_repo_fn, now_iso, require_official_category=True):
     apps, owners, ambiguous = [], {}, set()
     for repo in search_items:
         full = repo["full_name"]
@@ -768,6 +779,8 @@ def build_index(search_items, prev_dl, blocklist, id_to_repo, repo_to_id, fetch_
                 continue
             if is_verified or full.lower().startswith("blockmd-plugins/"):
                 validate_official_bilingual(m, docs)
+                if require_official_category:
+                    validate_official_category(m)
             if pid_key in owners:
                 if owners[pid_key] != full.lower():
                     ambiguous.add(pid_key)
@@ -925,6 +938,7 @@ def add_system_apps(index, repositories, blocklist, now_iso):
             [repositories[repo]], {plugin_id: entry["downloads"]}, blocklist,
             {plugin_id: repo}, {repo: plugin_id},
             lambda source, timestamp: fetch_github_repo(source, timestamp, tag), now_iso,
+            require_official_category=False,
         )["apps"][0]
         if prior["version"] != tag.removeprefix("v") or any(
             p.startswith("system:") or p == "events:system" for p in prior["permissions"]
