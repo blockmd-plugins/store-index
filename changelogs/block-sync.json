@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-24T11:46:51Z",
-  "latest_version": "1.3.119",
+  "updated_at": "2026-11-24T13:37:44Z",
+  "latest_version": "1.3.120",
   "releases": [
+    {
+      "version": "1.3.120",
+      "tag": "v1.3.120",
+      "published_at": "2026-11-24T13:37:12Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.120",
+      "zh": {
+        "fixes": [
+          "同步功能现在会在删除单篇笔记或整个文件夹时记录删除标记，确保删除操作能够可靠地同步到所有设备，避免已删除的内容重新出现。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "Sync now records deletion markers when individual notes or entire folders are removed, ensuring that deletions are reliably propagated across all devices instead of removed content reappearing."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- Sync now records deletion markers when individual notes or entire folders are removed, ensuring that deletions are reliably propagated across all devices instead of removed content reappearing.\n\n---\n\n## 中文\n\n### 修复\n\n- 同步功能现在会在删除单篇笔记或整个文件夹时记录删除标记，确保删除操作能够可靠地同步到所有设备，避免已删除的内容重新出现。"
+    },
     {
       "version": "1.3.119",
       "tag": "v1.3.119",
@@ -297,20 +314,6 @@
         ]
       },
       "body": "## Changes\n\n- fix(sync): retain pending alerts within their file and configuration scope (`af5afac`)"
-    },
-    {
-      "version": "1.3.82",
-      "tag": "v1.3.82",
-      "published_at": "2026-11-20T21:29:46Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.82",
-      "en": {
-        "other": [
-          "fix(sync): validate Git worktrees and history before writing (`805f82e`)",
-          "fix(sync): account for Git push URLs on reconnect (`c7876e5`)",
-          "fix(sync): retire stale pause notices and distinguish confirmation plans (`6cad22a`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix(sync): validate Git worktrees and history before writing (`805f82e`)\n- fix(sync): account for Git push URLs on reconnect (`c7876e5`)\n- fix(sync): retire stale pause notices and distinguish confirmation plans (`6cad22a`)"
     }
   ]
 }
