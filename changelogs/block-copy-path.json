@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-copy-path",
   "repo": "blockmd-plugins/block-copy-path",
-  "updated_at": "2026-11-24T03:55:08Z",
-  "latest_version": "1.0.13",
+  "updated_at": "2026-11-24T06:04:30Z",
+  "latest_version": "1.0.14",
   "releases": [
+    {
+      "version": "1.0.14",
+      "tag": "v1.0.14",
+      "published_at": "2026-11-24T06:01:42Z",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.14",
+      "zh": {
+        "fixes": [
+          "恢复了旧版本主程序所需的存储与界面权限支持，确保插件在旧版应用中能够正常运行。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "The plugin now restores the required storage and user interface permissions to ensure it runs properly on older versions of the host application."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- The plugin now restores the required storage and user interface permissions to ensure it runs properly on older versions of the host application.\n\n---\n\n## 中文\n\n### 修复\n\n- 恢复了旧版本主程序所需的存储与界面权限支持，确保插件在旧版应用中能够正常运行。"
+    },
     {
       "version": "1.0.13",
       "tag": "v1.0.13",

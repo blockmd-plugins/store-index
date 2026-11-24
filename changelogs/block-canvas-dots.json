@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-canvas-dots",
   "repo": "blockmd-plugins/block-canvas-dots",
-  "updated_at": "2026-11-24T03:55:08Z",
-  "latest_version": "1.2.38",
+  "updated_at": "2026-11-24T06:04:30Z",
+  "latest_version": "1.2.39",
   "releases": [
+    {
+      "version": "1.2.39",
+      "tag": "v1.2.39",
+      "published_at": "2026-11-24T06:01:48Z",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.39",
+      "zh": {
+        "fixes": [
+          "插件恢复了旧版本宿主应用所需的存储与界面权限，解决了旧版本环境下背景设置与控制界面无法正常加载或保存的问题。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "The plugin restores storage and interface permissions on older versions of the host application, resolving issues where background settings and controls failed to load or save."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- The plugin restores storage and interface permissions on older versions of the host application, resolving issues where background settings and controls failed to load or save.\n\n---\n\n## 中文\n\n### 修复\n\n- 插件恢复了旧版本宿主应用所需的存储与界面权限，解决了旧版本环境下背景设置与控制界面无法正常加载或保存的问题。"
+    },
     {
       "version": "1.2.38",
       "tag": "v1.2.38",

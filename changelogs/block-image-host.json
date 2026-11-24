@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-image-host",
   "repo": "blockmd-plugins/block-image-host",
-  "updated_at": "2026-11-24T03:55:08Z",
-  "latest_version": "1.2.47",
+  "updated_at": "2026-11-24T06:04:30Z",
+  "latest_version": "1.2.48",
   "releases": [
+    {
+      "version": "1.2.48",
+      "tag": "v1.2.48",
+      "published_at": "2026-11-24T06:01:50Z",
+      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.48",
+      "zh": {
+        "fixes": [
+          "插件现已正确声明剪贴板权限以避免操作失败，并恢复了对旧版本笔记应用的兼容支持。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "The plugin now properly declares clipboard permissions to prevent operation failures and restores compatibility with older versions of the note application."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- The plugin now properly declares clipboard permissions to prevent operation failures and restores compatibility with older versions of the note application.\n\n---\n\n## 中文\n\n### 修复\n\n- 插件现已正确声明剪贴板权限以避免操作失败，并恢复了对旧版本笔记应用的兼容支持。"
+    },
     {
       "version": "1.2.47",
       "tag": "v1.2.47",

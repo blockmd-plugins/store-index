@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-poop-everywhere",
   "repo": "blockmd-plugins/block-poop-everywhere",
-  "updated_at": "2026-11-24T03:55:08Z",
-  "latest_version": "1.0.36",
+  "updated_at": "2026-11-24T06:04:30Z",
+  "latest_version": "1.0.37",
   "releases": [
+    {
+      "version": "1.0.37",
+      "tag": "v1.0.37",
+      "published_at": "2026-11-24T06:02:22Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.37",
+      "zh": {
+        "fixes": [
+          "恢复了对旧版本宿主应用的存储与界面权限支持，确保各项界面组件与本地数据在较早版本的客户端中均能正常使用。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "The plugin now restores legacy storage and interface permissions, ensuring that all UI elements and saved data function reliably on older versions of the host application."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- The plugin now restores legacy storage and interface permissions, ensuring that all UI elements and saved data function reliably on older versions of the host application.\n\n---\n\n## 中文\n\n### 修复\n\n- 恢复了对旧版本宿主应用的存储与界面权限支持，确保各项界面组件与本地数据在较早版本的客户端中均能正常使用。"
+    },
     {
       "version": "1.0.36",
       "tag": "v1.0.36",

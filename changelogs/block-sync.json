@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-24T03:55:08Z",
-  "latest_version": "1.3.118",
+  "updated_at": "2026-11-24T06:04:30Z",
+  "latest_version": "1.3.119",
   "releases": [
+    {
+      "version": "1.3.119",
+      "tag": "v1.3.119",
+      "published_at": "2026-11-24T06:01:59Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.119",
+      "zh": {
+        "fixes": [
+          "恢复了对旧版本宿主应用的存储与界面权限支持，确保在旧版本客户端中可以正常访问本地数据并显示插件界面。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "Sync restores required storage and interface permissions for older versions of the host application, ensuring local data access and interface controls work properly."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- Sync restores required storage and interface permissions for older versions of the host application, ensuring local data access and interface controls work properly.\n\n---\n\n## 中文\n\n### 修复\n\n- 恢复了对旧版本宿主应用的存储与界面权限支持，确保在旧版本客户端中可以正常访问本地数据并显示插件界面。"
+    },
     {
       "version": "1.3.118",
       "tag": "v1.3.118",
@@ -294,19 +311,6 @@
         ]
       },
       "body": "## Changes\n\n- fix(sync): validate Git worktrees and history before writing (`805f82e`)\n- fix(sync): account for Git push URLs on reconnect (`c7876e5`)\n- fix(sync): retire stale pause notices and distinguish confirmation plans (`6cad22a`)"
-    },
-    {
-      "version": "1.3.79",
-      "tag": "v1.3.79",
-      "published_at": "2026-11-20T21:11:18Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.79",
-      "en": {
-        "other": [
-          "fix(sync): protect unpublished Git history during sync (`8288220`)",
-          "fix(sync): retry undelivered conflict and approval notices (`bf608ff`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix(sync): protect unpublished Git history during sync (`8288220`)\n- fix(sync): retry undelivered conflict and approval notices (`bf608ff`)"
     }
   ]
 }

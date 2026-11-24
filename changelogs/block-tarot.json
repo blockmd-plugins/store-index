@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-tarot",
   "repo": "blockmd-plugins/block-tarot",
-  "updated_at": "2026-11-24T03:55:08Z",
-  "latest_version": "1.0.22",
+  "updated_at": "2026-11-24T06:04:30Z",
+  "latest_version": "1.0.23",
   "releases": [
+    {
+      "version": "1.0.23",
+      "tag": "v1.0.23",
+      "published_at": "2026-11-24T06:02:02Z",
+      "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.23",
+      "zh": {
+        "fixes": [
+          "塔罗模式现已重新启用旧版存储与界面权限，恢复了在较旧版本主程序中的正常运行与数据保存支持。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "Tarot Mode now reinstates legacy storage and interface permissions, restoring normal operation and data saving on older versions of the host application."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- Tarot Mode now reinstates legacy storage and interface permissions, restoring normal operation and data saving on older versions of the host application.\n\n---\n\n## 中文\n\n### 修复\n\n- 塔罗模式现已重新启用旧版存储与界面权限，恢复了在较旧版本主程序中的正常运行与数据保存支持。"
+    },
     {
       "version": "1.0.22",
       "tag": "v1.0.22",

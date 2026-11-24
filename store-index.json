@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-24T03:55:08Z",
+  "updated_at": "2026-11-24T06:04:30Z",
   "apps": [
     {
       "app": "blockmd",
@@ -92,306 +92,28 @@
     },
     {
       "app": "blockmd",
-      "id": "block-image-host",
-      "name": {
-        "zh": "图床上传",
-        "en": "Image Host"
-      },
-      "version": "1.2.47",
-      "author": "Block Community",
-      "repo": "blockmd-plugins/block-image-host",
-      "summary": {
-        "zh": "支持 Cloudflare R2、S3 兼容存储与 GitHub 仓库的笔记图片自动上传",
-        "en": "Upload local note images to Cloudflare R2, S3-compatible storage, or GitHub"
-      },
-      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.2.47/block-image-host-v1.2.47.tar.gz",
-      "sha256": "224d195afa5d128361b128dda36727b3db9f65af9663ee34f91efd8d96942ab6",
-      "downloads": 941,
-      "stars": 0,
-      "verified": true,
-      "updated_at": "2026-11-24T03:54:38Z",
-      "permissions": [
-        "notes:read",
-        "notes:write",
-        "network",
-        "events:note_saved"
-      ],
-      "surfaces": [
-        "settings_page"
-      ],
-      "icon": {
-        "view_box": "0 0 24 24",
-        "fill_paths": [
-          "M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
-        ],
-        "stroke_paths": [
-          "M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z",
-          "M4.5 16.5l4.2-4.2a1.4 1.4 0 0 1 2 0L14 15.6"
-        ],
-        "accent_paths": [
-          "M16.5 14V7.5",
-          "M14 10l2.5-2.5L19 10",
-          "M9 9.25a1.25 1.25 0 1 0 0 .01"
-        ]
-      },
-      "category": "edit",
-      "permission_reasons": {
-        "notes:read": {
-          "zh": "读取笔记正文与本地图片引用，筛选需要上传的图片",
-          "en": "Read note content and local image links to find images to upload"
-        },
-        "notes:write": {
-          "zh": "图片上传成功后将笔记中的本地路径替换为远程图床链接",
-          "en": "Replace local image paths with uploaded remote URLs in notes"
-        },
-        "network": {
-          "zh": "向 Cloudflare R2、S3 兼容存储或 GitHub 仓库上传图片",
-          "en": "Upload images to Cloudflare R2, S3-compatible storage, or GitHub"
-        },
-        "events:note_saved": {
-          "zh": "在保存笔记时自动检测并上传其中的本地图片",
-          "en": "Automatically detect and upload local images when a note is saved"
-        }
-      },
-      "beta": true,
-      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-image-host.json",
-      "changelog": [
-        {
-          "version": "1.2.47",
-          "tag": "v1.2.47",
-          "published_at": "2026-11-24T03:54:38Z",
-          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.47",
-          "zh": {
-            "new": [
-              "将图片拖到菜单栏图标上或粘贴到图标处即可上传，上传后会自动复制图片链接。",
-              "图片上传结果现在会通过应用内右上角横幅通知显示。"
-            ],
-            "other": [
-              "插件现在申请的存储和界面相关权限更少。"
-            ]
-          },
-          "en": {
-            "new": [
-              "The menu bar icon now uploads an image when you drag or paste it there, then copies the resulting link to your clipboard.",
-              "Upload results now appear in top-right in-app banners."
-            ],
-            "other": [
-              "The plugin now requests fewer storage and interface permissions."
-            ]
-          }
-        },
-        {
-          "version": "1.2.43",
-          "tag": "v1.2.43",
-          "published_at": "2026-11-23T18:13:08Z",
-          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.43",
-          "zh": {
-            "other": [
-              "插件详情中的作者信息与源码仓库链接已更新并指向官方组织。",
-              "插件状态现已明确标记为测试版本，以标示当前处于测试阶段。"
-            ]
-          },
-          "en": {
-            "other": [
-              "The plugin details now display the official organization as the author and link to the updated repository.",
-              "The plugin status is now explicitly marked as a beta release to indicate its current testing phase."
-            ]
-          }
-        },
-        {
-          "version": "1.2.40",
-          "tag": "v1.2.40",
-          "published_at": "2026-11-23T17:13:44Z",
-          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.40",
-          "zh": {
-            "improvements": [
-              "插件在应用商店中现已归类至编辑分类，便于用户按分类浏览与查找。"
-            ],
-            "other": [
-              "更新了发版说明的自动化脚本，以保持更新日志格式的一致性。"
-            ]
-          },
-          "en": {
-            "improvements": [
-              "The plugin is now listed under the Editing category in the marketplace to make it easier to discover when browsing by category."
-            ],
-            "other": [
-              "The automated release notes generation script has been updated to maintain consistent changelog formatting."
-            ]
-          }
-        },
-        {
-          "version": "1.2.34",
-          "tag": "v1.2.34",
-          "published_at": "2026-11-21T07:55:38Z",
-          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.34",
-          "en": {
-            "other": [
-              "chore: drop beta flag (`b531b2e`)"
-            ]
-          }
-        },
-        {
-          "version": "1.2.33",
-          "tag": "v1.2.33",
-          "published_at": "2026-11-21T07:39:34Z",
-          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.33",
-          "en": {
-            "other": [
-              "chore: simplify status copy and remove redundant counts (`dc2871e`)"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "app": "blockmd",
-      "id": "block-canvas-dots",
-      "name": {
-        "zh": "编辑器背景",
-        "en": "Editor Background"
-      },
-      "version": "1.2.38",
-      "author": "Block Community",
-      "repo": "blockmd-plugins/block-canvas-dots",
-      "summary": {
-        "zh": "为笔记铺上与行高对齐的点阵或方格，增加对比度，稳定追踪每一行",
-        "en": "Line-aligned dot or grid background for notes, adding contrast to track each line"
-      },
-      "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.38/block-canvas-dots-v1.2.38.tar.gz",
-      "sha256": "a43687fae97b0189102c7f88a0a48ce83dce9d6998e9352c1333414a0c205b66",
-      "downloads": 120,
-      "stars": 0,
-      "verified": true,
-      "updated_at": "2026-11-24T03:52:54Z",
-      "permissions": [],
-      "surfaces": [
-        "settings_page"
-      ],
-      "icon": {
-        "view_box": "0 0 24 24",
-        "fill_paths": [
-          "M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Z"
-        ],
-        "stroke_paths": [
-          "M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Z",
-          "M8.5 8.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M12 8.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M15.5 8.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M8.5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M15.5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M8.5 15.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M12 15.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-          "M15.5 15.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
-        ],
-        "accent_paths": [
-          "M12 12m-1.2 0a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0"
-        ]
-      },
-      "category": "appearance",
-      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-canvas-dots.json",
-      "changelog": [
-        {
-          "version": "1.2.38",
-          "tag": "v1.2.38",
-          "published_at": "2026-11-24T03:52:54Z",
-          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.38",
-          "zh": {
-            "other": [
-              "插件不再申请存储与用户界面的豁免权限，精简了安装与运行所需的系统授权范围。"
-            ]
-          },
-          "en": {
-            "other": [
-              "The plugin no longer requests exempt storage and user interface permissions, reducing the access privileges required during installation and operation."
-            ]
-          }
-        },
-        {
-          "version": "1.2.37",
-          "tag": "v1.2.37",
-          "published_at": "2026-11-23T18:12:58Z",
-          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.37",
-          "zh": {
-            "other": [
-              "插件信息中的作者与代码仓库链接已更新为新的官方组织。"
-            ]
-          },
-          "en": {
-            "other": [
-              "The plugin author and repository links have been updated to the official organization."
-            ]
-          }
-        },
-        {
-          "version": "1.2.35",
-          "tag": "v1.2.35",
-          "published_at": "2026-11-23T17:14:57Z",
-          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.35",
-          "zh": {
-            "other": [
-              "发版说明生成流程现已采用更新后的配置。",
-              "插件现已在商店中归类为「外观」。"
-            ]
-          },
-          "en": {
-            "other": [
-              "Release note generation now uses the updated configuration.",
-              "The plugin is now listed under Appearance in the store."
-            ]
-          }
-        },
-        {
-          "version": "1.2.31",
-          "tag": "v1.2.31",
-          "published_at": "2026-11-21T09:24:46Z",
-          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.31",
-          "zh": {
-            "other": [
-              "本次为维护版本，没有面向用户的变化。"
-            ]
-          },
-          "en": {
-            "other": [
-              "This is a maintenance release with no user-facing changes."
-            ]
-          }
-        },
-        {
-          "version": "1.2.29",
-          "tag": "v1.2.29",
-          "published_at": "2026-11-21T06:16:42Z",
-          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.29",
-          "en": {
-            "other": [
-              "feat(manifest): remove appearance settings section and bump version to 1.2.1 (`0f56922`)",
-              "refactor(ui): remove settings_section surface handling (`795f75f`)"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "app": "blockmd",
       "id": "block-titlebar",
       "name": {
         "zh": "顶栏图标",
         "en": "Titlebar Icons"
       },
-      "version": "1.0.34",
+      "version": "1.0.35",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-titlebar",
       "summary": {
         "zh": "自定义顶栏右上角显示的图标，隐藏不需要的按钮",
         "en": "Choose which icons appear in the top-right titlebar"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.0.34/block-titlebar-v1.0.34.tar.gz",
-      "sha256": "ad1f3aeea0cd3ea214de91e17c07d4082a8bb39395c72178bcd922f6bf8cbfdb",
-      "downloads": 120,
+      "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.0.35/block-titlebar-v1.0.35.tar.gz",
+      "sha256": "72a3fd4f94fe6033e7a9eb89cab63268b4c7de7592132343657549427519e9b1",
+      "downloads": 123,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-24T03:52:35Z",
-      "permissions": [],
+      "updated_at": "2026-11-24T06:01:59Z",
+      "permissions": [
+        "storage",
+        "ui:titlebar"
+      ],
       "surfaces": [
         "settings_page"
       ],
@@ -413,8 +135,34 @@
         ]
       },
       "category": "appearance",
+      "permission_reasons": {
+        "storage": {
+          "zh": "保存已隐藏的顶栏图标列表配置",
+          "en": "Save the list of hidden titlebar icons"
+        },
+        "ui:titlebar": {
+          "zh": "读取顶栏图标项并控制各个按钮的显示与隐藏",
+          "en": "Read titlebar items and control visibility of individual buttons"
+        }
+      },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-titlebar.json",
       "changelog": [
+        {
+          "version": "1.0.35",
+          "tag": "v1.0.35",
+          "published_at": "2026-11-24T06:01:59Z",
+          "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.35",
+          "zh": {
+            "fixes": [
+              "恢复了对旧版本主程序的兼容支持，重新补齐旧版存储与界面权限，确保在旧版本中能够正常自定义与隐藏顶栏按钮。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "The plugin now restores compatibility with older versions of the app by reinstating legacy storage and interface permissions, ensuring titlebar buttons can be customized and hidden properly."
+            ]
+          }
+        },
         {
           "version": "1.0.34",
           "tag": "v1.0.34",
@@ -484,15 +232,148 @@
               "Updated the automated script used to generate release notes."
             ]
           }
+        }
+      ]
+    },
+    {
+      "app": "blockmd",
+      "id": "block-canvas-dots",
+      "name": {
+        "zh": "编辑器背景",
+        "en": "Editor Background"
+      },
+      "version": "1.2.39",
+      "author": "Block Community",
+      "repo": "blockmd-plugins/block-canvas-dots",
+      "summary": {
+        "zh": "为笔记铺上与行高对齐的点阵或方格，增加对比度，稳定追踪每一行",
+        "en": "Line-aligned dot or grid background for notes, adding contrast to track each line"
+      },
+      "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.39/block-canvas-dots-v1.2.39.tar.gz",
+      "sha256": "8b584e2aacabb303ce9d07e6b87785f1ec1b71867d443bc088f25e6c1b287e87",
+      "downloads": 122,
+      "stars": 0,
+      "verified": true,
+      "updated_at": "2026-11-24T06:01:48Z",
+      "permissions": [
+        "storage",
+        "ui:settings"
+      ],
+      "surfaces": [
+        "settings_page"
+      ],
+      "icon": {
+        "view_box": "0 0 24 24",
+        "fill_paths": [
+          "M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Z"
+        ],
+        "stroke_paths": [
+          "M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Z",
+          "M8.5 8.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
+          "M12 8.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
+          "M15.5 8.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
+          "M8.5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
+          "M15.5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
+          "M8.5 15.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
+          "M12 15.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
+          "M15.5 15.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+        ],
+        "accent_paths": [
+          "M12 12m-1.2 0a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0"
+        ]
+      },
+      "category": "appearance",
+      "permission_reasons": {
+        "storage": {
+          "zh": "保存背景样式、对比度与对齐方式设置",
+          "en": "Save editor background style, contrast, and alignment preferences"
+        },
+        "ui:settings": {
+          "zh": "应用并切换编辑器点阵或方格背景",
+          "en": "Apply and toggle editor dot or grid backgrounds"
+        }
+      },
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-canvas-dots.json",
+      "changelog": [
+        {
+          "version": "1.2.39",
+          "tag": "v1.2.39",
+          "published_at": "2026-11-24T06:01:48Z",
+          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.39",
+          "zh": {
+            "fixes": [
+              "插件恢复了旧版本宿主应用所需的存储与界面权限，解决了旧版本环境下背景设置与控制界面无法正常加载或保存的问题。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "The plugin restores storage and interface permissions on older versions of the host application, resolving issues where background settings and controls failed to load or save."
+            ]
+          }
         },
         {
-          "version": "1.0.24",
-          "tag": "v1.0.24",
-          "published_at": "2026-11-21T07:55:30Z",
-          "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.24",
+          "version": "1.2.38",
+          "tag": "v1.2.38",
+          "published_at": "2026-11-24T03:52:54Z",
+          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.38",
+          "zh": {
+            "other": [
+              "插件不再申请存储与用户界面的豁免权限，精简了安装与运行所需的系统授权范围。"
+            ]
+          },
           "en": {
             "other": [
-              "chore: drop beta flag (`8c0ade0`)"
+              "The plugin no longer requests exempt storage and user interface permissions, reducing the access privileges required during installation and operation."
+            ]
+          }
+        },
+        {
+          "version": "1.2.37",
+          "tag": "v1.2.37",
+          "published_at": "2026-11-23T18:12:58Z",
+          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.37",
+          "zh": {
+            "other": [
+              "插件信息中的作者与代码仓库链接已更新为新的官方组织。"
+            ]
+          },
+          "en": {
+            "other": [
+              "The plugin author and repository links have been updated to the official organization."
+            ]
+          }
+        },
+        {
+          "version": "1.2.35",
+          "tag": "v1.2.35",
+          "published_at": "2026-11-23T17:14:57Z",
+          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.35",
+          "zh": {
+            "other": [
+              "发版说明生成流程现已采用更新后的配置。",
+              "插件现已在商店中归类为「外观」。"
+            ]
+          },
+          "en": {
+            "other": [
+              "Release note generation now uses the updated configuration.",
+              "The plugin is now listed under Appearance in the store."
+            ]
+          }
+        },
+        {
+          "version": "1.2.31",
+          "tag": "v1.2.31",
+          "published_at": "2026-11-21T09:24:46Z",
+          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.31",
+          "zh": {
+            "other": [
+              "本次为维护版本，没有面向用户的变化。"
+            ]
+          },
+          "en": {
+            "other": [
+              "This is a maintenance release with no user-facing changes."
             ]
           }
         }
@@ -505,23 +386,31 @@
         "zh": "到处拉屎",
         "en": "Poop Everywhere"
       },
-      "version": "1.0.36",
+      "version": "1.0.37",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-poop-everywhere",
       "summary": {
         "zh": "官方全扩展点示范插件：覆盖顶栏、侧栏、文件树角标、编辑区背景、面板、菜单、状态栏与弹窗",
         "en": "Official kitchen-sink demo covering titlebar, sidebar sections, file badges, editor backdrops, panels, menus, status bar, and dialogs"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.36/block-poop-everywhere-v1.0.36.tar.gz",
-      "sha256": "767d7ab78873d60b9d5aa0492564f5dfc4ae6a7a96ec3265dd1c39b040f760da",
-      "downloads": 87,
+      "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.37/block-poop-everywhere-v1.0.37.tar.gz",
+      "sha256": "eb2f99594edfd9a9edffa15759f1752f0ce69acba760bf6ae0c19f9de7dbec19",
+      "downloads": 89,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-24T03:54:05Z",
+      "updated_at": "2026-11-24T06:02:22Z",
       "permissions": [
+        "storage",
         "notes:read",
         "notes:write",
         "events:note_saved",
+        "ui:titlebar",
+        "ui:commands",
+        "ui:panels",
+        "ui:status",
+        "ui:notify",
+        "ui:sidebar",
+        "ui:appearance",
         "editor:read",
         "editor:write",
         "events:workspace"
@@ -544,6 +433,10 @@
       },
       "category": "tools",
       "permission_reasons": {
+        "storage": {
+          "zh": "保存拉屎风格、背景参数、笔记本白名单与战况记录。",
+          "en": "Save style preferences, backdrop settings, notebook allowlist, and drop history."
+        },
         "notes:read": {
           "zh": "扫描笔记中的标记数量、展示统计并支持点击列表打开对应笔记。",
           "en": "Scan notes for drop markers, compute stats, and jump to notes from lists."
@@ -555,6 +448,34 @@
         "events:note_saved": {
           "zh": "保存笔记后自动重算该页标记数并刷新文件树角标与状态栏。",
           "en": "Recount drop markers after note saves and refresh file badges and status bar."
+        },
+        "ui:titlebar": {
+          "zh": "在顶栏挂载面板、快捷拉一坨与冲水按钮，并动态展示数量角标。",
+          "en": "Mount panel, quick-drop, and flush buttons in the titlebar with live badges."
+        },
+        "ui:commands": {
+          "zh": "向命令面板、默认快捷键、页面「…」菜单与编辑器右键菜单注册操作。",
+          "en": "Register commands, default shortcuts, page menu items, and editor menu items."
+        },
+        "ui:panels": {
+          "zh": "在右侧打开「屎量面板」展示实时统计、战报与快捷操作。",
+          "en": "Open the right-hand Poop Board side panel for live metrics and actions."
+        },
+        "ui:status": {
+          "zh": "在底部状态栏展示带图标的当前总数，点击可一键切换右侧面板。",
+          "en": "Display a live icon counter in the bottom status bar to toggle the board."
+        },
+        "ui:notify": {
+          "zh": "弹出四类语气带图标轻提示，并在冲水前打开二次确认弹窗。",
+          "en": "Show icon-bearing toasts across all tones and open a flush confirmation dialog."
+        },
+        "ui:sidebar": {
+          "zh": "在左侧栏挂载「今日屎迹」分区、文件树行尾角标与笔记右键菜单。",
+          "en": "Add Today's Drops sidebar section, file-tree row badges, and tree context actions."
+        },
+        "ui:appearance": {
+          "zh": "在编辑区背景层绘制可调图案、密度与暗色夜光效果的矢量水印。",
+          "en": "Render configurable vector patterns, watermarks, and dark-glow editor backdrops."
         },
         "editor:read": {
           "zh": "读取当前编辑器选中文本，以便将其包装成带附言的标记块。",
@@ -571,6 +492,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-poop-everywhere.json",
       "changelog": [
+        {
+          "version": "1.0.37",
+          "tag": "v1.0.37",
+          "published_at": "2026-11-24T06:02:22Z",
+          "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.37",
+          "zh": {
+            "fixes": [
+              "恢复了对旧版本宿主应用的存储与界面权限支持，确保各项界面组件与本地数据在较早版本的客户端中均能正常使用。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "The plugin now restores legacy storage and interface permissions, ensuring that all UI elements and saved data function reliably on older versions of the host application."
+            ]
+          }
+        },
         {
           "version": "1.0.36",
           "tag": "v1.0.36",
@@ -626,18 +563,6 @@
               "fix: keep everyday settings to three choices (`906357f`)"
             ]
           }
-        },
-        {
-          "version": "1.0.9",
-          "tag": "v1.0.9",
-          "published_at": "2026-11-20T15:58:54Z",
-          "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.9",
-          "en": {
-            "other": [
-              "fix(backdrop): apply editor background from settings (`1fca85b`)",
-              "fix: harden nested CommonMark parsing, link titles, legacy list wraps, and O(N) bq refdefs (v1.0.9) (`574d405`)"
-            ]
-          }
         }
       ]
     },
@@ -648,20 +573,24 @@
         "zh": "塔罗模式",
         "en": "Tarot Mode"
       },
-      "version": "1.0.22",
+      "version": "1.0.23",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-tarot",
       "summary": {
         "zh": "午夜铜版塔罗皮肤与写作仪式：牌桌三张牌阵、每日一牌反问、大阿卡纳牌册与速记换肤",
         "en": "Midnight Copperplate tarot skin and writing rituals: 3-card spread, daily card reflection, 22 Major Arcana deck, and Quick Note skin"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.22/block-tarot-v1.0.22.tar.gz",
-      "sha256": "aeffb4407775c8a8b8dc98d864dd9d2411bd1404d4d2c77c72df74f5f498322e",
-      "downloads": 76,
+      "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.23/block-tarot-v1.0.23.tar.gz",
+      "sha256": "3b2a819145f58ba4418fcc43242012a047f07f417b0535549d510ab9ec74beb6",
+      "downloads": 78,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-24T03:53:53Z",
+      "updated_at": "2026-11-24T06:02:02Z",
       "permissions": [
+        "storage",
+        "ui:titlebar",
+        "ui:commands",
+        "ui:notify",
         "events:workspace"
       ],
       "surfaces": [
@@ -683,6 +612,22 @@
       },
       "category": "appearance",
       "permission_reasons": {
+        "storage": {
+          "zh": "保存塔罗模式开关偏好，在重启后恢复状态",
+          "en": "Save Tarot Mode toggle preference across restarts"
+        },
+        "ui:titlebar": {
+          "zh": "在顶栏挂载塔罗模式月亮快捷切换按钮",
+          "en": "Show the Tarot Mode moon toggle button in the titlebar"
+        },
+        "ui:commands": {
+          "zh": "向命令面板注册切换塔罗模式与打开各仪式房间的快捷命令",
+          "en": "Register command palette actions for Tarot Mode and ritual rooms"
+        },
+        "ui:notify": {
+          "zh": "切换塔罗模式或进入仪式房间时显示状态提示",
+          "en": "Show status feedback when toggling Tarot Mode or opening ritual rooms"
+        },
         "events:workspace": {
           "zh": "监听语言与主题切换事件，同步更新顶栏按钮与界面状态",
           "en": "Listen to locale and theme change events to sync button and UI state"
@@ -690,6 +635,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-tarot.json",
       "changelog": [
+        {
+          "version": "1.0.23",
+          "tag": "v1.0.23",
+          "published_at": "2026-11-24T06:02:02Z",
+          "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.23",
+          "zh": {
+            "fixes": [
+              "塔罗模式现已重新启用旧版存储与界面权限，恢复了在较旧版本主程序中的正常运行与数据保存支持。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "Tarot Mode now reinstates legacy storage and interface permissions, restoring normal operation and data saving on older versions of the host application."
+            ]
+          }
+        },
         {
           "version": "1.0.22",
           "tag": "v1.0.22",
@@ -751,17 +712,6 @@
               "refactor(ui): remove settings_section surface handling (`7fcb3ca`)"
             ]
           }
-        },
-        {
-          "version": "1.0.10",
-          "tag": "v1.0.10",
-          "published_at": "2026-11-20T13:59:43Z",
-          "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.10",
-          "en": {
-            "other": [
-              "chore(git): ignore local agent prompts, design files, and build artifacts (`602557f`)"
-            ]
-          }
         }
       ]
     },
@@ -781,7 +731,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.3/block-file-icons-v1.0.3.tar.gz",
       "sha256": "e24a563d6c1ca28f06e5cdaccdda7a559c4c25d7f3c3de98ab9fba4cd38e8ecf",
-      "downloads": 12,
+      "downloads": 14,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-23T18:28:51Z",
@@ -848,24 +798,26 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.3.118",
+      "version": "1.3.119",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "支持本地目录镜像、WebDAV 与 Git 仓库的多端增量同步",
         "en": "Incremental notebook sync via local mirror, WebDAV, and Git"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.118/block-sync-v1.3.118.tar.gz",
-      "sha256": "03dbe804aba25da6059ce20988810b639ac15484a29680659958e7e7a77d8247",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.119/block-sync-v1.3.119.tar.gz",
+      "sha256": "05ce3f5974391fe06cdf7a02b2af2e5f836ff23691769860ba53bc0240ce5df3",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-24T03:52:48Z",
+      "updated_at": "2026-11-24T06:01:59Z",
       "permissions": [
+        "storage",
         "notes:read",
         "notes:write",
         "network",
         "events:note_saved",
+        "system:notify",
         "system:secrets",
         "events:system"
       ],
@@ -888,6 +840,10 @@
       },
       "category": "tools",
       "permission_reasons": {
+        "storage": {
+          "zh": "保存各笔记本的同步配置、同步状态元信息与近期同步日志",
+          "en": "Save per-notebook sync settings, sync state metadata, and recent logs"
+        },
         "notes:read": {
           "zh": "读取待同步笔记与附件内容，用于增量比对与上传",
           "en": "Read notes and attachments for incremental comparison and upload"
@@ -904,6 +860,10 @@
           "zh": "在笔记保存后自动触发增量同步",
           "en": "Automatically trigger incremental sync when a note is saved"
         },
+        "system:notify": {
+          "zh": "同步失败、发生冲突或需要确认时发出通知",
+          "en": "Notify you when sync fails, encounters conflicts, or needs confirmation"
+        },
         "system:secrets": {
           "zh": "将 Git 令牌和 WebDAV 密码保存在系统凭据库中",
           "en": "Store Git tokens and WebDAV passwords in the system credential store"
@@ -915,6 +875,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-sync.json",
       "changelog": [
+        {
+          "version": "1.3.119",
+          "tag": "v1.3.119",
+          "published_at": "2026-11-24T06:01:59Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.119",
+          "zh": {
+            "fixes": [
+              "恢复了对旧版本宿主应用的存储与界面权限支持，确保在旧版本客户端中可以正常访问本地数据并显示插件界面。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "Sync restores required storage and interface permissions for older versions of the host application, ensuring local data access and interface controls work properly."
+            ]
+          }
+        },
         {
           "version": "1.3.118",
           "tag": "v1.3.118",
@@ -998,26 +974,188 @@
               "Sync now displays recent sync activity separately within each sync target tab, preventing records from different targets from mixing together."
             ]
           }
+        }
+      ]
+    },
+    {
+      "app": "blockmd",
+      "id": "block-image-host",
+      "name": {
+        "zh": "图床上传",
+        "en": "Image Host"
+      },
+      "version": "1.2.48",
+      "author": "Block Community",
+      "repo": "blockmd-plugins/block-image-host",
+      "summary": {
+        "zh": "支持 Cloudflare R2、S3 兼容存储与 GitHub 仓库的笔记图片自动上传",
+        "en": "Upload local note images to Cloudflare R2, S3-compatible storage, or GitHub"
+      },
+      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.2.48/block-image-host-v1.2.48.tar.gz",
+      "sha256": "a57a20f7154113db3a58cba6cb443c6beddce9a35c03deae5127d38fb14a3b17",
+      "downloads": 941,
+      "stars": 0,
+      "verified": true,
+      "updated_at": "2026-11-24T06:01:50Z",
+      "permissions": [
+        "storage",
+        "notes:read",
+        "notes:write",
+        "network",
+        "events:note_saved",
+        "system:clipboard_read",
+        "system:clipboard_write",
+        "ui:menubar",
+        "ui:commands"
+      ],
+      "surfaces": [
+        "settings_page"
+      ],
+      "icon": {
+        "view_box": "0 0 24 24",
+        "fill_paths": [
+          "M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
+        ],
+        "stroke_paths": [
+          "M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z",
+          "M4.5 16.5l4.2-4.2a1.4 1.4 0 0 1 2 0L14 15.6"
+        ],
+        "accent_paths": [
+          "M16.5 14V7.5",
+          "M14 10l2.5-2.5L19 10",
+          "M9 9.25a1.25 1.25 0 1 0 0 .01"
+        ]
+      },
+      "category": "edit",
+      "permission_reasons": {
+        "storage": {
+          "zh": "保存图床服务商凭证、命名规则与上传记录",
+          "en": "Save image host credentials, naming rules, and upload logs"
+        },
+        "notes:read": {
+          "zh": "读取笔记正文与本地图片引用，筛选需要上传的图片",
+          "en": "Read note content and local image links to find images to upload"
+        },
+        "notes:write": {
+          "zh": "图片上传成功后将笔记中的本地路径替换为远程图床链接",
+          "en": "Replace local image paths with uploaded remote URLs in notes"
+        },
+        "network": {
+          "zh": "向 Cloudflare R2、S3 兼容存储或 GitHub 仓库上传图片",
+          "en": "Upload images to Cloudflare R2, S3-compatible storage, or GitHub"
+        },
+        "events:note_saved": {
+          "zh": "在保存笔记时自动检测并上传其中的本地图片",
+          "en": "Automatically detect and upload local images when a note is saved"
+        },
+        "system:clipboard_read": {
+          "zh": "点击菜单栏「上传剪贴板」时读取剪贴板中的图片或图片文件",
+          "en": "Read clipboard images or image files when clicking Upload Clipboard in the menu bar"
+        },
+        "system:clipboard_write": {
+          "zh": "上传完成或点击最近记录时将远程图片链接写入剪贴板",
+          "en": "Copy uploaded image URLs or recent links to the clipboard"
+        },
+        "ui:menubar": {
+          "zh": "在系统菜单栏显示上传图标，接收拖入或剪贴板图片并列出最近上传",
+          "en": "Show a menu bar icon to upload dropped or clipboard images and list recent uploads"
+        },
+        "ui:commands": {
+          "zh": "注册上传剪贴板、上传拖入文件与复制最近链接命令",
+          "en": "Register commands for clipboard upload, dropped upload, and copying recent links"
+        }
+      },
+      "beta": true,
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-image-host.json",
+      "changelog": [
+        {
+          "version": "1.2.48",
+          "tag": "v1.2.48",
+          "published_at": "2026-11-24T06:01:50Z",
+          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.48",
+          "zh": {
+            "fixes": [
+              "插件现已正确声明剪贴板权限以避免操作失败，并恢复了对旧版本笔记应用的兼容支持。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "The plugin now properly declares clipboard permissions to prevent operation failures and restores compatibility with older versions of the note application."
+            ]
+          }
         },
         {
-          "version": "1.3.108",
-          "tag": "v1.3.108",
-          "published_at": "2026-11-22T06:18:39Z",
-          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.108",
+          "version": "1.2.47",
+          "tag": "v1.2.47",
+          "published_at": "2026-11-24T03:54:38Z",
+          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.47",
           "zh": {
             "new": [
-              "同步插件现已支持同时向多个目标执行同步，并为各个通道独立显示实时进度。"
+              "将图片拖到菜单栏图标上或粘贴到图标处即可上传，上传后会自动复制图片链接。",
+              "图片上传结果现在会通过应用内右上角横幅通知显示。"
             ],
-            "fixes": [
-              "同步插件现会在保存设置时拦截清空唯一同步目标的操作，防止所有同步目的地被意外移除。"
+            "other": [
+              "插件现在申请的存储和界面相关权限更少。"
             ]
           },
           "en": {
             "new": [
-              "Sync now supports simultaneous synchronization across multiple targets and displays independent real-time progress for each channel."
+              "The menu bar icon now uploads an image when you drag or paste it there, then copies the resulting link to your clipboard.",
+              "Upload results now appear in top-right in-app banners."
             ],
-            "fixes": [
-              "Sync now rejects saving configuration changes that would clear the only remaining sync target, preventing all destinations from being accidentally removed."
+            "other": [
+              "The plugin now requests fewer storage and interface permissions."
+            ]
+          }
+        },
+        {
+          "version": "1.2.43",
+          "tag": "v1.2.43",
+          "published_at": "2026-11-23T18:13:08Z",
+          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.43",
+          "zh": {
+            "other": [
+              "插件详情中的作者信息与源码仓库链接已更新并指向官方组织。",
+              "插件状态现已明确标记为测试版本，以标示当前处于测试阶段。"
+            ]
+          },
+          "en": {
+            "other": [
+              "The plugin details now display the official organization as the author and link to the updated repository.",
+              "The plugin status is now explicitly marked as a beta release to indicate its current testing phase."
+            ]
+          }
+        },
+        {
+          "version": "1.2.40",
+          "tag": "v1.2.40",
+          "published_at": "2026-11-23T17:13:44Z",
+          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.40",
+          "zh": {
+            "improvements": [
+              "插件在应用商店中现已归类至编辑分类，便于用户按分类浏览与查找。"
+            ],
+            "other": [
+              "更新了发版说明的自动化脚本，以保持更新日志格式的一致性。"
+            ]
+          },
+          "en": {
+            "improvements": [
+              "The plugin is now listed under the Editing category in the marketplace to make it easier to discover when browsing by category."
+            ],
+            "other": [
+              "The automated release notes generation script has been updated to maintain consistent changelog formatting."
+            ]
+          }
+        },
+        {
+          "version": "1.2.34",
+          "tag": "v1.2.34",
+          "published_at": "2026-11-21T07:55:38Z",
+          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.34",
+          "en": {
+            "other": [
+              "chore: drop beta flag (`b531b2e`)"
             ]
           }
         }
@@ -1030,20 +1168,23 @@
         "zh": "复制路径",
         "en": "Copy Path"
       },
-      "version": "1.0.13",
+      "version": "1.0.14",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-copy-path",
       "summary": {
         "zh": "在页面菜单、标签页和文件树右键里复制文件路径，可选完整路径、相对路径或文件名",
         "en": "Copy a file path from the page menu, tab or file tree, as a full path, relative path or file name"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.13/block-copy-path-v1.0.13.tar.gz",
-      "sha256": "00d363b5a6f758cff2ae219a5752dacfc73771d228e2be412f65b19b10c41ae9",
-      "downloads": 38,
+      "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.14/block-copy-path-v1.0.14.tar.gz",
+      "sha256": "14a2888ddd454ded5413700e9b02a866ca3c07cf1abf75271fa96ef255b39751",
+      "downloads": 41,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-24T03:53:44Z",
+      "updated_at": "2026-11-24T06:01:42Z",
       "permissions": [
+        "storage",
+        "ui:commands",
+        "ui:sidebar",
         "notes:path",
         "system:clipboard_write"
       ],
@@ -1065,6 +1206,18 @@
       },
       "category": "tools",
       "permission_reasons": {
+        "storage": {
+          "zh": "保存你选的复制格式",
+          "en": "Save the copy format you chose"
+        },
+        "ui:commands": {
+          "zh": "在页面菜单、标签页右键和快捷键 Cmd+Shift+C 中提供复制入口",
+          "en": "Add the copy action to the page menu, tab menu and the Cmd+Shift+C shortcut"
+        },
+        "ui:sidebar": {
+          "zh": "在文件树笔记与文件夹的右键菜单中提供复制入口",
+          "en": "Add the copy action to the file tree menu for notes and folders"
+        },
         "notes:path": {
           "zh": "拿到你右键或正在查看的文件路径，不读取内容",
           "en": "Get the path of the file you right-clicked or are viewing, without reading it"
@@ -1076,6 +1229,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-copy-path.json",
       "changelog": [
+        {
+          "version": "1.0.14",
+          "tag": "v1.0.14",
+          "published_at": "2026-11-24T06:01:42Z",
+          "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.14",
+          "zh": {
+            "fixes": [
+              "恢复了旧版本主程序所需的存储与界面权限支持，确保插件在旧版应用中能够正常运行。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "The plugin now restores the required storage and user interface permissions to ensure it runs properly on older versions of the host application."
+            ]
+          }
+        },
         {
           "version": "1.0.13",
           "tag": "v1.0.13",
@@ -1143,17 +1312,6 @@
             ],
             "other": [
               "The release notes generation tooling is updated to streamline version publishing."
-            ]
-          }
-        },
-        {
-          "version": "1.0.3",
-          "tag": "v1.0.3",
-          "published_at": "2026-11-21T07:24:30Z",
-          "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.3",
-          "en": {
-            "other": [
-              "chore: drop beta flag (`ad5a3d1`)"
             ]
           }
         }
