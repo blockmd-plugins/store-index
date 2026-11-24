@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-24T10:55:53Z",
+  "updated_at": "2026-11-24T11:46:51Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.0.36/block-titlebar-v1.0.36.tar.gz",
       "sha256": "b0476a905618a5fcfd5dcf76bc57eb2c201d43f7477e2f0c8e13623b64967aa3",
-      "downloads": 129,
+      "downloads": 131,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T08:14:59Z",
@@ -245,7 +245,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.39/block-canvas-dots-v1.2.39.tar.gz",
       "sha256": "8b584e2aacabb303ce9d07e6b87785f1ec1b71867d443bc088f25e6c1b287e87",
-      "downloads": 126,
+      "downloads": 127,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T06:01:48Z",
@@ -389,7 +389,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.37/block-poop-everywhere-v1.0.37.tar.gz",
       "sha256": "eb2f99594edfd9a9edffa15759f1752f0ce69acba760bf6ae0c19f9de7dbec19",
-      "downloads": 93,
+      "downloads": 94,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T06:02:22Z",
@@ -576,7 +576,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.23/block-tarot-v1.0.23.tar.gz",
       "sha256": "3b2a819145f58ba4418fcc43242012a047f07f417b0535549d510ab9ec74beb6",
-      "downloads": 83,
+      "downloads": 84,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T06:02:02Z",
@@ -725,7 +725,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.3/block-file-icons-v1.0.3.tar.gz",
       "sha256": "e24a563d6c1ca28f06e5cdaccdda7a559c4c25d7f3c3de98ab9fba4cd38e8ecf",
-      "downloads": 18,
+      "downloads": 19,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-23T18:28:51Z",
@@ -1162,19 +1162,19 @@
         "zh": "复制路径",
         "en": "Copy Path"
       },
-      "version": "1.0.14",
+      "version": "1.0.15",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-copy-path",
       "summary": {
         "zh": "在页面菜单、标签页和文件树右键里复制文件路径，可选完整路径、相对路径或文件名",
         "en": "Copy a file path from the page menu, tab or file tree, as a full path, relative path or file name"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.14/block-copy-path-v1.0.14.tar.gz",
-      "sha256": "14a2888ddd454ded5413700e9b02a866ca3c07cf1abf75271fa96ef255b39751",
-      "downloads": 45,
+      "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.15/block-copy-path-v1.0.15.tar.gz",
+      "sha256": "f2ca9f512e5f56a2c13b1455dd577571f4550f2f8ea49a6df75e3e0cd05e8cc7",
+      "downloads": 47,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-24T06:01:42Z",
+      "updated_at": "2026-11-24T11:45:25Z",
       "permissions": [
         "storage",
         "ui:commands",
@@ -1223,6 +1223,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-copy-path.json",
       "changelog": [
+        {
+          "version": "1.0.15",
+          "tag": "v1.0.15",
+          "published_at": "2026-11-24T11:45:25Z",
+          "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.15",
+          "zh": {
+            "other": [
+              "本次为维护版本，没有面向用户的变化。"
+            ]
+          },
+          "en": {
+            "other": [
+              "This is a maintenance release with no user-facing changes."
+            ]
+          }
+        },
         {
           "version": "1.0.14",
           "tag": "v1.0.14",
@@ -1284,28 +1300,6 @@
           "en": {
             "fixes": [
               "The sample path preview now builds example paths from your home directory to accurately reflect real file paths."
-            ]
-          }
-        },
-        {
-          "version": "1.0.9",
-          "tag": "v1.0.9",
-          "published_at": "2026-11-22T06:25:06Z",
-          "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.9",
-          "zh": {
-            "fixes": [
-              "示例路径预览现已改用通用的示例路径，不再展开显示本地用户的主目录。"
-            ],
-            "other": [
-              "发版说明生成工具已更新，以优化版本发布流程。"
-            ]
-          },
-          "en": {
-            "fixes": [
-              "The sample path preview now displays a neutral example instead of expanding the local user home directory."
-            ],
-            "other": [
-              "The release notes generation tooling is updated to streamline version publishing."
             ]
           }
         }

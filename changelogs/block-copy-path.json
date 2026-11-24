@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-copy-path",
   "repo": "blockmd-plugins/block-copy-path",
-  "updated_at": "2026-11-24T10:55:53Z",
-  "latest_version": "1.0.14",
+  "updated_at": "2026-11-24T11:46:51Z",
+  "latest_version": "1.0.15",
   "releases": [
+    {
+      "version": "1.0.15",
+      "tag": "v1.0.15",
+      "published_at": "2026-11-24T11:45:25Z",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.15",
+      "zh": {
+        "other": [
+          "本次为维护版本，没有面向用户的变化。"
+        ]
+      },
+      "en": {
+        "other": [
+          "This is a maintenance release with no user-facing changes."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- This is a maintenance release with no user-facing changes.\n\n---\n\n## 中文\n\n### 其他\n\n- 本次为维护版本，没有面向用户的变化。"
+    },
     {
       "version": "1.0.14",
       "tag": "v1.0.14",
