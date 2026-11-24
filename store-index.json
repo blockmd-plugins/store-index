@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-24T06:04:30Z",
+  "updated_at": "2026-11-24T08:15:24Z",
   "apps": [
     {
       "app": "blockmd",
@@ -97,19 +97,19 @@
         "zh": "顶栏图标",
         "en": "Titlebar Icons"
       },
-      "version": "1.0.35",
+      "version": "1.0.36",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-titlebar",
       "summary": {
         "zh": "自定义顶栏右上角显示的图标，隐藏不需要的按钮",
         "en": "Choose which icons appear in the top-right titlebar"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.0.35/block-titlebar-v1.0.35.tar.gz",
-      "sha256": "72a3fd4f94fe6033e7a9eb89cab63268b4c7de7592132343657549427519e9b1",
-      "downloads": 123,
+      "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.0.36/block-titlebar-v1.0.36.tar.gz",
+      "sha256": "b0476a905618a5fcfd5dcf76bc57eb2c201d43f7477e2f0c8e13623b64967aa3",
+      "downloads": 127,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-24T06:01:59Z",
+      "updated_at": "2026-11-24T08:14:59Z",
       "permissions": [
         "storage",
         "ui:titlebar"
@@ -147,6 +147,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-titlebar.json",
       "changelog": [
+        {
+          "version": "1.0.36",
+          "tag": "v1.0.36",
+          "published_at": "2026-11-24T08:14:59Z",
+          "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.36",
+          "zh": {
+            "improvements": [
+              "顶栏图标设置中的插槽名称现显示为“AI Agent”，原名称“AI Assistant”已替换。"
+            ]
+          },
+          "en": {
+            "improvements": [
+              "The titlebar icon slot label now says “AI Agent” instead of “AI Assistant.”"
+            ]
+          }
+        },
         {
           "version": "1.0.35",
           "tag": "v1.0.35",
@@ -210,28 +226,6 @@
               "The plugin is now listed under the Appearance category in the plugin marketplace."
             ]
           }
-        },
-        {
-          "version": "1.0.30",
-          "tag": "v1.0.30",
-          "published_at": "2026-11-22T06:33:08Z",
-          "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.30",
-          "zh": {
-            "fixes": [
-              "设置界面中的源码模式预览现已调整至源码模式设置选项上方。"
-            ],
-            "other": [
-              "更新了用于生成发版说明的自动化脚本。"
-            ]
-          },
-          "en": {
-            "fixes": [
-              "The Source Mode preview in settings is now positioned above the Source Mode section."
-            ],
-            "other": [
-              "Updated the automated script used to generate release notes."
-            ]
-          }
         }
       ]
     },
@@ -251,7 +245,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.39/block-canvas-dots-v1.2.39.tar.gz",
       "sha256": "8b584e2aacabb303ce9d07e6b87785f1ec1b71867d443bc088f25e6c1b287e87",
-      "downloads": 122,
+      "downloads": 125,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T06:01:48Z",
@@ -395,7 +389,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.37/block-poop-everywhere-v1.0.37.tar.gz",
       "sha256": "eb2f99594edfd9a9edffa15759f1752f0ce69acba760bf6ae0c19f9de7dbec19",
-      "downloads": 89,
+      "downloads": 92,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T06:02:22Z",
@@ -582,7 +576,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.23/block-tarot-v1.0.23.tar.gz",
       "sha256": "3b2a819145f58ba4418fcc43242012a047f07f417b0535549d510ab9ec74beb6",
-      "downloads": 78,
+      "downloads": 82,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T06:02:02Z",
@@ -731,7 +725,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.3/block-file-icons-v1.0.3.tar.gz",
       "sha256": "e24a563d6c1ca28f06e5cdaccdda7a559c4c25d7f3c3de98ab9fba4cd38e8ecf",
-      "downloads": 14,
+      "downloads": 16,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-23T18:28:51Z",
@@ -1177,7 +1171,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.14/block-copy-path-v1.0.14.tar.gz",
       "sha256": "14a2888ddd454ded5413700e9b02a866ca3c07cf1abf75271fa96ef255b39751",
-      "downloads": 41,
+      "downloads": 44,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T06:01:42Z",
