@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-canvas-dots",
   "repo": "blockmd-plugins/block-canvas-dots",
-  "updated_at": "2026-11-24T00:51:17Z",
-  "latest_version": "1.2.37",
+  "updated_at": "2026-11-24T03:55:08Z",
+  "latest_version": "1.2.38",
   "releases": [
+    {
+      "version": "1.2.38",
+      "tag": "v1.2.38",
+      "published_at": "2026-11-24T03:52:54Z",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.38",
+      "zh": {
+        "other": [
+          "插件不再申请存储与用户界面的豁免权限，精简了安装与运行所需的系统授权范围。"
+        ]
+      },
+      "en": {
+        "other": [
+          "The plugin no longer requests exempt storage and user interface permissions, reducing the access privileges required during installation and operation."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- The plugin no longer requests exempt storage and user interface permissions, reducing the access privileges required during installation and operation.\n\n---\n\n## 中文\n\n### 其他\n\n- 插件不再申请存储与用户界面的豁免权限，精简了安装与运行所需的系统授权范围。"
+    },
     {
       "version": "1.2.37",
       "tag": "v1.2.37",

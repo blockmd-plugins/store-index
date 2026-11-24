@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-copy-path",
   "repo": "blockmd-plugins/block-copy-path",
-  "updated_at": "2026-11-24T00:51:17Z",
-  "latest_version": "1.0.12",
+  "updated_at": "2026-11-24T03:55:08Z",
+  "latest_version": "1.0.13",
   "releases": [
+    {
+      "version": "1.0.13",
+      "tag": "v1.0.13",
+      "published_at": "2026-11-24T03:53:44Z",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.13",
+      "zh": {
+        "other": [
+          "复制路径插件不再申请豁免存储权限或界面权限。"
+        ]
+      },
+      "en": {
+        "other": [
+          "Copy Path no longer requests exempt storage or UI permissions."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- Copy Path no longer requests exempt storage or UI permissions.\n\n---\n\n## 中文\n\n### 其他\n\n- 复制路径插件不再申请豁免存储权限或界面权限。"
+    },
     {
       "version": "1.0.12",
       "tag": "v1.0.12",

@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-tarot",
   "repo": "blockmd-plugins/block-tarot",
-  "updated_at": "2026-11-24T00:51:17Z",
-  "latest_version": "1.0.21",
+  "updated_at": "2026-11-24T03:55:08Z",
+  "latest_version": "1.0.22",
   "releases": [
+    {
+      "version": "1.0.22",
+      "tag": "v1.0.22",
+      "published_at": "2026-11-24T03:53:53Z",
+      "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.22",
+      "zh": {
+        "improvements": [
+          "塔罗模式现在请求的权限更少，移除了豁免的存储权限和界面访问权限。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "Tarot Mode now requests fewer permissions, removing its exempt storage and UI access permissions."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- Tarot Mode now requests fewer permissions, removing its exempt storage and UI access permissions.\n\n---\n\n## 中文\n\n### 改进\n\n- 塔罗模式现在请求的权限更少，移除了豁免的存储权限和界面访问权限。"
+    },
     {
       "version": "1.0.21",
       "tag": "v1.0.21",

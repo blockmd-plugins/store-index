@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-titlebar",
   "repo": "blockmd-plugins/block-titlebar",
-  "updated_at": "2026-11-24T00:51:17Z",
-  "latest_version": "1.0.33",
+  "updated_at": "2026-11-24T03:55:08Z",
+  "latest_version": "1.0.34",
   "releases": [
+    {
+      "version": "1.0.34",
+      "tag": "v1.0.34",
+      "published_at": "2026-11-24T03:52:35Z",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.34",
+      "zh": {
+        "other": [
+          "插件不再申请非必要的存储与界面访问权限，精简了运行所需的权限范围。"
+        ]
+      },
+      "en": {
+        "other": [
+          "The plugin no longer requests unnecessary storage and user interface permissions, minimizing the access privileges required to run."
+        ]
+      },
+      "body": "## English\n\n### Other\n\n- The plugin no longer requests unnecessary storage and user interface permissions, minimizing the access privileges required to run.\n\n---\n\n## 中文\n\n### 其他\n\n- 插件不再申请非必要的存储与界面访问权限，精简了运行所需的权限范围。"
+    },
     {
       "version": "1.0.33",
       "tag": "v1.0.33",

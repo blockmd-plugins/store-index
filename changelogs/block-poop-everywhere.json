@@ -3,9 +3,32 @@
   "schema_version": 1,
   "id": "block-poop-everywhere",
   "repo": "blockmd-plugins/block-poop-everywhere",
-  "updated_at": "2026-11-24T00:51:17Z",
-  "latest_version": "1.0.28",
+  "updated_at": "2026-11-24T03:55:08Z",
+  "latest_version": "1.0.36",
   "releases": [
+    {
+      "version": "1.0.36",
+      "tag": "v1.0.36",
+      "published_at": "2026-11-24T03:54:05Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.36",
+      "zh": {
+        "improvements": [
+          "右上角的通知横幅现已改为显示插件默认图标。"
+        ],
+        "other": [
+          "插件不再申请存储与界面的豁免权限，缩减了运行所需的权限范围。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "Notification banners in the top-right corner now display the default plugin icon."
+        ],
+        "other": [
+          "The plugin no longer requests exempt storage and user interface permissions, reducing the required access scope."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- Notification banners in the top-right corner now display the default plugin icon.\n\n### Other\n\n- The plugin no longer requests exempt storage and user interface permissions, reducing the required access scope.\n\n---\n\n## 中文\n\n### 改进\n\n- 右上角的通知横幅现已改为显示插件默认图标。\n\n### 其他\n\n- 插件不再申请存储与界面的豁免权限，缩减了运行所需的权限范围。"
+    },
     {
       "version": "1.0.28",
       "tag": "v1.0.28",

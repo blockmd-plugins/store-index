@@ -3,9 +3,34 @@
   "schema_version": 1,
   "id": "block-image-host",
   "repo": "blockmd-plugins/block-image-host",
-  "updated_at": "2026-11-24T00:51:17Z",
-  "latest_version": "1.2.43",
+  "updated_at": "2026-11-24T03:55:08Z",
+  "latest_version": "1.2.47",
   "releases": [
+    {
+      "version": "1.2.47",
+      "tag": "v1.2.47",
+      "published_at": "2026-11-24T03:54:38Z",
+      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.47",
+      "zh": {
+        "new": [
+          "将图片拖到菜单栏图标上或粘贴到图标处即可上传，上传后会自动复制图片链接。",
+          "图片上传结果现在会通过应用内右上角横幅通知显示。"
+        ],
+        "other": [
+          "插件现在申请的存储和界面相关权限更少。"
+        ]
+      },
+      "en": {
+        "new": [
+          "The menu bar icon now uploads an image when you drag or paste it there, then copies the resulting link to your clipboard.",
+          "Upload results now appear in top-right in-app banners."
+        ],
+        "other": [
+          "The plugin now requests fewer storage and interface permissions."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- The menu bar icon now uploads an image when you drag or paste it there, then copies the resulting link to your clipboard.\n- Upload results now appear in top-right in-app banners.\n\n### Other\n\n- The plugin now requests fewer storage and interface permissions.\n\n---\n\n## 中文\n\n### 新功能\n\n- 将图片拖到菜单栏图标上或粘贴到图标处即可上传，上传后会自动复制图片链接。\n- 图片上传结果现在会通过应用内右上角横幅通知显示。\n\n### 其他\n\n- 插件现在申请的存储和界面相关权限更少。"
+    },
     {
       "version": "1.2.43",
       "tag": "v1.2.43",
