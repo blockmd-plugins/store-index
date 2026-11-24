@@ -74,6 +74,7 @@ VALID_PERMISSIONS = {
     "ui:notify",
     "ui:sidebar",
     "ui:appearance",
+    "ui:menubar",
     "editor:read",
     "editor:write",
     "events:workspace",
