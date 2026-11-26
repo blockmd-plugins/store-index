@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-tarot",
   "repo": "blockmd-plugins/block-tarot",
-  "updated_at": "2026-11-26T08:18:26Z",
-  "latest_version": "1.0.23",
+  "updated_at": "2026-11-26T12:54:50Z",
+  "latest_version": "1.0.24",
   "releases": [
+    {
+      "version": "1.0.24",
+      "tag": "v1.0.24",
+      "published_at": "2026-11-26T12:54:18Z",
+      "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.24",
+      "zh": {
+        "fixes": [
+          "插件增强了启动与界面渲染的容错处理，避免因异常错误导致插件无法启动或视图显示空白。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "The plugin now handles unexpected errors during startup and interface rendering more reliably, preventing launch crashes and display failures."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- The plugin now handles unexpected errors during startup and interface rendering more reliably, preventing launch crashes and display failures.\n\n---\n\n## 中文\n\n### 修复\n\n- 插件增强了启动与界面渲染的容错处理，避免因异常错误导致插件无法启动或视图显示空白。"
+    },
     {
       "version": "1.0.23",
       "tag": "v1.0.23",

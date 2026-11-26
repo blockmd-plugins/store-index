@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-26T08:18:26Z",
+  "updated_at": "2026-11-26T12:54:50Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.0.36/block-titlebar-v1.0.36.tar.gz",
       "sha256": "b0476a905618a5fcfd5dcf76bc57eb2c201d43f7477e2f0c8e13623b64967aa3",
-      "downloads": 139,
+      "downloads": 140,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T08:14:59Z",
@@ -245,7 +245,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.39/block-canvas-dots-v1.2.39.tar.gz",
       "sha256": "8b584e2aacabb303ce9d07e6b87785f1ec1b71867d443bc088f25e6c1b287e87",
-      "downloads": 133,
+      "downloads": 134,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T06:01:48Z",
@@ -389,7 +389,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.37/block-poop-everywhere-v1.0.37.tar.gz",
       "sha256": "eb2f99594edfd9a9edffa15759f1752f0ce69acba760bf6ae0c19f9de7dbec19",
-      "downloads": 100,
+      "downloads": 101,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T06:02:22Z",
@@ -567,19 +567,19 @@
         "zh": "塔罗模式",
         "en": "Tarot Mode"
       },
-      "version": "1.0.23",
+      "version": "1.0.24",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-tarot",
       "summary": {
         "zh": "午夜铜版塔罗皮肤与写作仪式：牌桌三张牌阵、每日一牌反问、大阿卡纳牌册与速记换肤",
         "en": "Midnight Copperplate tarot skin and writing rituals: 3-card spread, daily card reflection, 22 Major Arcana deck, and Quick Note skin"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.23/block-tarot-v1.0.23.tar.gz",
-      "sha256": "3b2a819145f58ba4418fcc43242012a047f07f417b0535549d510ab9ec74beb6",
-      "downloads": 91,
+      "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.24/block-tarot-v1.0.24.tar.gz",
+      "sha256": "51142ab3be984d0098998c5028bc8a3a8b4a7e35af8114e5195b0149f4c056c0",
+      "downloads": 98,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-24T06:02:02Z",
+      "updated_at": "2026-11-26T12:54:18Z",
       "permissions": [
         "storage",
         "ui:titlebar",
@@ -629,6 +629,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-tarot.json",
       "changelog": [
+        {
+          "version": "1.0.24",
+          "tag": "v1.0.24",
+          "published_at": "2026-11-26T12:54:18Z",
+          "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.24",
+          "zh": {
+            "fixes": [
+              "插件增强了启动与界面渲染的容错处理，避免因异常错误导致插件无法启动或视图显示空白。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "The plugin now handles unexpected errors during startup and interface rendering more reliably, preventing launch crashes and display failures."
+            ]
+          }
+        },
         {
           "version": "1.0.23",
           "tag": "v1.0.23",
@@ -694,18 +710,6 @@
               "The plugin is now listed under the “Appearance” category in the store."
             ]
           }
-        },
-        {
-          "version": "1.0.13",
-          "tag": "v1.0.13",
-          "published_at": "2026-11-21T06:16:49Z",
-          "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.13",
-          "en": {
-            "other": [
-              "feat(manifest): remove appearance settings section and ui:settings permission (`c18ba31`)",
-              "refactor(ui): remove settings_section surface handling (`7fcb3ca`)"
-            ]
-          }
         }
       ]
     },
@@ -725,7 +729,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.3/block-file-icons-v1.0.3.tar.gz",
       "sha256": "e24a563d6c1ca28f06e5cdaccdda7a559c4c25d7f3c3de98ab9fba4cd38e8ecf",
-      "downloads": 25,
+      "downloads": 26,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-23T18:28:51Z",
@@ -1171,7 +1175,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.15/block-copy-path-v1.0.15.tar.gz",
       "sha256": "f2ca9f512e5f56a2c13b1455dd577571f4550f2f8ea49a6df75e3e0cd05e8cc7",
-      "downloads": 55,
+      "downloads": 56,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-24T11:45:25Z",
