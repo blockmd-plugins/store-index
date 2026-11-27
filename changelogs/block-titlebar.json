@@ -3,9 +3,36 @@
   "schema_version": 1,
   "id": "block-titlebar",
   "repo": "blockmd-plugins/block-titlebar",
-  "updated_at": "2026-11-27T15:27:40Z",
-  "latest_version": "1.0.39",
+  "updated_at": "2026-11-27T16:38:09Z",
+  "latest_version": "1.1.43",
   "releases": [
+    {
+      "version": "1.1.43",
+      "tag": "v1.1.43",
+      "published_at": "2026-11-27T16:37:42Z",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.1.43",
+      "zh": {
+        "new": [
+          "插件商店现已提供专属图标和精选展示图片。",
+          "顶栏分组及其预览现会根据宿主应用提供的元数据呈现。"
+        ],
+        "fixes": [
+          "收到格式错误的项目响应时，插件现会报告协议错误，并且不再预留显示按钮的位置。",
+          "设置现会校验顶栏布尔选项，在英文界面中避免显示中日韩文字标签，并将“显示全部”固定在最后一张设置卡片上。"
+        ]
+      },
+      "en": {
+        "new": [
+          "The plugin now has a store icon and featured artwork.",
+          "Titlebar groups and their previews now reflect metadata provided by the host application."
+        ],
+        "fixes": [
+          "The plugin now reports protocol errors when it receives malformed item responses and no longer reserves a reveal slot.",
+          "The settings now validate titlebar boolean options, avoid Chinese, Japanese, and Korean labels in the English interface, and keep “Show all” on the last settings card."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- The plugin now has a store icon and featured artwork.\n- Titlebar groups and their previews now reflect metadata provided by the host application.\n\n### Fixes\n\n- The plugin now reports protocol errors when it receives malformed item responses and no longer reserves a reveal slot.\n- The settings now validate titlebar boolean options, avoid Chinese, Japanese, and Korean labels in the English interface, and keep “Show all” on the last settings card.\n\n---\n\n## 中文\n\n### 新功能\n\n- 插件商店现已提供专属图标和精选展示图片。\n- 顶栏分组及其预览现会根据宿主应用提供的元数据呈现。\n\n### 修复\n\n- 收到格式错误的项目响应时，插件现会报告协议错误，并且不再预留显示按钮的位置。\n- 设置现会校验顶栏布尔选项，在英文界面中避免显示中日韩文字标签，并将“显示全部”固定在最后一张设置卡片上。"
+    },
     {
       "version": "1.0.39",
       "tag": "v1.0.39",
