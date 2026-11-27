@@ -3,9 +3,28 @@
   "schema_version": 1,
   "id": "block-tarot",
   "repo": "blockmd-plugins/block-tarot",
-  "updated_at": "2026-11-27T18:07:09Z",
-  "latest_version": "1.0.27",
+  "updated_at": "2026-11-27T18:22:43Z",
+  "latest_version": "1.0.29",
   "releases": [
+    {
+      "version": "1.0.29",
+      "tag": "v1.0.29",
+      "published_at": "2026-11-27T18:21:55Z",
+      "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.29",
+      "zh": {
+        "new": [
+          "商店页面现已展示专属图标和主题插画，突出塔罗模式的特色。",
+          "点击月亮按钮进入塔罗模式时，现会直接打开牌桌。"
+        ]
+      },
+      "en": {
+        "new": [
+          "The store listing now features a dedicated icon and artwork that showcase Tarot Mode.",
+          "Entering Tarot Mode from the moon button now opens the card table directly."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- The store listing now features a dedicated icon and artwork that showcase Tarot Mode.\n- Entering Tarot Mode from the moon button now opens the card table directly.\n\n---\n\n## 中文\n\n### 新功能\n\n- 商店页面现已展示专属图标和主题插画，突出塔罗模式的特色。\n- 点击月亮按钮进入塔罗模式时，现会直接打开牌桌。"
+    },
     {
       "version": "1.0.27",
       "tag": "v1.0.27",

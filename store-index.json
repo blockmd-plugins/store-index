@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T18:07:09Z",
+  "updated_at": "2026-11-27T18:22:43Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.1.43/block-titlebar-v1.1.43.tar.gz",
       "sha256": "dd0f24958985dd04d854f8857813fb76c3e2799d0134b470d06d8587d2c95382",
-      "downloads": 159,
+      "downloads": 160,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T16:37:42Z",
@@ -255,7 +255,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.42/block-canvas-dots-v1.2.42.tar.gz",
       "sha256": "8f209c2299fb0379f3861bd42d379eff95a1c0bede5fa73ab3ce915ef10b9b0a",
-      "downloads": 152,
+      "downloads": 153,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:23:45Z",
@@ -395,19 +395,19 @@
         "zh": "塔罗模式",
         "en": "Tarot Mode"
       },
-      "version": "1.0.27",
+      "version": "1.0.29",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-tarot",
       "summary": {
         "zh": "复古暗金塔罗主题与灵感抽卡工具，为写作换装并附带每日一牌与三张牌阵",
         "en": "Retro dark-gold Tarot theme with daily card prompts and a 3-card spread for writing inspiration"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.27/block-tarot-v1.0.27.tar.gz",
-      "sha256": "6f67eb893ece6a09fd3e2a6c1ff6a38a4eb40f05b4d6fea5cdb48a06fe979e0e",
-      "downloads": 116,
+      "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.29/block-tarot-v1.0.29.tar.gz",
+      "sha256": "00679f1421c7311615f01c747df6cb672d0bfd88a4de337441924e7061e22ba7",
+      "downloads": 118,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T09:24:32Z",
+      "updated_at": "2026-11-27T18:21:55Z",
       "permissions": [
         "storage",
         "ui:titlebar",
@@ -478,6 +478,24 @@
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-tarot.json",
       "changelog": [
         {
+          "version": "1.0.29",
+          "tag": "v1.0.29",
+          "published_at": "2026-11-27T18:21:55Z",
+          "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.29",
+          "zh": {
+            "new": [
+              "商店页面现已展示专属图标和主题插画，突出塔罗模式的特色。",
+              "点击月亮按钮进入塔罗模式时，现会直接打开牌桌。"
+            ]
+          },
+          "en": {
+            "new": [
+              "The store listing now features a dedicated icon and artwork that showcase Tarot Mode.",
+              "Entering Tarot Mode from the moon button now opens the card table directly."
+            ]
+          }
+        },
+        {
           "version": "1.0.27",
           "tag": "v1.0.27",
           "published_at": "2026-11-27T09:24:32Z",
@@ -538,22 +556,6 @@
           "en": {
             "improvements": [
               "Tarot Mode now requests fewer permissions, removing its exempt storage and UI access permissions."
-            ]
-          }
-        },
-        {
-          "version": "1.0.21",
-          "tag": "v1.0.21",
-          "published_at": "2026-11-23T18:13:02Z",
-          "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.21",
-          "zh": {
-            "other": [
-              "插件详情中的作者署名与源码仓库链接现已更新至官方插件组织。"
-            ]
-          },
-          "en": {
-            "other": [
-              "The plugin details now point to the official plugin organization for author attribution and source code repository links."
             ]
           }
         }
@@ -1092,7 +1094,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.40/block-poop-everywhere-v1.0.40.tar.gz",
       "sha256": "aac348633cfaf4f6fd8bf60be66a1f0bf0e711bda607cfad52087e740ab8d64d",
-      "downloads": 118,
+      "downloads": 119,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:14Z",
@@ -1289,7 +1291,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
       "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 75,
+      "downloads": 76,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:29Z",
