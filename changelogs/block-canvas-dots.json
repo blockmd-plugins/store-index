@@ -3,9 +3,28 @@
   "schema_version": 1,
   "id": "block-canvas-dots",
   "repo": "blockmd-plugins/block-canvas-dots",
-  "updated_at": "2026-11-27T19:14:12Z",
-  "latest_version": "1.2.42",
+  "updated_at": "2026-11-27T19:53:19Z",
+  "latest_version": "1.2.45",
   "releases": [
+    {
+      "version": "1.2.45",
+      "tag": "v1.2.45",
+      "published_at": "2026-11-27T19:52:58Z",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.45",
+      "zh": {
+        "new": [
+          "插件新增了商店图标和精选展示图片。",
+          "现在可以选择让背景铺满整个屏幕。"
+        ]
+      },
+      "en": {
+        "new": [
+          "The plugin now includes a store icon and featured artwork.",
+          "You can now choose to show the backdrop across the full screen."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- The plugin now includes a store icon and featured artwork.\n- You can now choose to show the backdrop across the full screen.\n\n---\n\n## 中文\n\n### 新功能\n\n- 插件新增了商店图标和精选展示图片。\n- 现在可以选择让背景铺满整个屏幕。"
+    },
     {
       "version": "1.2.42",
       "tag": "v1.2.42",

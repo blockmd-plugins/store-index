@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T19:14:12Z",
+  "updated_at": "2026-11-27T19:53:19Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.1.43/block-titlebar-v1.1.43.tar.gz",
       "sha256": "dd0f24958985dd04d854f8857813fb76c3e2799d0134b470d06d8587d2c95382",
-      "downloads": 164,
+      "downloads": 165,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T16:37:42Z",
@@ -246,19 +246,19 @@
         "zh": "编辑器背景",
         "en": "Editor Background"
       },
-      "version": "1.2.42",
+      "version": "1.2.45",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-canvas-dots",
       "summary": {
-        "zh": "像纸质点阵手账本一样，给写作区铺上对齐文字的点阵或方格底纹",
-        "en": "Give your editor a dot or grid paper look, aligned to every line for easier reading"
+        "zh": "像纸质点阵手账本一样，给写作区或全屏窗口铺上对齐文字的点阵或方格底纹",
+        "en": "Give your editor or full window a line-aligned dot or grid paper backdrop"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.42/block-canvas-dots-v1.2.42.tar.gz",
-      "sha256": "8f209c2299fb0379f3861bd42d379eff95a1c0bede5fa73ab3ce915ef10b9b0a",
-      "downloads": 158,
+      "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.45/block-canvas-dots-v1.2.45.tar.gz",
+      "sha256": "140d77b59ad9fb6a4f15597b45d8e3de4de10d3c196fe49222b1e4270df220a2",
+      "downloads": 159,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T09:23:45Z",
+      "updated_at": "2026-11-27T19:52:58Z",
       "permissions": [
         "storage",
         "ui:settings",
@@ -290,20 +290,38 @@
       "category": "appearance",
       "permission_reasons": {
         "storage": {
-          "zh": "记住你选好的底纹样式和深浅度",
-          "en": "Remember your chosen background pattern and contrast level"
+          "zh": "记住你选好的底纹样式、深浅度和显示范围",
+          "en": "Remember your chosen pattern, contrast level, and display scope"
         },
         "ui:settings": {
-          "zh": "在写作区显示和切换点阵或方格底纹",
-          "en": "Display and switch dot or grid backgrounds in the editor"
+          "zh": "在设置页展示和切换点阵、方格底纹与显示范围",
+          "en": "Configure dot or grid patterns, contrast, and display scope"
         },
         "ui:appearance": {
-          "zh": "在编辑区背景中渲染对齐文字的点阵或方格纸纹",
-          "en": "Render line-aligned dot or grid paper backdrops behind the editor"
+          "zh": "在编辑区或全屏窗口底层渲染点阵与方格背景",
+          "en": "Render line-aligned dot or grid backdrops in the editor or full window"
         }
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-canvas-dots.json",
       "changelog": [
+        {
+          "version": "1.2.45",
+          "tag": "v1.2.45",
+          "published_at": "2026-11-27T19:52:58Z",
+          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.45",
+          "zh": {
+            "new": [
+              "插件新增了商店图标和精选展示图片。",
+              "现在可以选择让背景铺满整个屏幕。"
+            ]
+          },
+          "en": {
+            "new": [
+              "The plugin now includes a store icon and featured artwork.",
+              "You can now choose to show the backdrop across the full screen."
+            ]
+          }
+        },
         {
           "version": "1.2.42",
           "tag": "v1.2.42",
@@ -367,24 +385,6 @@
               "The plugin author and repository links have been updated to the official organization."
             ]
           }
-        },
-        {
-          "version": "1.2.35",
-          "tag": "v1.2.35",
-          "published_at": "2026-11-23T17:14:57Z",
-          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.35",
-          "zh": {
-            "other": [
-              "发版说明生成流程现已采用更新后的配置。",
-              "插件现已在商店中归类为「外观」。"
-            ]
-          },
-          "en": {
-            "other": [
-              "Release note generation now uses the updated configuration.",
-              "The plugin is now listed under Appearance in the store."
-            ]
-          }
         }
       ]
     },
@@ -404,7 +404,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.30/block-tarot-v1.0.30.tar.gz",
       "sha256": "1405b4da2726e79a1fecbd031a0d29ddd68ce26c7776d6e8953892e5c568c1d6",
-      "downloads": 126,
+      "downloads": 127,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T18:56:07Z",
@@ -1084,7 +1084,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.40/block-poop-everywhere-v1.0.40.tar.gz",
       "sha256": "aac348633cfaf4f6fd8bf60be66a1f0bf0e711bda607cfad52087e740ab8d64d",
-      "downloads": 123,
+      "downloads": 124,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:14Z",
@@ -1281,7 +1281,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
       "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 80,
+      "downloads": 81,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:29Z",
