@@ -3,9 +3,34 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-27T11:21:40Z",
-  "latest_version": "1.3.124",
+  "updated_at": "2026-11-27T13:29:45Z",
+  "latest_version": "1.3.129",
   "releases": [
+    {
+      "version": "1.3.129",
+      "tag": "v1.3.129",
+      "published_at": "2026-11-27T13:29:25Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.129",
+      "zh": {
+        "new": [
+          "Sync 现在会以流式方式计算文件哈希并复制文件，以减少内存占用；同时跳过隔离文件，并安全处理同步错误。",
+          "Sync 现在支持设置文件大小限制和忽略规则，并会汇总显示已跳过的文件。"
+        ],
+        "fixes": [
+          "Sync 现在可以正常加载错误处理功能，不会再因错误文本处理模块重复导入而失败。"
+        ]
+      },
+      "en": {
+        "new": [
+          "Sync now streams file hashing and copying to reduce memory use, skips quarantined files, and handles sync errors safely.",
+          "Sync lets you set a file size limit and ignore rules, and shows a summary of skipped files."
+        ],
+        "fixes": [
+          "Sync now loads its error handling without failing on a duplicate error text import."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- Sync now streams file hashing and copying to reduce memory use, skips quarantined files, and handles sync errors safely.\n- Sync lets you set a file size limit and ignore rules, and shows a summary of skipped files.\n\n### Fixes\n\n- Sync now loads its error handling without failing on a duplicate error text import.\n\n---\n\n## 中文\n\n### 新功能\n\n- Sync 现在会以流式方式计算文件哈希并复制文件，以减少内存占用；同时跳过隔离文件，并安全处理同步错误。\n- Sync 现在支持设置文件大小限制和忽略规则，并会汇总显示已跳过的文件。\n\n### 修复\n\n- Sync 现在可以正常加载错误处理功能，不会再因错误文本处理模块重复导入而失败。"
+    },
     {
       "version": "1.3.124",
       "tag": "v1.3.124",
@@ -313,18 +338,6 @@
         ]
       },
       "body": "## Changes\n\n- fix(sync): distinguish independent failure notices (`c337329`)"
-    },
-    {
-      "version": "1.3.84",
-      "tag": "v1.3.84",
-      "published_at": "2026-11-20T21:49:12Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.84",
-      "en": {
-        "other": [
-          "fix(sync): retain ordered retryable failure and conflict notices (`39918f3`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix(sync): retain ordered retryable failure and conflict notices (`39918f3`)"
     }
   ]
 }

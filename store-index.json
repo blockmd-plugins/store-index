@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T11:21:40Z",
+  "updated_at": "2026-11-27T13:29:45Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.0.39/block-titlebar-v1.0.39.tar.gz",
       "sha256": "c6c5adf9259bd431c0c2c69d352e316f3347b17bc9239dabde414992b884e1e2",
-      "downloads": 149,
+      "downloads": 150,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:23:47Z",
@@ -245,7 +245,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.42/block-canvas-dots-v1.2.42.tar.gz",
       "sha256": "8f209c2299fb0379f3861bd42d379eff95a1c0bede5fa73ab3ce915ef10b9b0a",
-      "downloads": 145,
+      "downloads": 146,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:23:45Z",
@@ -394,7 +394,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.27/block-tarot-v1.0.27.tar.gz",
       "sha256": "6f67eb893ece6a09fd3e2a6c1ff6a38a4eb40f05b4d6fea5cdb48a06fe979e0e",
-      "downloads": 108,
+      "downloads": 110,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:32Z",
@@ -565,7 +565,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.12/block-file-icons-v1.0.12.tar.gz",
       "sha256": "bc4087f6e2b34a46bd783fa7385b7b86c253b03f2c698f47bd2224765b7dd4d4",
-      "downloads": 33,
+      "downloads": 36,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T11:21:02Z",
@@ -664,19 +664,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.3.124",
+      "version": "1.3.129",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "把笔记自动同步到自有云盘、WebDAV 网盘或 Git 仓库，无需买会员",
         "en": "Auto-sync notes to your own cloud folder, WebDAV, or Git repo with no extra subscription"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.124/block-sync-v1.3.124.tar.gz",
-      "sha256": "7584264e377c5924ca0f6df90bcb4f8c7e5e5df5bb4c812627045c54fea3eed7",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.129/block-sync-v1.3.129.tar.gz",
+      "sha256": "3014758bda2a636c4da1ebfccf4a8170f8305eaa416d7514768daf2e1833c307",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T06:31:15Z",
+      "updated_at": "2026-11-27T13:29:25Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -752,6 +752,30 @@
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-sync.json",
       "changelog": [
         {
+          "version": "1.3.129",
+          "tag": "v1.3.129",
+          "published_at": "2026-11-27T13:29:25Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.129",
+          "zh": {
+            "new": [
+              "Sync 现在会以流式方式计算文件哈希并复制文件，以减少内存占用；同时跳过隔离文件，并安全处理同步错误。",
+              "Sync 现在支持设置文件大小限制和忽略规则，并会汇总显示已跳过的文件。"
+            ],
+            "fixes": [
+              "Sync 现在可以正常加载错误处理功能，不会再因错误文本处理模块重复导入而失败。"
+            ]
+          },
+          "en": {
+            "new": [
+              "Sync now streams file hashing and copying to reduce memory use, skips quarantined files, and handles sync errors safely.",
+              "Sync lets you set a file size limit and ignore rules, and shows a summary of skipped files."
+            ],
+            "fixes": [
+              "Sync now loads its error handling without failing on a duplicate error text import."
+            ]
+          }
+        },
+        {
           "version": "1.3.124",
           "tag": "v1.3.124",
           "published_at": "2026-11-27T06:31:15Z",
@@ -824,36 +848,6 @@
             ],
             "other": [
               "The plugin no longer requests unnecessary storage and notification permissions, reducing the access privileges required to run."
-            ]
-          }
-        },
-        {
-          "version": "1.3.116",
-          "tag": "v1.3.116",
-          "published_at": "2026-11-23T17:17:38Z",
-          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.116",
-          "zh": {
-            "new": [
-              "同步现在会将删除操作传播到本地目录、镜像目录、Git 仓库和 WebDAV 目标。",
-              "同步现在会将同步活动记录到 Block 的活动日志中。"
-            ],
-            "fixes": [
-              "保存配置时，同步现在会阻止关闭唯一启用的目标。"
-            ],
-            "other": [
-              "同步在商店中的分类现为「工具」。"
-            ]
-          },
-          "en": {
-            "new": [
-              "Sync now propagates deletions across local folders, mirror directories, Git repositories, and WebDAV targets.",
-              "Sync now records its activity in Block’s activity log."
-            ],
-            "fixes": [
-              "Sync now prevents you from disabling the only enabled target when saving its configuration."
-            ],
-            "other": [
-              "Sync’s store listing is now classified under Tools."
             ]
           }
         }
@@ -1069,7 +1063,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.40/block-poop-everywhere-v1.0.40.tar.gz",
       "sha256": "aac348633cfaf4f6fd8bf60be66a1f0bf0e711bda607cfad52087e740ab8d64d",
-      "downloads": 111,
+      "downloads": 112,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:14Z",
@@ -1266,7 +1260,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
       "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 68,
+      "downloads": 69,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:29Z",
