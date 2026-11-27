@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-canvas-dots",
   "repo": "blockmd-plugins/block-canvas-dots",
-  "updated_at": "2026-11-27T20:06:01Z",
-  "latest_version": "1.2.45",
+  "updated_at": "2026-11-27T20:07:15Z",
+  "latest_version": "1.2.46",
   "releases": [
+    {
+      "version": "1.2.46",
+      "tag": "v1.2.46",
+      "published_at": "2026-11-27T20:06:59Z",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.46",
+      "zh": {
+        "improvements": [
+          "全编辑区背景的说明现已明确指出，背景覆盖编辑区，不包括侧边栏和标题栏。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "The full-editor background description now clarifies that it covers the editor area, excluding the sidebar and title bar."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- The full-editor background description now clarifies that it covers the editor area, excluding the sidebar and title bar.\n\n---\n\n## 中文\n\n### 改进\n\n- 全编辑区背景的说明现已明确指出，背景覆盖编辑区，不包括侧边栏和标题栏。"
+    },
     {
       "version": "1.2.45",
       "tag": "v1.2.45",

@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T20:06:01Z",
+  "updated_at": "2026-11-27T20:07:15Z",
   "apps": [
     {
       "app": "blockmd",
@@ -246,19 +246,19 @@
         "zh": "编辑器背景",
         "en": "Editor Background"
       },
-      "version": "1.2.45",
+      "version": "1.2.46",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-canvas-dots",
       "summary": {
-        "zh": "像纸质点阵手账本一样，给写作区或全屏窗口铺上对齐文字的点阵或方格底纹",
-        "en": "Give your editor or full window a line-aligned dot or grid paper backdrop"
+        "zh": "像纸质点阵手账本一样，给写作区铺上对齐文字的点阵或方格底纹，支持铺满整块编辑区",
+        "en": "Give your editor a line-aligned dot or grid paper backdrop, in the text column or full editor"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.45/block-canvas-dots-v1.2.45.tar.gz",
-      "sha256": "140d77b59ad9fb6a4f15597b45d8e3de4de10d3c196fe49222b1e4270df220a2",
+      "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.46/block-canvas-dots-v1.2.46.tar.gz",
+      "sha256": "9480ff8a6e585e07011542a68c233a30967b26b61ef46bd379f2aaf1be736dc1",
       "downloads": 163,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T19:52:58Z",
+      "updated_at": "2026-11-27T20:06:59Z",
       "permissions": [
         "storage",
         "ui:settings",
@@ -298,12 +298,28 @@
           "en": "Configure dot or grid patterns, contrast, and display scope"
         },
         "ui:appearance": {
-          "zh": "在编辑区或全屏窗口底层渲染点阵与方格背景",
-          "en": "Render line-aligned dot or grid backdrops in the editor or full window"
+          "zh": "在编辑区正文列或整块编辑区画布底层渲染点阵与方格背景",
+          "en": "Render line-aligned dot or grid backdrops across the text column or full editor canvas"
         }
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-canvas-dots.json",
       "changelog": [
+        {
+          "version": "1.2.46",
+          "tag": "v1.2.46",
+          "published_at": "2026-11-27T20:06:59Z",
+          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.46",
+          "zh": {
+            "improvements": [
+              "全编辑区背景的说明现已明确指出，背景覆盖编辑区，不包括侧边栏和标题栏。"
+            ]
+          },
+          "en": {
+            "improvements": [
+              "The full-editor background description now clarifies that it covers the editor area, excluding the sidebar and title bar."
+            ]
+          }
+        },
         {
           "version": "1.2.45",
           "tag": "v1.2.45",
@@ -367,22 +383,6 @@
           "en": {
             "other": [
               "The plugin no longer requests exempt storage and user interface permissions, reducing the access privileges required during installation and operation."
-            ]
-          }
-        },
-        {
-          "version": "1.2.37",
-          "tag": "v1.2.37",
-          "published_at": "2026-11-23T18:12:58Z",
-          "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.37",
-          "zh": {
-            "other": [
-              "插件信息中的作者与代码仓库链接已更新为新的官方组织。"
-            ]
-          },
-          "en": {
-            "other": [
-              "The plugin author and repository links have been updated to the official organization."
             ]
           }
         }
