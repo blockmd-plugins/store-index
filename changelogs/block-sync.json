@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-27T18:56:33Z",
-  "latest_version": "1.4.142",
+  "updated_at": "2026-11-27T19:14:12Z",
+  "latest_version": "1.4.143",
   "releases": [
+    {
+      "version": "1.4.143",
+      "tag": "v1.4.143",
+      "published_at": "2026-11-27T19:13:23Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.4.143",
+      "zh": {
+        "fixes": [
+          "同步现在会核对笔记本身份，在迁移时保护已有基线，并更安全地清理恢复过程中的数据。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "Sync now verifies notebook identity, protects existing baselines during migrations, and handles recovery cleanup more safely."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- Sync now verifies notebook identity, protects existing baselines during migrations, and handles recovery cleanup more safely.\n\n---\n\n## 中文\n\n### 修复\n\n- 同步现在会核对笔记本身份，在迁移时保护已有基线，并更安全地清理恢复过程中的数据。"
+    },
     {
       "version": "1.4.142",
       "tag": "v1.4.142",
@@ -373,18 +390,6 @@
         ]
       },
       "body": "## Changes\n\n- feat: list only folders the user adds with the plus button (`7da211c`)"
-    },
-    {
-      "version": "1.3.95",
-      "tag": "v1.3.95",
-      "published_at": "2026-11-21T03:42:39Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.95",
-      "en": {
-        "other": [
-          "feat(sync): add scheduled sync interval (`bb202b2`)"
-        ]
-      },
-      "body": "## Changes\n\n- feat(sync): add scheduled sync interval (`bb202b2`)"
     }
   ]
 }

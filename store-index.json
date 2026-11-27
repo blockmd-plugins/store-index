@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T18:56:33Z",
+  "updated_at": "2026-11-27T19:14:12Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.1.43/block-titlebar-v1.1.43.tar.gz",
       "sha256": "dd0f24958985dd04d854f8857813fb76c3e2799d0134b470d06d8587d2c95382",
-      "downloads": 162,
+      "downloads": 164,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T16:37:42Z",
@@ -255,7 +255,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.42/block-canvas-dots-v1.2.42.tar.gz",
       "sha256": "8f209c2299fb0379f3861bd42d379eff95a1c0bede5fa73ab3ce915ef10b9b0a",
-      "downloads": 155,
+      "downloads": 158,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:23:45Z",
@@ -404,7 +404,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.30/block-tarot-v1.0.30.tar.gz",
       "sha256": "1405b4da2726e79a1fecbd031a0d29ddd68ce26c7776d6e8953892e5c568c1d6",
-      "downloads": 122,
+      "downloads": 126,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T18:56:07Z",
@@ -676,19 +676,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.4.142",
+      "version": "1.4.143",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "把笔记自动同步到自有云盘、WebDAV 网盘或 Git 仓库，无需买会员",
         "en": "Auto-sync notes to your own cloud folder, WebDAV, or Git repo with no extra subscription"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.4.142/block-sync-v1.4.142.tar.gz",
-      "sha256": "10e15e0e2aaf9a924990663f18a76343f139a897d4c7ec819f0697a9912f3406",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.4.143/block-sync-v1.4.143.tar.gz",
+      "sha256": "82eba56fd5abf7124a58262280d0587b85c49ee16de22fef791a7905ad7ad76d",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T18:06:44Z",
+      "updated_at": "2026-11-27T19:13:23Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -768,6 +768,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-sync.json",
       "changelog": [
+        {
+          "version": "1.4.143",
+          "tag": "v1.4.143",
+          "published_at": "2026-11-27T19:13:23Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.4.143",
+          "zh": {
+            "fixes": [
+              "同步现在会核对笔记本身份，在迁移时保护已有基线，并更安全地清理恢复过程中的数据。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "Sync now verifies notebook identity, protects existing baselines during migrations, and handles recovery cleanup more safely."
+            ]
+          }
+        },
         {
           "version": "1.4.142",
           "tag": "v1.4.142",
@@ -859,30 +875,6 @@
               "Sync now tracks connection check results separately for each protocol and detects when the related settings have changed.",
               "The settings form now saves changes automatically, lets you reset linked credentials, and displays connection status in a single row.",
               "Sync now saves target configuration automatically and tests the connection when you change it."
-            ]
-          }
-        },
-        {
-          "version": "1.3.129",
-          "tag": "v1.3.129",
-          "published_at": "2026-11-27T13:29:25Z",
-          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.129",
-          "zh": {
-            "new": [
-              "Sync 现在会以流式方式计算文件哈希并复制文件，以减少内存占用；同时跳过隔离文件，并安全处理同步错误。",
-              "Sync 现在支持设置文件大小限制和忽略规则，并会汇总显示已跳过的文件。"
-            ],
-            "fixes": [
-              "Sync 现在可以正常加载错误处理功能，不会再因错误文本处理模块重复导入而失败。"
-            ]
-          },
-          "en": {
-            "new": [
-              "Sync now streams file hashing and copying to reduce memory use, skips quarantined files, and handles sync errors safely.",
-              "Sync lets you set a file size limit and ignore rules, and shows a summary of skipped files."
-            ],
-            "fixes": [
-              "Sync now loads its error handling without failing on a duplicate error text import."
             ]
           }
         }
@@ -1092,7 +1084,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.40/block-poop-everywhere-v1.0.40.tar.gz",
       "sha256": "aac348633cfaf4f6fd8bf60be66a1f0bf0e711bda607cfad52087e740ab8d64d",
-      "downloads": 121,
+      "downloads": 123,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:14Z",
@@ -1289,7 +1281,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
       "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 78,
+      "downloads": 80,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:29Z",
