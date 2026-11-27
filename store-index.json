@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T18:22:43Z",
+  "updated_at": "2026-11-27T18:30:31Z",
   "apps": [
     {
       "app": "blockmd",
@@ -895,19 +895,19 @@
         "zh": "图床上传",
         "en": "Image Host"
       },
-      "version": "1.2.53",
+      "version": "1.2.57",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-image-host",
       "summary": {
         "zh": "自动把本地图片传到云端图床并换好链接，发博客或换电脑都不裂图",
         "en": "Auto-upload note images to your own cloud storage and swap in live links like PicGo"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.2.53/block-image-host-v1.2.53.tar.gz",
-      "sha256": "412d82310098516654a839a6d7203a192039501203d2ec52ddbc1cbf31334576",
+      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.2.57/block-image-host-v1.2.57.tar.gz",
+      "sha256": "3dec265db66c9c8998eedd28d749d8364d559eee95d4b70cdf5ac0baa65a7c5f",
       "downloads": 941,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T14:05:30Z",
+      "updated_at": "2026-11-27T18:30:09Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -985,6 +985,30 @@
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-image-host.json",
       "changelog": [
         {
+          "version": "1.2.57",
+          "tag": "v1.2.57",
+          "published_at": "2026-11-27T18:30:09Z",
+          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.57",
+          "zh": {
+            "new": [
+              "插件新增商店图标和精选展示图片，方便用户在 Block 商店中识别插件。"
+            ],
+            "fixes": [
+              "本地文件检查与读取以及 GitHub 上传现在可在 Block 运行环境中正常使用。",
+              "图床服务商设置会立即保存，同时保留现有的自动保存状态。"
+            ]
+          },
+          "en": {
+            "new": [
+              "The plugin now has a store icon and featured artwork to help users recognize it in the Block store."
+            ],
+            "fixes": [
+              "Local file checks and reads, along with GitHub uploads, now work with the Block runtime.",
+              "Provider settings are saved immediately, and the existing autosave state is preserved."
+            ]
+          }
+        },
+        {
           "version": "1.2.53",
           "tag": "v1.2.53",
           "published_at": "2026-11-27T14:05:30Z",
@@ -1055,24 +1079,6 @@
             ],
             "other": [
               "The plugin now requests fewer storage and interface permissions."
-            ]
-          }
-        },
-        {
-          "version": "1.2.43",
-          "tag": "v1.2.43",
-          "published_at": "2026-11-23T18:13:08Z",
-          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.43",
-          "zh": {
-            "other": [
-              "插件详情中的作者信息与源码仓库链接已更新并指向官方组织。",
-              "插件状态现已明确标记为测试版本，以标示当前处于测试阶段。"
-            ]
-          },
-          "en": {
-            "other": [
-              "The plugin details now display the official organization as the author and link to the updated repository.",
-              "The plugin status is now explicitly marked as a beta release to indicate its current testing phase."
             ]
           }
         }

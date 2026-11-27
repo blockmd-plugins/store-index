@@ -3,9 +3,34 @@
   "schema_version": 1,
   "id": "block-image-host",
   "repo": "blockmd-plugins/block-image-host",
-  "updated_at": "2026-11-27T18:22:43Z",
-  "latest_version": "1.2.53",
+  "updated_at": "2026-11-27T18:30:31Z",
+  "latest_version": "1.2.57",
   "releases": [
+    {
+      "version": "1.2.57",
+      "tag": "v1.2.57",
+      "published_at": "2026-11-27T18:30:09Z",
+      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.57",
+      "zh": {
+        "new": [
+          "插件新增商店图标和精选展示图片，方便用户在 Block 商店中识别插件。"
+        ],
+        "fixes": [
+          "本地文件检查与读取以及 GitHub 上传现在可在 Block 运行环境中正常使用。",
+          "图床服务商设置会立即保存，同时保留现有的自动保存状态。"
+        ]
+      },
+      "en": {
+        "new": [
+          "The plugin now has a store icon and featured artwork to help users recognize it in the Block store."
+        ],
+        "fixes": [
+          "Local file checks and reads, along with GitHub uploads, now work with the Block runtime.",
+          "Provider settings are saved immediately, and the existing autosave state is preserved."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- The plugin now has a store icon and featured artwork to help users recognize it in the Block store.\n\n### Fixes\n\n- Local file checks and reads, along with GitHub uploads, now work with the Block runtime.\n- Provider settings are saved immediately, and the existing autosave state is preserved.\n\n---\n\n## 中文\n\n### 新功能\n\n- 插件新增商店图标和精选展示图片，方便用户在 Block 商店中识别插件。\n\n### 修复\n\n- 本地文件检查与读取以及 GitHub 上传现在可在 Block 运行环境中正常使用。\n- 图床服务商设置会立即保存，同时保留现有的自动保存状态。"
+    },
     {
       "version": "1.2.53",
       "tag": "v1.2.53",
@@ -283,13 +308,6 @@
         ]
       },
       "body": "## Changes\n\n- Simplify image host path and branch settings (`451a647`)"
-    },
-    {
-      "version": "1.1.0",
-      "tag": "v1.1.0",
-      "published_at": "2026-11-18T13:54:00Z",
-      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.1.0",
-      "body": "**Full Changelog**: https://github.com/blockmd-plugins/block-image-host/compare/v1.0.0...v1.1.0"
     }
   ]
 }
