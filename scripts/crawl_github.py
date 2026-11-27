@@ -88,6 +88,9 @@ VALID_PERMISSIONS = {
     "system:trash",
     "system:badge",
     "events:system",
+    "system:fs",
+    "system:exec",
+    "ai:complete",
 }
 VALID_CATEGORIES = {"sync", "edit", "organize", "ai", "publish", "appearance", "tools", "language"}
 RETIRED_CATEGORIES = {"sync", "publish"}
@@ -468,12 +471,23 @@ def validate_manifest_core(m):
         if not isinstance(entry_cmd, list) or not all(isinstance(x, str) for x in entry_cmd):
             raise ValueError("manifest.entry.command must be an array of strings")
     has_entry_cmd = isinstance(entry_cmd, list) and len(entry_cmd) > 0
+    entry_js = entry.get("js") if isinstance(entry, dict) else None
+    entry_wasm = entry.get("wasm") if isinstance(entry, dict) else None
+    has_entry_js = isinstance(entry_js, str) and entry_js.strip() != ""
+    has_entry_wasm = isinstance(entry_wasm, str) and entry_wasm.strip() != ""
+    if has_entry_js and not entry_js.endswith((".js", ".mjs")):
+        raise ValueError("manifest.entry.js must point to a .js or .mjs file")
+    if has_entry_wasm and not entry_wasm.endswith(".wasm"):
+        raise ValueError("manifest.entry.wasm must point to a .wasm file")
+    if sum([has_entry_cmd, has_entry_js, has_entry_wasm]) > 1:
+        raise ValueError("manifest.entry must specify at most one of js, wasm, or command")
+    has_entry = has_entry_cmd or has_entry_js or has_entry_wasm
     has_runtime_contribs = isinstance(contributes, dict) and any(
         isinstance(contributes.get(k), list) and len(contributes[k]) > 0
         for k in RUNTIME_CONTRIB_KEYS
     )
     declarative = (
-        not has_entry_cmd
+        not has_entry
         and len(perms) == 0
         and len(surfaces) == 0
         and raw_cat == "language"
@@ -481,7 +495,9 @@ def validate_manifest_core(m):
         and not has_runtime_contribs
     )
     if not declarative:
-        if not has_entry_cmd or not entry_cmd[0].strip():
+        if not has_entry:
+            raise ValueError("manifest.entry must specify one of js, wasm, or command")
+        if has_entry_cmd and not entry_cmd[0].strip():
             raise ValueError("manifest.entry.command must be a non-empty array of strings with a non-empty executable")
         if not surfaces:
             raise ValueError("manifest.surfaces must declare ['settings_page']")
