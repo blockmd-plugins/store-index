@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-27T20:58:12Z",
-  "latest_version": "1.4.145",
+  "updated_at": "2026-11-27T21:47:56Z",
+  "latest_version": "1.4.146",
   "releases": [
+    {
+      "version": "1.4.146",
+      "tag": "v1.4.146",
+      "published_at": "2026-11-27T21:46:51Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.4.146",
+      "zh": {
+        "improvements": [
+          "使用 Git 同步时，Sync 现在会简化提交后推送的流程、在启动时迁移路径，并在同步前验证镜像根目录。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "Sync now uses a simpler commit-then-push flow for Git, migrates paths at startup, and verifies the mirror root before syncing."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- Sync now uses a simpler commit-then-push flow for Git, migrates paths at startup, and verifies the mirror root before syncing.\n\n---\n\n## 中文\n\n### 改进\n\n- 使用 Git 同步时，Sync 现在会简化提交后推送的流程、在启动时迁移路径，并在同步前验证镜像根目录。"
+    },
     {
       "version": "1.4.145",
       "tag": "v1.4.145",
@@ -388,18 +405,6 @@
         ]
       },
       "body": "## Changes\n\n- chore: simplify status copy and remove redundant counts (`367e44e`)"
-    },
-    {
-      "version": "1.3.98",
-      "tag": "v1.3.98",
-      "published_at": "2026-11-21T07:24:35Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.98",
-      "en": {
-        "other": [
-          "chore: drop beta flag (`119c5ea`)"
-        ]
-      },
-      "body": "## Changes\n\n- chore: drop beta flag (`119c5ea`)"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T20:58:12Z",
+  "updated_at": "2026-11-27T21:47:56Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.1.43/block-titlebar-v1.1.43.tar.gz",
       "sha256": "dd0f24958985dd04d854f8857813fb76c3e2799d0134b470d06d8587d2c95382",
-      "downloads": 169,
+      "downloads": 170,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T16:37:42Z",
@@ -255,7 +255,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.46/block-canvas-dots-v1.2.46.tar.gz",
       "sha256": "9480ff8a6e585e07011542a68c233a30967b26b61ef46bd379f2aaf1be736dc1",
-      "downloads": 168,
+      "downloads": 169,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T20:06:59Z",
@@ -404,7 +404,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.30/block-tarot-v1.0.30.tar.gz",
       "sha256": "1405b4da2726e79a1fecbd031a0d29ddd68ce26c7776d6e8953892e5c568c1d6",
-      "downloads": 131,
+      "downloads": 132,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T18:56:07Z",
@@ -577,7 +577,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.12/block-file-icons-v1.0.12.tar.gz",
       "sha256": "2aba36f2cce2546cef1633555a0d730d2936522dca4576e2ebd80bca62a7793b",
-      "downloads": 44,
+      "downloads": 45,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T11:21:02Z",
@@ -676,19 +676,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.4.145",
+      "version": "1.4.146",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "把笔记自动同步到自有云盘、WebDAV 网盘或 Git 仓库，无需买会员",
         "en": "Auto-sync notes to your own cloud folder, WebDAV, or Git repo with no extra subscription"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.4.145/block-sync-v1.4.145.tar.gz",
-      "sha256": "2c8cdc33d7fd7e9e234e16ff9ef115a0b3b3d26d9851dd57ef7b30d38f10cd0d",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.4.146/block-sync-v1.4.146.tar.gz",
+      "sha256": "17235d663bf3ac2bbb9647e6b56328efd885e0ffc1dc779371038cd550823565",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T20:57:01Z",
+      "updated_at": "2026-11-27T21:46:51Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -769,6 +769,22 @@
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-sync.json",
       "changelog": [
         {
+          "version": "1.4.146",
+          "tag": "v1.4.146",
+          "published_at": "2026-11-27T21:46:51Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.4.146",
+          "zh": {
+            "improvements": [
+              "使用 Git 同步时，Sync 现在会简化提交后推送的流程、在启动时迁移路径，并在同步前验证镜像根目录。"
+            ]
+          },
+          "en": {
+            "improvements": [
+              "Sync now uses a simpler commit-then-push flow for Git, migrates paths at startup, and verifies the mirror root before syncing."
+            ]
+          }
+        },
+        {
           "version": "1.4.145",
           "tag": "v1.4.145",
           "published_at": "2026-11-27T20:57:01Z",
@@ -839,36 +855,6 @@
             "fixes": [
               "Sync now disables sparse pack walks during pushes and allows more time for each push to complete.",
               "Sync now explains when a local mirror folder cannot be accessed because authorization is missing."
-            ]
-          }
-        },
-        {
-          "version": "1.4.138",
-          "tag": "v1.4.138",
-          "published_at": "2026-11-27T17:51:45Z",
-          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.4.138",
-          "zh": {
-            "new": [
-              "同步现在使用宿主提供的笔记本 ID 保存各笔记本的密钥和恢复目录，确保它们与对应笔记本关联。"
-            ],
-            "improvements": [
-              "同步现在会限制重复重试，在读取笔记时安全地进行扫描，并控制 Git 清理的工作量。"
-            ],
-            "fixes": [
-              "同步现在能够可靠识别笔记本、安全清理恢复数据，并在降级时保留笔记本映射。",
-              "同步现在会再次同步删除操作，并能迁移使用旧名称的恢复文件。"
-            ]
-          },
-          "en": {
-            "new": [
-              "Sync now stores per-notebook keys and recovery folders using the host’s notebook IDs, keeping them associated with the correct notebooks."
-            ],
-            "improvements": [
-              "Sync now limits repeated retries, safely scans notes as it reads them, and bounds Git cleanup work."
-            ],
-            "fixes": [
-              "Sync now reliably identifies notebooks, safely prunes recovery data, and preserves notebook mappings when downgrading.",
-              "Sync now mirrors deletions again and migrates legacy recovery files with older names."
             ]
           }
         }
@@ -1078,7 +1064,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.40/block-poop-everywhere-v1.0.40.tar.gz",
       "sha256": "aac348633cfaf4f6fd8bf60be66a1f0bf0e711bda607cfad52087e740ab8d64d",
-      "downloads": 128,
+      "downloads": 129,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:14Z",
@@ -1275,7 +1261,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
       "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 85,
+      "downloads": 86,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:29Z",
