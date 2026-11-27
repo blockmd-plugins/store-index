@@ -3,9 +3,42 @@
   "schema_version": 1,
   "id": "block-file-icons",
   "repo": "blockmd-plugins/block-file-icons",
-  "updated_at": "2026-11-27T10:52:21Z",
-  "latest_version": "1.0.3",
+  "updated_at": "2026-11-27T11:21:40Z",
+  "latest_version": "1.0.12",
   "releases": [
+    {
+      "version": "1.0.12",
+      "tag": "v1.0.12",
+      "published_at": "2026-11-27T11:21:02Z",
+      "html_url": "https://github.com/blockmd-plugins/block-file-icons/releases/tag/v1.0.12",
+      "zh": {
+        "new": [
+          "现在可以为笔记本选择自定义图标，并在笔记本摘要视图中看到所选图标。",
+          "README 现在通过动态图示展示图标选择器的使用方式。"
+        ],
+        "improvements": [
+          "插件的图标功能现在运行在 Block 内置的 JavaScript 沙箱中。"
+        ],
+        "other": [
+          "插件清单现在不再申请可豁免的存储和界面权限。",
+          "插件清单现在为较旧版本的 Block 主机恢复了旧版存储和界面权限。"
+        ]
+      },
+      "en": {
+        "new": [
+          "Notebook icon selection and summary views now show the custom icons assigned to notebooks.",
+          "The README now includes animated demos of the icon picker."
+        ],
+        "improvements": [
+          "The plugin now uses Block’s built-in JavaScript sandbox to run its icon features."
+        ],
+        "other": [
+          "The plugin manifest no longer requests exempt storage and UI permissions.",
+          "The plugin manifest restores legacy storage and UI permissions for older Block hosts."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- Notebook icon selection and summary views now show the custom icons assigned to notebooks.\n- The README now includes animated demos of the icon picker.\n\n### Improvements\n\n- The plugin now uses Block’s built-in JavaScript sandbox to run its icon features.\n\n### Other\n\n- The plugin manifest no longer requests exempt storage and UI permissions.\n- The plugin manifest restores legacy storage and UI permissions for older Block hosts.\n\n---\n\n## 中文\n\n### 新功能\n\n- 现在可以为笔记本选择自定义图标，并在笔记本摘要视图中看到所选图标。\n- README 现在通过动态图示展示图标选择器的使用方式。\n\n### 改进\n\n- 插件的图标功能现在运行在 Block 内置的 JavaScript 沙箱中。\n\n### 其他\n\n- 插件清单现在不再申请可豁免的存储和界面权限。\n- 插件清单现在为较旧版本的 Block 主机恢复了旧版存储和界面权限。"
+    },
     {
       "version": "1.0.3",
       "tag": "v1.0.3",

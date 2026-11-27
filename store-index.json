@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T10:52:21Z",
+  "updated_at": "2026-11-27T11:21:40Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.0.39/block-titlebar-v1.0.39.tar.gz",
       "sha256": "c6c5adf9259bd431c0c2c69d352e316f3347b17bc9239dabde414992b884e1e2",
-      "downloads": 148,
+      "downloads": 149,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:23:47Z",
@@ -245,7 +245,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.42/block-canvas-dots-v1.2.42.tar.gz",
       "sha256": "8f209c2299fb0379f3861bd42d379eff95a1c0bede5fa73ab3ce915ef10b9b0a",
-      "downloads": 143,
+      "downloads": 145,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:23:45Z",
@@ -394,7 +394,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.27/block-tarot-v1.0.27.tar.gz",
       "sha256": "6f67eb893ece6a09fd3e2a6c1ff6a38a4eb40f05b4d6fea5cdb48a06fe979e0e",
-      "downloads": 107,
+      "downloads": 108,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:32Z",
@@ -556,19 +556,19 @@
         "zh": "自定义图标",
         "en": "Custom Icons"
       },
-      "version": "1.0.3",
+      "version": "1.0.12",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-file-icons",
       "summary": {
-        "zh": "为侧栏笔记和文件夹更换 96 款双色矢量图标，支持 7 种柔和色调与标签页同步显示",
-        "en": "Customize sidebar notes and folders with 96 two-tone icons, 7 soft tints, and optional tab sync"
+        "zh": "像 Notion 一样给笔记本、文件夹和笔记换上多彩小图标，在侧栏一眼认出它们",
+        "en": "Give notebooks, folders, and notes custom icons and colors like Notion so you spot them fast"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.3/block-file-icons-v1.0.3.tar.gz",
-      "sha256": "e24a563d6c1ca28f06e5cdaccdda7a559c4c25d7f3c3de98ab9fba4cd38e8ecf",
-      "downloads": 32,
+      "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.12/block-file-icons-v1.0.12.tar.gz",
+      "sha256": "bc4087f6e2b34a46bd783fa7385b7b86c253b03f2c698f47bd2224765b7dd4d4",
+      "downloads": 33,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-23T18:28:51Z",
+      "updated_at": "2026-11-27T11:21:02Z",
       "permissions": [
         "storage",
         "ui:sidebar"
@@ -595,16 +595,48 @@
       "category": "appearance",
       "permission_reasons": {
         "storage": {
-          "zh": "保存图标选择器的交互开关与标签页同步偏好设置",
-          "en": "Save sidebar icon picker and tab sync preferences"
+          "zh": "记住点击更换图标和同步标签页图标的开关状态",
+          "en": "Remember your click-to-pick and tab icon sync settings"
         },
         "ui:sidebar": {
-          "zh": "读取和更新当前笔记本的侧栏文件与文件夹自定义图标",
-          "en": "Read and update custom icons for sidebar files and folders"
+          "zh": "读取并更换笔记本、侧栏笔记和文件夹的自定义图标",
+          "en": "Read and update custom icons for notebooks, sidebar notes, and folders"
         }
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-file-icons.json",
       "changelog": [
+        {
+          "version": "1.0.12",
+          "tag": "v1.0.12",
+          "published_at": "2026-11-27T11:21:02Z",
+          "html_url": "https://github.com/blockmd-plugins/block-file-icons/releases/tag/v1.0.12",
+          "zh": {
+            "new": [
+              "现在可以为笔记本选择自定义图标，并在笔记本摘要视图中看到所选图标。",
+              "README 现在通过动态图示展示图标选择器的使用方式。"
+            ],
+            "improvements": [
+              "插件的图标功能现在运行在 Block 内置的 JavaScript 沙箱中。"
+            ],
+            "other": [
+              "插件清单现在不再申请可豁免的存储和界面权限。",
+              "插件清单现在为较旧版本的 Block 主机恢复了旧版存储和界面权限。"
+            ]
+          },
+          "en": {
+            "new": [
+              "Notebook icon selection and summary views now show the custom icons assigned to notebooks.",
+              "The README now includes animated demos of the icon picker."
+            ],
+            "improvements": [
+              "The plugin now uses Block’s built-in JavaScript sandbox to run its icon features."
+            ],
+            "other": [
+              "The plugin manifest no longer requests exempt storage and UI permissions.",
+              "The plugin manifest restores legacy storage and UI permissions for older Block hosts."
+            ]
+          }
+        },
         {
           "version": "1.0.3",
           "tag": "v1.0.3",
@@ -1037,7 +1069,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.40/block-poop-everywhere-v1.0.40.tar.gz",
       "sha256": "aac348633cfaf4f6fd8bf60be66a1f0bf0e711bda607cfad52087e740ab8d64d",
-      "downloads": 110,
+      "downloads": 111,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:14Z",
@@ -1234,7 +1266,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
       "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 67,
+      "downloads": 68,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:29Z",
