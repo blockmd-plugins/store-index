@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-27T20:07:15Z",
-  "latest_version": "1.4.144",
+  "updated_at": "2026-11-27T20:58:12Z",
+  "latest_version": "1.4.145",
   "releases": [
+    {
+      "version": "1.4.145",
+      "tag": "v1.4.145",
+      "published_at": "2026-11-27T20:57:01Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.4.145",
+      "zh": {
+        "fixes": [
+          "同步现在会校验 Git 仓库和镜像目录的根路径，重置尚未推送的 Git 提交，更新未经验证的同步基准，并隔离文件重命名迁移流程。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "Sync now validates the configured Git and mirror roots, resets unpushed Git commits, refreshes unverified sync baselines, and keeps file rename migrations isolated."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- Sync now validates the configured Git and mirror roots, resets unpushed Git commits, refreshes unverified sync baselines, and keeps file rename migrations isolated.\n\n---\n\n## 中文\n\n### 修复\n\n- 同步现在会校验 Git 仓库和镜像目录的根路径，重置尚未推送的 Git 提交，更新未经验证的同步基准，并隔离文件重命名迁移流程。"
+    },
     {
       "version": "1.4.144",
       "tag": "v1.4.144",
@@ -383,18 +400,6 @@
         ]
       },
       "body": "## Changes\n\n- chore: drop beta flag (`119c5ea`)"
-    },
-    {
-      "version": "1.3.97",
-      "tag": "v1.3.97",
-      "published_at": "2026-11-21T06:18:43Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.97",
-      "en": {
-        "other": [
-          "fix(sync): use default preview palette for confirmation card (`f7c6af3`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix(sync): use default preview palette for confirmation card (`f7c6af3`)"
     }
   ]
 }
