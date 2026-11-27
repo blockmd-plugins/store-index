@@ -107,9 +107,14 @@ RUNTIME_CONTRIB_KEYS = (
     "panels",
     "sidebar_sections",
     "file_badges",
+    "file_icons",
     "backdrops",
+    "block_decorators",
+    "themes",
+    "stages",
     "status_items",
     "dialogs",
+    "menubar_items",
 )
 MAX_API_BYTES = 8 * 1024 * 1024
 MAX_ARCHIVE_BYTES = 64 * 1024 * 1024
@@ -433,6 +438,8 @@ def validate_manifest_core(m):
     if contributes is not None and not isinstance(contributes, dict):
         raise ValueError("manifest.contributes must be an object")
     if isinstance(contributes, dict):
+        if "titlebar_manager" in contributes and not isinstance(contributes.get("titlebar_manager"), bool):
+            raise ValueError("manifest.contributes.titlebar_manager must be a boolean")
         for ck in (*RUNTIME_CONTRIB_KEYS, "languages"):
             val = contributes.get(ck)
             if val is not None and not isinstance(val, list):
@@ -448,7 +455,7 @@ def validate_manifest_core(m):
         raise ValueError("manifest.category must be 'language' when contributes.languages is declared")
 
     perms = m.get("permissions")
-    if perms is None and has_languages:
+    if perms is None:
         perms = []
     if not isinstance(perms, list):
         raise ValueError("manifest.permissions must be a list")
@@ -459,7 +466,7 @@ def validate_manifest_core(m):
         seen_perms.add(p)
 
     surfaces = m.get("surfaces")
-    if surfaces is None and has_languages:
+    if surfaces is None:
         surfaces = []
     if not isinstance(surfaces, list):
         raise ValueError("manifest.surfaces must be a list")
@@ -482,9 +489,12 @@ def validate_manifest_core(m):
     if sum([has_entry_cmd, has_entry_js, has_entry_wasm]) > 1:
         raise ValueError("manifest.entry must specify at most one of js, wasm, or command")
     has_entry = has_entry_cmd or has_entry_js or has_entry_wasm
-    has_runtime_contribs = isinstance(contributes, dict) and any(
-        isinstance(contributes.get(k), list) and len(contributes[k]) > 0
-        for k in RUNTIME_CONTRIB_KEYS
+    has_runtime_contribs = isinstance(contributes, dict) and (
+        contributes.get("titlebar_manager") is True
+        or any(
+            isinstance(contributes.get(k), list) and len(contributes[k]) > 0
+            for k in RUNTIME_CONTRIB_KEYS
+        )
     )
     declarative = (
         not has_entry
@@ -499,8 +509,6 @@ def validate_manifest_core(m):
             raise ValueError("manifest.entry must specify one of js, wasm, or command")
         if has_entry_cmd and not entry_cmd[0].strip():
             raise ValueError("manifest.entry.command must be a non-empty array of strings with a non-empty executable")
-        if not surfaces:
-            raise ValueError("manifest.surfaces must declare ['settings_page']")
     seen_surfaces = set()
     for s in surfaces:
         if not isinstance(s, str) or s not in VALID_SURFACES or s in seen_surfaces:
