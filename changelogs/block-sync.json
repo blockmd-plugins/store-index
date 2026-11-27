@@ -3,9 +3,30 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-27T14:05:12Z",
-  "latest_version": "1.3.129",
+  "updated_at": "2026-11-27T15:13:10Z",
+  "latest_version": "1.3.132",
   "releases": [
+    {
+      "version": "1.3.132",
+      "tag": "v1.3.132",
+      "published_at": "2026-11-27T14:05:41Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.132",
+      "zh": {
+        "new": [
+          "Sync 现在会分别记录各协议的连接检查结果，并在相关设置变更时识别结果已过期。",
+          "设置表单现在会自动保存更改，支持重置已关联的凭据，并将连接状态集中显示在同一行。",
+          "Sync 现在会自动保存目标配置，并在配置更改时测试连接。"
+        ]
+      },
+      "en": {
+        "new": [
+          "Sync now tracks connection check results separately for each protocol and detects when the related settings have changed.",
+          "The settings form now saves changes automatically, lets you reset linked credentials, and displays connection status in a single row.",
+          "Sync now saves target configuration automatically and tests the connection when you change it."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- Sync now tracks connection check results separately for each protocol and detects when the related settings have changed.\n- The settings form now saves changes automatically, lets you reset linked credentials, and displays connection status in a single row.\n- Sync now saves target configuration automatically and tests the connection when you change it.\n\n---\n\n## 中文\n\n### 新功能\n\n- Sync 现在会分别记录各协议的连接检查结果，并在相关设置变更时识别结果已过期。\n- 设置表单现在会自动保存更改，支持重置已关联的凭据，并将连接状态集中显示在同一行。\n- Sync 现在会自动保存目标配置，并在配置更改时测试连接。"
+    },
     {
       "version": "1.3.129",
       "tag": "v1.3.129",
@@ -326,18 +347,6 @@
         ]
       },
       "body": "## Changes\n\n- fix(sync): require durable approval before background writes (`00ef76e`)"
-    },
-    {
-      "version": "1.3.85",
-      "tag": "v1.3.85",
-      "published_at": "2026-11-20T22:02:35Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.85",
-      "en": {
-        "other": [
-          "fix(sync): distinguish independent failure notices (`c337329`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix(sync): distinguish independent failure notices (`c337329`)"
     }
   ]
 }

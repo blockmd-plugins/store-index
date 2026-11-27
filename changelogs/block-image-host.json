@@ -3,9 +3,28 @@
   "schema_version": 1,
   "id": "block-image-host",
   "repo": "blockmd-plugins/block-image-host",
-  "updated_at": "2026-11-27T14:05:12Z",
-  "latest_version": "1.2.51",
+  "updated_at": "2026-11-27T15:13:10Z",
+  "latest_version": "1.2.53",
   "releases": [
+    {
+      "version": "1.2.53",
+      "tag": "v1.2.53",
+      "published_at": "2026-11-27T14:05:30Z",
+      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.53",
+      "zh": {
+        "new": [
+          "设置表单现在会自动保存更改，并在同一行显示连接状态。",
+          "凭据发生变化时，插件现在会自动保存配置并测试连接。"
+        ]
+      },
+      "en": {
+        "new": [
+          "The settings form now saves changes automatically and displays the connection status in a single row.",
+          "The plugin now saves configuration automatically and tests the connection whenever credentials change."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- The settings form now saves changes automatically and displays the connection status in a single row.\n- The plugin now saves configuration automatically and tests the connection whenever credentials change.\n\n---\n\n## 中文\n\n### 新功能\n\n- 设置表单现在会自动保存更改，并在同一行显示连接状态。\n- 凭据发生变化时，插件现在会自动保存配置并测试连接。"
+    },
     {
       "version": "1.2.51",
       "tag": "v1.2.51",
@@ -271,13 +290,6 @@
       "published_at": "2026-11-18T13:54:00Z",
       "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.1.0",
       "body": "**Full Changelog**: https://github.com/blockmd-plugins/block-image-host/compare/v1.0.0...v1.1.0"
-    },
-    {
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "published_at": "2026-11-18T12:09:27Z",
-      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.0.0",
-      "body": "Initial release for Block App Store (blockmd)."
     }
   ]
 }
