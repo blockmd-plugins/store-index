@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-poop-everywhere",
   "repo": "blockmd-plugins/block-poop-everywhere",
-  "updated_at": "2026-11-27T06:33:47Z",
-  "latest_version": "1.0.37",
+  "updated_at": "2026-11-27T09:27:00Z",
+  "latest_version": "1.0.40",
   "releases": [
+    {
+      "version": "1.0.40",
+      "tag": "v1.0.40",
+      "published_at": "2026-11-27T09:24:14Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.40",
+      "zh": {
+        "improvements": [
+          "插件现已迁移至内置沙箱环境运行，提升了运行时的安全隔离度与整体稳定性。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "The plugin now runs within the built-in sandbox environment to deliver enhanced security isolation and runtime stability."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- The plugin now runs within the built-in sandbox environment to deliver enhanced security isolation and runtime stability.\n\n---\n\n## 中文\n\n### 改进\n\n- 插件现已迁移至内置沙箱环境运行，提升了运行时的安全隔离度与整体稳定性。"
+    },
     {
       "version": "1.0.37",
       "tag": "v1.0.37",

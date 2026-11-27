@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-canvas-dots",
   "repo": "blockmd-plugins/block-canvas-dots",
-  "updated_at": "2026-11-27T06:33:47Z",
-  "latest_version": "1.2.39",
+  "updated_at": "2026-11-27T09:27:00Z",
+  "latest_version": "1.2.42",
   "releases": [
+    {
+      "version": "1.2.42",
+      "tag": "v1.2.42",
+      "published_at": "2026-11-27T09:23:45Z",
+      "html_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/tag/v1.2.42",
+      "zh": {
+        "improvements": [
+          "点阵背景渲染现已迁移至应用内置沙盒中运行，提供更强的安全隔离与运行稳定性。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "Dot background rendering now runs inside the application's built-in sandbox to provide stronger security isolation and runtime stability."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- Dot background rendering now runs inside the application's built-in sandbox to provide stronger security isolation and runtime stability.\n\n---\n\n## 中文\n\n### 改进\n\n- 点阵背景渲染现已迁移至应用内置沙盒中运行，提供更强的安全隔离与运行稳定性。"
+    },
     {
       "version": "1.2.39",
       "tag": "v1.2.39",

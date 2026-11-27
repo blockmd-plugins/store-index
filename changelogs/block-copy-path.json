@@ -3,9 +3,28 @@
   "schema_version": 1,
   "id": "block-copy-path",
   "repo": "blockmd-plugins/block-copy-path",
-  "updated_at": "2026-11-27T06:33:47Z",
-  "latest_version": "1.0.15",
+  "updated_at": "2026-11-27T09:27:00Z",
+  "latest_version": "1.0.18",
   "releases": [
+    {
+      "version": "1.0.18",
+      "tag": "v1.0.18",
+      "published_at": "2026-11-27T09:24:29Z",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.18",
+      "zh": {
+        "improvements": [
+          "插件现已迁移至内置脚本沙箱中运行，提升了复制路径时的安全性和运行稳定性。",
+          "插件运行环境已切换至内置脚本沙箱，确保更稳定可靠的路径复制体验。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "The plugin now runs in the built-in JavaScript sandbox, improving execution security and stability when copying paths.",
+          "The plugin runtime has been migrated to the built-in JavaScript sandbox to ensure a more reliable path copying experience."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- The plugin now runs in the built-in JavaScript sandbox, improving execution security and stability when copying paths.\n- The plugin runtime has been migrated to the built-in JavaScript sandbox to ensure a more reliable path copying experience.\n\n---\n\n## 中文\n\n### 改进\n\n- 插件现已迁移至内置脚本沙箱中运行，提升了复制路径时的安全性和运行稳定性。\n- 插件运行环境已切换至内置脚本沙箱，确保更稳定可靠的路径复制体验。"
+    },
     {
       "version": "1.0.15",
       "tag": "v1.0.15",

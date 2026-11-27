@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-image-host",
   "repo": "blockmd-plugins/block-image-host",
-  "updated_at": "2026-11-27T06:33:47Z",
-  "latest_version": "1.2.48",
+  "updated_at": "2026-11-27T09:27:00Z",
+  "latest_version": "1.2.51",
   "releases": [
+    {
+      "version": "1.2.51",
+      "tag": "v1.2.51",
+      "published_at": "2026-11-27T09:24:12Z",
+      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.51",
+      "zh": {
+        "improvements": [
+          "插件已迁移至应用内置的沙箱环境中运行，提升了图片上传时的稳定性和安全性。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "The plugin now runs in the application's built-in sandbox, improving stability and security during image uploads."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- The plugin now runs in the application's built-in sandbox, improving stability and security during image uploads.\n\n---\n\n## 中文\n\n### 改进\n\n- 插件已迁移至应用内置的沙箱环境中运行，提升了图片上传时的稳定性和安全性。"
+    },
     {
       "version": "1.2.48",
       "tag": "v1.2.48",

@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-tarot",
   "repo": "blockmd-plugins/block-tarot",
-  "updated_at": "2026-11-27T06:33:47Z",
-  "latest_version": "1.0.24",
+  "updated_at": "2026-11-27T09:27:00Z",
+  "latest_version": "1.0.27",
   "releases": [
+    {
+      "version": "1.0.27",
+      "tag": "v1.0.27",
+      "published_at": "2026-11-27T09:24:32Z",
+      "html_url": "https://github.com/blockmd-plugins/block-tarot/releases/tag/v1.0.27",
+      "zh": {
+        "improvements": [
+          "塔罗模式现已迁移至笔记应用内置的脚本沙箱中运行，提升了插件的安全隔离性与整体运行稳定性。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "Tarot Mode now runs within the note application's built-in JavaScript sandbox, improving security isolation and overall runtime stability."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- Tarot Mode now runs within the note application's built-in JavaScript sandbox, improving security isolation and overall runtime stability.\n\n---\n\n## 中文\n\n### 改进\n\n- 塔罗模式现已迁移至笔记应用内置的脚本沙箱中运行，提升了插件的安全隔离性与整体运行稳定性。"
+    },
     {
       "version": "1.0.24",
       "tag": "v1.0.24",

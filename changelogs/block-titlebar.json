@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-titlebar",
   "repo": "blockmd-plugins/block-titlebar",
-  "updated_at": "2026-11-27T06:33:47Z",
-  "latest_version": "1.0.36",
+  "updated_at": "2026-11-27T09:27:00Z",
+  "latest_version": "1.0.39",
   "releases": [
+    {
+      "version": "1.0.39",
+      "tag": "v1.0.39",
+      "published_at": "2026-11-27T09:23:47Z",
+      "html_url": "https://github.com/blockmd-plugins/block-titlebar/releases/tag/v1.0.39",
+      "zh": {
+        "improvements": [
+          "顶栏图标的管理逻辑已迁移至应用内置的脚本沙盒中运行，提升了运行时的安全性与整体稳定性。"
+        ]
+      },
+      "en": {
+        "improvements": [
+          "Titlebar icon management now runs inside the application's built-in JavaScript sandbox, improving runtime security and overall stability."
+        ]
+      },
+      "body": "## English\n\n### Improvements\n\n- Titlebar icon management now runs inside the application's built-in JavaScript sandbox, improving runtime security and overall stability.\n\n---\n\n## 中文\n\n### 改进\n\n- 顶栏图标的管理逻辑已迁移至应用内置的脚本沙盒中运行，提升了运行时的安全性与整体稳定性。"
+    },
     {
       "version": "1.0.36",
       "tag": "v1.0.36",
