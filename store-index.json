@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T18:30:31Z",
+  "updated_at": "2026-11-27T18:55:53Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.1.43/block-titlebar-v1.1.43.tar.gz",
       "sha256": "dd0f24958985dd04d854f8857813fb76c3e2799d0134b470d06d8587d2c95382",
-      "downloads": 160,
+      "downloads": 162,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T16:37:42Z",
@@ -255,7 +255,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.42/block-canvas-dots-v1.2.42.tar.gz",
       "sha256": "8f209c2299fb0379f3861bd42d379eff95a1c0bede5fa73ab3ce915ef10b9b0a",
-      "downloads": 153,
+      "downloads": 155,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:23:45Z",
@@ -404,7 +404,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.29/block-tarot-v1.0.29.tar.gz",
       "sha256": "00679f1421c7311615f01c747df6cb672d0bfd88a4de337441924e7061e22ba7",
-      "downloads": 118,
+      "downloads": 122,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T18:21:55Z",
@@ -895,19 +895,19 @@
         "zh": "图床上传",
         "en": "Image Host"
       },
-      "version": "1.2.57",
+      "version": "1.2.58",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-image-host",
       "summary": {
         "zh": "自动把本地图片传到云端图床并换好链接，发博客或换电脑都不裂图",
         "en": "Auto-upload note images to your own cloud storage and swap in live links like PicGo"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.2.57/block-image-host-v1.2.57.tar.gz",
-      "sha256": "3dec265db66c9c8998eedd28d749d8364d559eee95d4b70cdf5ac0baa65a7c5f",
+      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.2.58/block-image-host-v1.2.58.tar.gz",
+      "sha256": "433b3f9757e498beeaa50380e99de5402dbbde6b613b05257d322b02baba3580",
       "downloads": 941,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T18:30:09Z",
+      "updated_at": "2026-11-27T18:47:23Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -985,6 +985,22 @@
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-image-host.json",
       "changelog": [
         {
+          "version": "1.2.58",
+          "tag": "v1.2.58",
+          "published_at": "2026-11-27T18:47:23Z",
+          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.58",
+          "zh": {
+            "fixes": [
+              "检查本地资源时现在不会跟随符号链接，查询 GitHub 文件 SHA 时也会请求对象表示形式。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "Local asset checks now inspect links without following them, and GitHub file SHA lookups request the object representation."
+            ]
+          }
+        },
+        {
           "version": "1.2.57",
           "tag": "v1.2.57",
           "published_at": "2026-11-27T18:30:09Z",
@@ -1057,30 +1073,6 @@
               "The plugin now properly declares clipboard permissions to prevent operation failures and restores compatibility with older versions of the note application."
             ]
           }
-        },
-        {
-          "version": "1.2.47",
-          "tag": "v1.2.47",
-          "published_at": "2026-11-24T03:54:38Z",
-          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.47",
-          "zh": {
-            "new": [
-              "将图片拖到菜单栏图标上或粘贴到图标处即可上传，上传后会自动复制图片链接。",
-              "图片上传结果现在会通过应用内右上角横幅通知显示。"
-            ],
-            "other": [
-              "插件现在申请的存储和界面相关权限更少。"
-            ]
-          },
-          "en": {
-            "new": [
-              "The menu bar icon now uploads an image when you drag or paste it there, then copies the resulting link to your clipboard.",
-              "Upload results now appear in top-right in-app banners."
-            ],
-            "other": [
-              "The plugin now requests fewer storage and interface permissions."
-            ]
-          }
         }
       ]
     },
@@ -1100,7 +1092,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.40/block-poop-everywhere-v1.0.40.tar.gz",
       "sha256": "aac348633cfaf4f6fd8bf60be66a1f0bf0e711bda607cfad52087e740ab8d64d",
-      "downloads": 119,
+      "downloads": 121,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:14Z",
@@ -1297,7 +1289,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
       "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 76,
+      "downloads": 78,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:29Z",

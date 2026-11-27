@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-image-host",
   "repo": "blockmd-plugins/block-image-host",
-  "updated_at": "2026-11-27T18:30:31Z",
-  "latest_version": "1.2.57",
+  "updated_at": "2026-11-27T18:55:53Z",
+  "latest_version": "1.2.58",
   "releases": [
+    {
+      "version": "1.2.58",
+      "tag": "v1.2.58",
+      "published_at": "2026-11-27T18:47:23Z",
+      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.58",
+      "zh": {
+        "fixes": [
+          "检查本地资源时现在不会跟随符号链接，查询 GitHub 文件 SHA 时也会请求对象表示形式。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "Local asset checks now inspect links without following them, and GitHub file SHA lookups request the object representation."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- Local asset checks now inspect links without following them, and GitHub file SHA lookups request the object representation.\n\n---\n\n## 中文\n\n### 修复\n\n- 检查本地资源时现在不会跟随符号链接，查询 GitHub 文件 SHA 时也会请求对象表示形式。"
+    },
     {
       "version": "1.2.57",
       "tag": "v1.2.57",
@@ -296,18 +313,6 @@
         ]
       },
       "body": "## Changes\n\n- fix: clean up idle status and persist upload policy toggles immediately (`52f8cf0`)"
-    },
-    {
-      "version": "1.1.6",
-      "tag": "v1.1.6",
-      "published_at": "2026-11-18T18:11:11Z",
-      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.1.6",
-      "en": {
-        "other": [
-          "Simplify image host path and branch settings (`451a647`)"
-        ]
-      },
-      "body": "## Changes\n\n- Simplify image host path and branch settings (`451a647`)"
     }
   ]
 }
