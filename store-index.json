@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-27T16:38:09Z",
+  "updated_at": "2026-11-27T17:52:28Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.1.43/block-titlebar-v1.1.43.tar.gz",
       "sha256": "dd0f24958985dd04d854f8857813fb76c3e2799d0134b470d06d8587d2c95382",
-      "downloads": 154,
+      "downloads": 157,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T16:37:42Z",
@@ -255,7 +255,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.42/block-canvas-dots-v1.2.42.tar.gz",
       "sha256": "8f209c2299fb0379f3861bd42d379eff95a1c0bede5fa73ab3ce915ef10b9b0a",
-      "downloads": 150,
+      "downloads": 151,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:23:45Z",
@@ -404,7 +404,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.27/block-tarot-v1.0.27.tar.gz",
       "sha256": "6f67eb893ece6a09fd3e2a6c1ff6a38a4eb40f05b4d6fea5cdb48a06fe979e0e",
-      "downloads": 114,
+      "downloads": 115,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:32Z",
@@ -574,7 +574,7 @@
         "en": "Give notebooks, folders, and notes custom icons and colors like Notion so you spot them fast"
       },
       "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.12/block-file-icons-v1.0.12.tar.gz",
-      "sha256": "bc4087f6e2b34a46bd783fa7385b7b86c253b03f2c698f47bd2224765b7dd4d4",
+      "sha256": "2aba36f2cce2546cef1633555a0d730d2936522dca4576e2ebd80bca62a7793b",
       "downloads": 40,
       "stars": 0,
       "verified": true,
@@ -622,28 +622,28 @@
           "html_url": "https://github.com/blockmd-plugins/block-file-icons/releases/tag/v1.0.12",
           "zh": {
             "new": [
-              "现在可以为笔记本选择自定义图标，并在笔记本摘要视图中看到所选图标。",
-              "README 现在通过动态图示展示图标选择器的使用方式。"
+              "现在可以为每个笔记本选择图标，并在笔记本摘要中查看所选图标。"
             ],
-            "improvements": [
-              "插件的图标功能现在运行在 Block 内置的 JavaScript 沙箱中。"
+            "fixes": [
+              "旧版宿主现在可以使用插件所需的存储和界面权限。"
             ],
             "other": [
-              "插件清单现在不再申请可豁免的存储和界面权限。",
-              "插件清单现在为较旧版本的 Block 主机恢复了旧版存储和界面权限。"
+              "插件现在不再申请可豁免的存储和界面权限。",
+              "README 现已加入图标选择器的动态演示。",
+              "插件现在通过内置的 JavaScript 沙箱运行区块图标功能。"
             ]
           },
           "en": {
             "new": [
-              "Notebook icon selection and summary views now show the custom icons assigned to notebooks.",
-              "The README now includes animated demos of the icon picker."
+              "You can now choose an icon for each notebook and see the selected icon in notebook summaries."
             ],
-            "improvements": [
-              "The plugin now uses Block’s built-in JavaScript sandbox to run its icon features."
+            "fixes": [
+              "Older hosts can now access the storage and UI permissions required by the plugin."
             ],
             "other": [
-              "The plugin manifest no longer requests exempt storage and UI permissions.",
-              "The plugin manifest restores legacy storage and UI permissions for older Block hosts."
+              "The plugin no longer requests exempt storage and UI permissions.",
+              "The README now includes animated demonstrations of the icon picker.",
+              "The plugin now runs block icon features in the built-in JavaScript sandbox."
             ]
           }
         },
@@ -674,19 +674,19 @@
         "zh": "同步",
         "en": "Sync"
       },
-      "version": "1.3.134",
+      "version": "1.4.138",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-sync",
       "summary": {
         "zh": "把笔记自动同步到自有云盘、WebDAV 网盘或 Git 仓库，无需买会员",
         "en": "Auto-sync notes to your own cloud folder, WebDAV, or Git repo with no extra subscription"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.3.134/block-sync-v1.3.134.tar.gz",
-      "sha256": "fd19ec061ab7a17b9a61ca02fa93803eede47243adf66032015459e2813c8b3d",
+      "download_url": "https://github.com/blockmd-plugins/block-sync/releases/download/v1.4.138/block-sync-v1.4.138.tar.gz",
+      "sha256": "4e031dca0db2b6c7114ec632e9b6f9c6022a8e2dd740844c094ade4d5f85cd7e",
       "downloads": 1281,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T15:27:09Z",
+      "updated_at": "2026-11-27T17:51:45Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -766,6 +766,36 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-sync.json",
       "changelog": [
+        {
+          "version": "1.4.138",
+          "tag": "v1.4.138",
+          "published_at": "2026-11-27T17:51:45Z",
+          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.4.138",
+          "zh": {
+            "new": [
+              "同步现在使用宿主提供的笔记本 ID 保存各笔记本的密钥和恢复目录，确保它们与对应笔记本关联。"
+            ],
+            "improvements": [
+              "同步现在会限制重复重试，在读取笔记时安全地进行扫描，并控制 Git 清理的工作量。"
+            ],
+            "fixes": [
+              "同步现在能够可靠识别笔记本、安全清理恢复数据，并在降级时保留笔记本映射。",
+              "同步现在会再次同步删除操作，并能迁移使用旧名称的恢复文件。"
+            ]
+          },
+          "en": {
+            "new": [
+              "Sync now stores per-notebook keys and recovery folders using the host’s notebook IDs, keeping them associated with the correct notebooks."
+            ],
+            "improvements": [
+              "Sync now limits repeated retries, safely scans notes as it reads them, and bounds Git cleanup work."
+            ],
+            "fixes": [
+              "Sync now reliably identifies notebooks, safely prunes recovery data, and preserves notebook mappings when downgrading.",
+              "Sync now mirrors deletions again and migrates legacy recovery files with older names."
+            ]
+          }
+        },
         {
           "version": "1.3.134",
           "tag": "v1.3.134",
@@ -847,22 +877,6 @@
             ],
             "fixes": [
               "Sync now automatically hides a sync destination's detailed settings whenever its switch is turned off, keeping the settings interface clean."
-            ]
-          }
-        },
-        {
-          "version": "1.3.120",
-          "tag": "v1.3.120",
-          "published_at": "2026-11-24T13:37:12Z",
-          "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.120",
-          "zh": {
-            "fixes": [
-              "同步功能现在会在删除单篇笔记或整个文件夹时记录删除标记，确保删除操作能够可靠地同步到所有设备，避免已删除的内容重新出现。"
-            ]
-          },
-          "en": {
-            "fixes": [
-              "Sync now records deletion markers when individual notes or entire folders are removed, ensuring that deletions are reliably propagated across all devices instead of removed content reappearing."
             ]
           }
         }
@@ -1074,7 +1088,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.40/block-poop-everywhere-v1.0.40.tar.gz",
       "sha256": "aac348633cfaf4f6fd8bf60be66a1f0bf0e711bda607cfad52087e740ab8d64d",
-      "downloads": 116,
+      "downloads": 117,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:14Z",
@@ -1271,7 +1285,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
       "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 73,
+      "downloads": 74,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:29Z",

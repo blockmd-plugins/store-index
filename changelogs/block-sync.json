@@ -3,9 +3,40 @@
   "schema_version": 1,
   "id": "block-sync",
   "repo": "blockmd-plugins/block-sync",
-  "updated_at": "2026-11-27T16:38:09Z",
-  "latest_version": "1.3.134",
+  "updated_at": "2026-11-27T17:52:28Z",
+  "latest_version": "1.4.138",
   "releases": [
+    {
+      "version": "1.4.138",
+      "tag": "v1.4.138",
+      "published_at": "2026-11-27T17:51:45Z",
+      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.4.138",
+      "zh": {
+        "new": [
+          "同步现在使用宿主提供的笔记本 ID 保存各笔记本的密钥和恢复目录，确保它们与对应笔记本关联。"
+        ],
+        "improvements": [
+          "同步现在会限制重复重试，在读取笔记时安全地进行扫描，并控制 Git 清理的工作量。"
+        ],
+        "fixes": [
+          "同步现在能够可靠识别笔记本、安全清理恢复数据，并在降级时保留笔记本映射。",
+          "同步现在会再次同步删除操作，并能迁移使用旧名称的恢复文件。"
+        ]
+      },
+      "en": {
+        "new": [
+          "Sync now stores per-notebook keys and recovery folders using the host’s notebook IDs, keeping them associated with the correct notebooks."
+        ],
+        "improvements": [
+          "Sync now limits repeated retries, safely scans notes as it reads them, and bounds Git cleanup work."
+        ],
+        "fixes": [
+          "Sync now reliably identifies notebooks, safely prunes recovery data, and preserves notebook mappings when downgrading.",
+          "Sync now mirrors deletions again and migrates legacy recovery files with older names."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- Sync now stores per-notebook keys and recovery folders using the host’s notebook IDs, keeping them associated with the correct notebooks.\n\n### Improvements\n\n- Sync now limits repeated retries, safely scans notes as it reads them, and bounds Git cleanup work.\n\n### Fixes\n\n- Sync now reliably identifies notebooks, safely prunes recovery data, and preserves notebook mappings when downgrading.\n- Sync now mirrors deletions again and migrates legacy recovery files with older names.\n\n---\n\n## 中文\n\n### 新功能\n\n- 同步现在使用宿主提供的笔记本 ID 保存各笔记本的密钥和恢复目录，确保它们与对应笔记本关联。\n\n### 改进\n\n- 同步现在会限制重复重试，在读取笔记时安全地进行扫描，并控制 Git 清理的工作量。\n\n### 修复\n\n- 同步现在能够可靠识别笔记本、安全清理恢复数据，并在降级时保留笔记本映射。\n- 同步现在会再次同步删除操作，并能迁移使用旧名称的恢复文件。"
+    },
     {
       "version": "1.3.134",
       "tag": "v1.3.134",
@@ -341,19 +372,6 @@
         ]
       },
       "body": "## Changes\n\n- fix(sync): lock the worktree and branch while applying Git plans (`960a9f2`)\n- fix(sync): clear approved plans in the result transaction (`92f6f79`)\n- fix(sync): retain queued reminders until acknowledged (`549cfc9`)"
-    },
-    {
-      "version": "1.3.90",
-      "tag": "v1.3.90",
-      "published_at": "2026-11-20T22:35:41Z",
-      "html_url": "https://github.com/blockmd-plugins/block-sync/releases/tag/v1.3.90",
-      "en": {
-        "other": [
-          "fix(sync): keep user Git worktree updates in Git (`5a44cec`)",
-          "fix(sync): scope confirmation failures to the affected note (`836474b`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix(sync): keep user Git worktree updates in Git (`5a44cec`)\n- fix(sync): scope confirmation failures to the affected note (`836474b`)"
     }
   ]
 }
