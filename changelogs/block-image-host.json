@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-image-host",
   "repo": "blockmd-plugins/block-image-host",
-  "updated_at": "2026-11-28T02:41:44Z",
-  "latest_version": "1.2.58",
+  "updated_at": "2026-11-28T06:40:54Z",
+  "latest_version": "1.2.59",
   "releases": [
+    {
+      "version": "1.2.59",
+      "tag": "v1.2.59",
+      "published_at": "2026-11-28T06:40:34Z",
+      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.59",
+      "zh": {
+        "fixes": [
+          "快捷键列表和命令面板现在不会显示插件内部使用的菜单命令。"
+        ]
+      },
+      "en": {
+        "fixes": [
+          "Internal menu commands no longer appear in the shortcuts list or command palette."
+        ]
+      },
+      "body": "## English\n\n### Fixes\n\n- Internal menu commands no longer appear in the shortcuts list or command palette.\n\n---\n\n## 中文\n\n### 修复\n\n- 快捷键列表和命令面板现在不会显示插件内部使用的菜单命令。"
+    },
     {
       "version": "1.2.58",
       "tag": "v1.2.58",
@@ -301,18 +318,6 @@
         ]
       },
       "body": "## Changes\n\n- feat: streamline image host to 2 cards with unified config save and aligned logs (v1.2.0) (`4a4faa5`)"
-    },
-    {
-      "version": "1.1.7",
-      "tag": "v1.1.7",
-      "published_at": "2026-11-18T18:22:44Z",
-      "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.1.7",
-      "en": {
-        "other": [
-          "fix: clean up idle status and persist upload policy toggles immediately (`52f8cf0`)"
-        ]
-      },
-      "body": "## Changes\n\n- fix: clean up idle status and persist upload policy toggles immediately (`52f8cf0`)"
     }
   ]
 }

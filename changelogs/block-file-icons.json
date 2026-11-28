@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-file-icons",
   "repo": "blockmd-plugins/block-file-icons",
-  "updated_at": "2026-11-28T02:41:44Z",
-  "latest_version": "1.0.12",
+  "updated_at": "2026-11-28T06:40:54Z",
+  "latest_version": "1.0.13",
   "releases": [
+    {
+      "version": "1.0.13",
+      "tag": "v1.0.13",
+      "published_at": "2026-11-28T05:05:49Z",
+      "html_url": "https://github.com/blockmd-plugins/block-file-icons/releases/tag/v1.0.13",
+      "zh": {
+        "new": [
+          "插件商店页面现已展示自定义图标和精选宣传图。"
+        ]
+      },
+      "en": {
+        "new": [
+          "The plugin store listing now includes a custom icon and featured artwork."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- The plugin store listing now includes a custom icon and featured artwork.\n\n---\n\n## 中文\n\n### 新功能\n\n- 插件商店页面现已展示自定义图标和精选宣传图。"
+    },
     {
       "version": "1.0.12",
       "tag": "v1.0.12",

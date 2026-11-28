@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-poop-everywhere",
   "repo": "blockmd-plugins/block-poop-everywhere",
-  "updated_at": "2026-11-28T02:41:44Z",
-  "latest_version": "1.0.40",
+  "updated_at": "2026-11-28T06:40:54Z",
+  "latest_version": "1.0.41",
   "releases": [
+    {
+      "version": "1.0.41",
+      "tag": "v1.0.41",
+      "published_at": "2026-11-28T06:06:36Z",
+      "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.41",
+      "zh": {
+        "new": [
+          "插件商店现已展示专属图标和精选封面，让「到处拉屎」更容易辨认。"
+        ]
+      },
+      "en": {
+        "new": [
+          "The plugin now includes a store icon and featured artwork to give it a recognizable look in the plugin store."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- The plugin now includes a store icon and featured artwork to give it a recognizable look in the plugin store.\n\n---\n\n## 中文\n\n### 新功能\n\n- 插件商店现已展示专属图标和精选封面，让「到处拉屎」更容易辨认。"
+    },
     {
       "version": "1.0.40",
       "tag": "v1.0.40",

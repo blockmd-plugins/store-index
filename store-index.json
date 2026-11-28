@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-28T02:41:44Z",
+  "updated_at": "2026-11-28T06:40:54Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.1.43/block-titlebar-v1.1.43.tar.gz",
       "sha256": "dd0f24958985dd04d854f8857813fb76c3e2799d0134b470d06d8587d2c95382",
-      "downloads": 172,
+      "downloads": 173,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T16:37:42Z",
@@ -255,7 +255,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.46/block-canvas-dots-v1.2.46.tar.gz",
       "sha256": "9480ff8a6e585e07011542a68c233a30967b26b61ef46bd379f2aaf1be736dc1",
-      "downloads": 171,
+      "downloads": 172,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T20:06:59Z",
@@ -404,7 +404,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.30/block-tarot-v1.0.30.tar.gz",
       "sha256": "1405b4da2726e79a1fecbd031a0d29ddd68ce26c7776d6e8953892e5c568c1d6",
-      "downloads": 134,
+      "downloads": 135,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T18:56:07Z",
@@ -568,19 +568,19 @@
         "zh": "自定义图标",
         "en": "Custom Icons"
       },
-      "version": "1.0.12",
+      "version": "1.0.13",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-file-icons",
       "summary": {
         "zh": "像 Notion 一样给笔记本、文件夹和笔记换上多彩小图标，在侧栏一眼认出它们",
         "en": "Give notebooks, folders, and notes custom icons and colors like Notion so you spot them fast"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.12/block-file-icons-v1.0.12.tar.gz",
-      "sha256": "2aba36f2cce2546cef1633555a0d730d2936522dca4576e2ebd80bca62a7793b",
-      "downloads": 47,
+      "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.13/block-file-icons-v1.0.13.tar.gz",
+      "sha256": "26bf4f6108f5846593801dd222b6bd658d05dc4b8dc009a1ad5001a2710ea0c1",
+      "downloads": 50,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T11:21:02Z",
+      "updated_at": "2026-11-28T05:05:49Z",
       "permissions": [
         "storage",
         "ui:sidebar"
@@ -617,6 +617,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-file-icons.json",
       "changelog": [
+        {
+          "version": "1.0.13",
+          "tag": "v1.0.13",
+          "published_at": "2026-11-28T05:05:49Z",
+          "html_url": "https://github.com/blockmd-plugins/block-file-icons/releases/tag/v1.0.13",
+          "zh": {
+            "new": [
+              "插件商店页面现已展示自定义图标和精选宣传图。"
+            ]
+          },
+          "en": {
+            "new": [
+              "The plugin store listing now includes a custom icon and featured artwork."
+            ]
+          }
+        },
         {
           "version": "1.0.12",
           "tag": "v1.0.12",
@@ -857,19 +873,19 @@
         "zh": "图床上传",
         "en": "Image Host"
       },
-      "version": "1.2.58",
+      "version": "1.2.59",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-image-host",
       "summary": {
         "zh": "自动把本地图片传到云端图床并换好链接，发博客或换电脑都不裂图",
         "en": "Auto-upload note images to your own cloud storage and swap in live links like PicGo"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.2.58/block-image-host-v1.2.58.tar.gz",
-      "sha256": "433b3f9757e498beeaa50380e99de5402dbbde6b613b05257d322b02baba3580",
+      "download_url": "https://github.com/blockmd-plugins/block-image-host/releases/download/v1.2.59/block-image-host-v1.2.59.tar.gz",
+      "sha256": "90fc7d0fa080e3e9cf329876faa4f63e41af3b6772fcab8e05bd51b0d7f3e3f1",
       "downloads": 941,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T18:47:23Z",
+      "updated_at": "2026-11-28T06:40:34Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -939,13 +955,29 @@
           "en": "Add a menu bar icon for drag-and-drop uploads, clipboard uploads, and recent links"
         },
         "ui:commands": {
-          "zh": "提供上传剪贴板、上传拖入图片和复制最近链接的快捷命令",
-          "en": "Provide commands for clipboard upload, dropped-file upload, and copying recent links"
+          "zh": "响应顶部菜单栏上传剪贴板、拖入上传和复制最近链接等操作",
+          "en": "Handle menu bar clipboard uploads, dropped-file uploads, and copying recent links"
         }
       },
       "beta": true,
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-image-host.json",
       "changelog": [
+        {
+          "version": "1.2.59",
+          "tag": "v1.2.59",
+          "published_at": "2026-11-28T06:40:34Z",
+          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.59",
+          "zh": {
+            "fixes": [
+              "快捷键列表和命令面板现在不会显示插件内部使用的菜单命令。"
+            ]
+          },
+          "en": {
+            "fixes": [
+              "Internal menu commands no longer appear in the shortcuts list or command palette."
+            ]
+          }
+        },
         {
           "version": "1.2.58",
           "tag": "v1.2.58",
@@ -1019,22 +1051,6 @@
               "The plugin now runs in the application's built-in sandbox, improving stability and security during image uploads."
             ]
           }
-        },
-        {
-          "version": "1.2.48",
-          "tag": "v1.2.48",
-          "published_at": "2026-11-24T06:01:50Z",
-          "html_url": "https://github.com/blockmd-plugins/block-image-host/releases/tag/v1.2.48",
-          "zh": {
-            "fixes": [
-              "插件现已正确声明剪贴板权限以避免操作失败，并恢复了对旧版本笔记应用的兼容支持。"
-            ]
-          },
-          "en": {
-            "fixes": [
-              "The plugin now properly declares clipboard permissions to prevent operation failures and restores compatibility with older versions of the note application."
-            ]
-          }
         }
       ]
     },
@@ -1045,19 +1061,19 @@
         "zh": "到处拉屎",
         "en": "Poop Everywhere"
       },
-      "version": "1.0.40",
+      "version": "1.0.41",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-poop-everywhere",
       "summary": {
         "zh": "趣味整蛊彩蛋插件：在顶栏、背景和笔记里到处留痕，玩够一键冲水，兼作官方示例",
         "en": "Playful prank plugin to drop marks across Block and flush them clean, also an official UI showcase"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.40/block-poop-everywhere-v1.0.40.tar.gz",
-      "sha256": "aac348633cfaf4f6fd8bf60be66a1f0bf0e711bda607cfad52087e740ab8d64d",
-      "downloads": 131,
+      "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.41/block-poop-everywhere-v1.0.41.tar.gz",
+      "sha256": "d0f57c09c7d277573ee3f4f621942593be0f4a4b92035e15f4357e53be4f365a",
+      "downloads": 133,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T09:24:14Z",
+      "updated_at": "2026-11-28T06:06:36Z",
       "permissions": [
         "storage",
         "notes:read",
@@ -1157,6 +1173,22 @@
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-poop-everywhere.json",
       "changelog": [
         {
+          "version": "1.0.41",
+          "tag": "v1.0.41",
+          "published_at": "2026-11-28T06:06:36Z",
+          "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.41",
+          "zh": {
+            "new": [
+              "插件商店现已展示专属图标和精选封面，让「到处拉屎」更容易辨认。"
+            ]
+          },
+          "en": {
+            "new": [
+              "The plugin now includes a store icon and featured artwork to give it a recognizable look in the plugin store."
+            ]
+          }
+        },
+        {
           "version": "1.0.40",
           "tag": "v1.0.40",
           "published_at": "2026-11-27T09:24:14Z",
@@ -1220,18 +1252,6 @@
               "chore: simplify status copy and remove redundant counts (`f94ee08`)"
             ]
           }
-        },
-        {
-          "version": "1.0.27",
-          "tag": "v1.0.27",
-          "published_at": "2026-11-21T06:16:54Z",
-          "html_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/tag/v1.0.27",
-          "en": {
-            "other": [
-              "feat: remove appearance settings section and ui:settings permission (`56e9cea`)",
-              "refactor: remove settings_section surface and update extension map (`ae76a15`)"
-            ]
-          }
         }
       ]
     },
@@ -1251,7 +1271,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
       "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 88,
+      "downloads": 89,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T09:24:29Z",
