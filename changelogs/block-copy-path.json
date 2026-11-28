@@ -3,9 +3,26 @@
   "schema_version": 1,
   "id": "block-copy-path",
   "repo": "blockmd-plugins/block-copy-path",
-  "updated_at": "2026-11-28T06:40:54Z",
-  "latest_version": "1.0.18",
+  "updated_at": "2026-11-28T11:45:17Z",
+  "latest_version": "1.0.19",
   "releases": [
+    {
+      "version": "1.0.19",
+      "tag": "v1.0.19",
+      "published_at": "2026-11-28T06:56:28Z",
+      "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.19",
+      "zh": {
+        "new": [
+          "「复制路径」在插件商店页面新增了图标和精选展示图片。"
+        ]
+      },
+      "en": {
+        "new": [
+          "Copy Path now has a store icon and featured artwork on its listing."
+        ]
+      },
+      "body": "## English\n\n### New\n\n- Copy Path now has a store icon and featured artwork on its listing.\n\n---\n\n## 中文\n\n### 新功能\n\n- 「复制路径」在插件商店页面新增了图标和精选展示图片。"
+    },
     {
       "version": "1.0.18",
       "tag": "v1.0.18",

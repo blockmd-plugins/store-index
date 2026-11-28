@@ -1,0 +1,29 @@
+{
+  "app": "blockmd",
+  "schema_version": 1,
+  "id": "block-tag-manager",
+  "repo": "itjun/block-tag-manager",
+  "updated_at": "2026-11-28T11:45:17Z",
+  "latest_version": "1.0.0",
+  "releases": [
+    {
+      "version": "1.0.0",
+      "tag": "v1.0.0",
+      "published_at": "2026-11-28T11:40:09Z",
+      "html_url": "https://github.com/itjun/block-tag-manager/releases/tag/v1.0.0",
+      "zh": {
+        "new": [
+          "Browse nested tag groups across the notebook in the right panel and jump directly to matching notes.",
+          "Inspect current note YAML properties and add, rename, or remove tags with live suggestions from existing tags.",
+          "Runs in Block's built-in JS sandbox with zero external runtime dependencies, updating only the `tags` field while preserving other frontmatter properties, comments, and note content."
+        ],
+        "other": [
+          "在右侧标签面板浏览笔记本全部多级标签分组，点击标签或分组下的「全部笔记」即可筛选并打开对应笔记。",
+          "支持查看当前笔记 YAML 属性，添加、重命名或移除标签，输入时实时联想已有标签。",
+          "基于 Block 内置 JS 沙盒运行，无需额外安装 Python；只局部修改 `tags` 字段，保留其余 YAML 属性、注释与正文。"
+        ]
+      },
+      "body": "## 中文\n\n### 新增功能\n- 在右侧标签面板浏览笔记本全部多级标签分组，点击标签或分组下的「全部笔记」即可筛选并打开对应笔记。\n- 支持查看当前笔记 YAML 属性，添加、重命名或移除标签，输入时实时联想已有标签。\n- 基于 Block 内置 JS 沙盒运行，无需额外安装 Python；只局部修改 `tags` 字段，保留其余 YAML 属性、注释与正文。\n\n## English\n\n### New Features\n- Browse nested tag groups across the notebook in the right panel and jump directly to matching notes.\n- Inspect current note YAML properties and add, rename, or remove tags with live suggestions from existing tags.\n- Runs in Block's built-in JS sandbox with zero external runtime dependencies, updating only the `tags` field while preserving other frontmatter properties, comments, and note content."
+    }
+  ]
+}

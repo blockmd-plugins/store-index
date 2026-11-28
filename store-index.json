@@ -2,7 +2,7 @@
   "app": "blockmd",
   "schema_version": 1,
   "topic": "blockmd-plugin",
-  "updated_at": "2026-11-28T06:40:54Z",
+  "updated_at": "2026-11-28T11:45:17Z",
   "apps": [
     {
       "app": "blockmd",
@@ -106,7 +106,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-titlebar/releases/download/v1.1.43/block-titlebar-v1.1.43.tar.gz",
       "sha256": "dd0f24958985dd04d854f8857813fb76c3e2799d0134b470d06d8587d2c95382",
-      "downloads": 173,
+      "downloads": 174,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T16:37:42Z",
@@ -255,7 +255,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-canvas-dots/releases/download/v1.2.46/block-canvas-dots-v1.2.46.tar.gz",
       "sha256": "9480ff8a6e585e07011542a68c233a30967b26b61ef46bd379f2aaf1be736dc1",
-      "downloads": 172,
+      "downloads": 173,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T20:06:59Z",
@@ -404,7 +404,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-tarot/releases/download/v1.0.30/block-tarot-v1.0.30.tar.gz",
       "sha256": "1405b4da2726e79a1fecbd031a0d29ddd68ce26c7776d6e8953892e5c568c1d6",
-      "downloads": 135,
+      "downloads": 136,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-27T18:56:07Z",
@@ -577,7 +577,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-file-icons/releases/download/v1.0.13/block-file-icons-v1.0.13.tar.gz",
       "sha256": "26bf4f6108f5846593801dd222b6bd658d05dc4b8dc009a1ad5001a2710ea0c1",
-      "downloads": 50,
+      "downloads": 52,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-28T05:05:49Z",
@@ -678,6 +678,75 @@
           "en": {
             "other": [
               "This is a maintenance release with no user-facing changes."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "app": "blockmd",
+      "id": "block-tag-manager",
+      "name": {
+        "zh": "标签管理",
+        "en": "Tag Manager"
+      },
+      "version": "1.0.0",
+      "author": "itjun",
+      "repo": "itjun/block-tag-manager",
+      "summary": {
+        "zh": "浏览笔记本标签，管理当前笔记的 YAML 标签。",
+        "en": "Browse notebook tags and edit the current note's YAML tags."
+      },
+      "download_url": "https://github.com/itjun/block-tag-manager/releases/download/v1.0.0/block-tag-manager-v1.0.0.tar.gz",
+      "sha256": "3059be13006b6cf2f4ba5f94f4ed5801772f9676bf5d3ba9c4a87278d0f8bb0e",
+      "downloads": 0,
+      "stars": 0,
+      "verified": false,
+      "updated_at": "2026-11-28T11:40:09Z",
+      "permissions": [
+        "notes:read",
+        "notes:write",
+        "events:note_saved",
+        "events:workspace"
+      ],
+      "surfaces": [
+        "settings_page"
+      ],
+      "icon": {
+        "view_box": "0 0 24 24",
+        "stroke_paths": [
+          "M3 4h8l10 10-7 7L3 10Z",
+          "M7.5 7.5h.01"
+        ]
+      },
+      "category": "organize",
+      "permission_reasons": {
+        "notes:read": {
+          "zh": "读取笔记属性与标签，按标签筛选并打开笔记。",
+          "en": "Read note properties and tags to browse and open matching notes."
+        },
+        "notes:write": {
+          "zh": "仅在你修改当前笔记标签时写回 YAML。",
+          "en": "Write back to the current note only when you edit its YAML tags."
+        }
+      },
+      "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-tag-manager.json",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "tag": "v1.0.0",
+          "published_at": "2026-11-28T11:40:09Z",
+          "html_url": "https://github.com/itjun/block-tag-manager/releases/tag/v1.0.0",
+          "zh": {
+            "new": [
+              "Browse nested tag groups across the notebook in the right panel and jump directly to matching notes.",
+              "Inspect current note YAML properties and add, rename, or remove tags with live suggestions from existing tags.",
+              "Runs in Block's built-in JS sandbox with zero external runtime dependencies, updating only the `tags` field while preserving other frontmatter properties, comments, and note content."
+            ],
+            "other": [
+              "在右侧标签面板浏览笔记本全部多级标签分组，点击标签或分组下的「全部笔记」即可筛选并打开对应笔记。",
+              "支持查看当前笔记 YAML 属性，添加、重命名或移除标签，输入时实时联想已有标签。",
+              "基于 Block 内置 JS 沙盒运行，无需额外安装 Python；只局部修改 `tags` 字段，保留其余 YAML 属性、注释与正文。"
             ]
           }
         }
@@ -1070,7 +1139,7 @@
       },
       "download_url": "https://github.com/blockmd-plugins/block-poop-everywhere/releases/download/v1.0.41/block-poop-everywhere-v1.0.41.tar.gz",
       "sha256": "d0f57c09c7d277573ee3f4f621942593be0f4a4b92035e15f4357e53be4f365a",
-      "downloads": 133,
+      "downloads": 134,
       "stars": 0,
       "verified": true,
       "updated_at": "2026-11-28T06:06:36Z",
@@ -1262,19 +1331,19 @@
         "zh": "复制路径",
         "en": "Copy Path"
       },
-      "version": "1.0.18",
+      "version": "1.0.19",
       "author": "Block Community",
       "repo": "blockmd-plugins/block-copy-path",
       "summary": {
         "zh": "像 VS Code 一样一键复制笔记或文件夹路径，方便贴给终端或 AI 助手",
         "en": "Copy a note or folder path in one click like VS Code, ready to paste into terminals or AI"
       },
-      "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.18/block-copy-path-v1.0.18.tar.gz",
-      "sha256": "1b9d7772d9c0457e0e825a282cd49f64742ba75dfe7a9d3fc1b1ae80d4ea5ff4",
-      "downloads": 89,
+      "download_url": "https://github.com/blockmd-plugins/block-copy-path/releases/download/v1.0.19/block-copy-path-v1.0.19.tar.gz",
+      "sha256": "502bb38a539c54cfd49fbaa4488fd6d1b91761e23f97113aaeb14b38614393a2",
+      "downloads": 92,
       "stars": 0,
       "verified": true,
-      "updated_at": "2026-11-27T09:24:29Z",
+      "updated_at": "2026-11-28T06:56:28Z",
       "permissions": [
         "storage",
         "ui:commands",
@@ -1323,6 +1392,22 @@
       },
       "changelog_url": "https://raw.githubusercontent.com/blockmd-plugins/store-index/main/changelogs/block-copy-path.json",
       "changelog": [
+        {
+          "version": "1.0.19",
+          "tag": "v1.0.19",
+          "published_at": "2026-11-28T06:56:28Z",
+          "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.19",
+          "zh": {
+            "new": [
+              "「复制路径」在插件商店页面新增了图标和精选展示图片。"
+            ]
+          },
+          "en": {
+            "new": [
+              "Copy Path now has a store icon and featured artwork on its listing."
+            ]
+          }
+        },
         {
           "version": "1.0.18",
           "tag": "v1.0.18",
@@ -1386,22 +1471,6 @@
           "en": {
             "other": [
               "Copy Path no longer requests exempt storage or UI permissions."
-            ]
-          }
-        },
-        {
-          "version": "1.0.12",
-          "tag": "v1.0.12",
-          "published_at": "2026-11-23T18:13:07Z",
-          "html_url": "https://github.com/blockmd-plugins/block-copy-path/releases/tag/v1.0.12",
-          "zh": {
-            "other": [
-              "插件详情中的作者与代码仓库链接已更新至新的维护组织。"
-            ]
-          },
-          "en": {
-            "other": [
-              "The author and repository links in the plugin details have been updated to point to the new organization."
             ]
           }
         }
